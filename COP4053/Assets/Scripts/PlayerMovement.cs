@@ -23,11 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Movement()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        // Vector3 movement = new Vector3(x, 0, z) * speed * Time.deltaTime;
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce(movement * speed);
+        Vector3 dirVector = new Vector3(Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal")).normalized;
+        GetComponent<Rigidbody>().MovePosition(transform.position + dirVector * Time.deltaTime);
     }
 }
