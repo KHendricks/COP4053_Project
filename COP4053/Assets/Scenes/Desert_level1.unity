@@ -218,15 +218,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: c4504c16619b6432c8e72fdf06d0f6ad, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.70710737
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: c4504c16619b6432c8e72fdf06d0f6ad, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: c4504c16619b6432c8e72fdf06d0f6ad, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.7071063
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: c4504c16619b6432c8e72fdf06d0f6ad, type: 3}
       propertyPath: m_RootOrder
@@ -407,6 +407,10 @@ Prefab:
     - target: {fileID: 400010, guid: c4504c16619b6432c8e72fdf06d0f6ad, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 400028, guid: c4504c16619b6432c8e72fdf06d0f6ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 990
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4504c16619b6432c8e72fdf06d0f6ad, type: 3}
@@ -948,7 +952,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4927239187243998, guid: 118192b61e71142399b7e38eaab0b9d2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.11003494
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: 4927239187243998, guid: 118192b61e71142399b7e38eaab0b9d2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -956,7 +960,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4927239187243998, guid: 118192b61e71142399b7e38eaab0b9d2, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.011404455
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 4927239187243998, guid: 118192b61e71142399b7e38eaab0b9d2, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1105,6 +1109,7 @@ GameObject:
   - component: {fileID: 1119138851}
   - component: {fileID: 1119138850}
   - component: {fileID: 1119138853}
+  - component: {fileID: 1119138854}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1165,13 +1170,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1119138849}
-  m_LocalRotation: {x: -0.1384424, y: 0.68037844, z: -0.11893647, w: -0.7097697}
-  m_LocalPosition: {x: 8.12, y: 1.96, z: -0.55}
+  m_LocalRotation: {x: 0.18222557, y: 0.0019083293, z: -0.010296421, w: 0.98320097}
+  m_LocalPosition: {x: 5.44, y: 1.96, z: 2.59}
   m_LocalScale: {x: 0.95009, y: 0.79117, z: 0.6810071}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 21, y: 272.2, z: -1.2}
+  m_LocalEulerAnglesHint: {x: 21, y: 0, z: -1.2}
 --- !u!114 &1119138853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1184,6 +1189,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 6e9e877378cf04235838eb18c2d2a506, type: 2}
+--- !u!114 &1119138854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1119138849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7bbbfaad019f45c0bbf1dc0587c3450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1416046947}
+  smooth: 5
+  xOffset: 0
+  yOffset: 1
+  zOffset: 3
 --- !u!1 &1125386423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,7 +1498,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf7f2a4b1e844ac3b11fe1d16b6f984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
+  sprintMultiplier: 3
+  jumpHeight: 3
 --- !u!54 &1416046949
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1489,7 +1512,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

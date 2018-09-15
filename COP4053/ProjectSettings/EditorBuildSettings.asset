@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 30ac490b59c9b4b7a9c51e4583b7f5ce
   - enabled: 1
-    path: Assets/Scenes/LevelOne.unity
-    guid: c1fc60587a47c48469bb9fa2ec4d86b8
+    path: Assets/Scenes/Desert_level1.unity
+    guid: 13e9e782d6ff841d9ab693e919c01d29
   m_configObjects: {}

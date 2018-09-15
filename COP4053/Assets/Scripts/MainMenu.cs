@@ -19,6 +19,6 @@ public class MainMenu : MonoBehaviour
 
     public void LoadLevelOne()
     {
-        SceneManager.LoadScene("LevelOne");
+        SceneManager.LoadScene("Desert_level1");
     }
 }
