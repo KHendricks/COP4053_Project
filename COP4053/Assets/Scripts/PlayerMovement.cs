@@ -43,8 +43,27 @@ public class PlayerMovement : MonoBehaviour
 
     void Movement()
     {
-        Vector3 dirVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
-        GetComponent<Rigidbody>().MovePosition(transform.position + dirVector * Time.deltaTime * speed);
+        float horizontalAxis = Input.GetAxis("Horizontal");
+        float verticalAxis = Input.GetAxis("Vertical");
+
+        var camera = Camera.main;
+
+        // Camera's forward and right vectors
+        var forward = camera.transform.forward;
+        var right = camera.transform.right;
+
+        // Project forward and right vectors on horizontal plane (y = 0)
+        forward.y = 0f;
+        right.y = 0f;
+        forward.Normalize();
+        right.Normalize();
+
+        // Direction we want to move;
+        var dir = forward * verticalAxis + right * horizontalAxis;
+
+        transform.Translate(dir * speed * Time.deltaTime);
+        //Vector3 dirVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+        //GetComponent<Rigidbody>().MovePosition(transform.position + dirVector * Time.deltaTime * speed);
     }
 
     void Sprint(bool isSprinting)
