@@ -5,16 +5,17 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour 
 {
+    public LayerMask groundLayer;
     public float speed = 3f;
     public float sprintMultiplier = 3f;
-    public float jumpHeight = 3f;
+    public float jumpHeight = 5f;
     Rigidbody rb;
+
 
 	// Use this for initialization
 	void Start () 
     {
         rb = gameObject.GetComponent<Rigidbody>();
-
     }
 	
 	// Update is called once per frame
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckInput()
     {
+        Debug.Log(IsGrounded());
         if (Input.GetKeyDown("space"))
             Jump();
         if (Input.GetKeyDown("left shift"))
@@ -34,11 +36,22 @@ public class PlayerMovement : MonoBehaviour
             Sprint(false);
     }
 
+    private bool IsGrounded()
+    {
+        float distanceToGround = .2f;
+
+        Vector2 playerPosition = gameObject.transform.position;
+        Debug.DrawRay(playerPosition, Vector2.down, Color.red);
+        bool isGrounded = Physics.Raycast(playerPosition, Vector2.down, distanceToGround, groundLayer);
+
+        return isGrounded;
+    }
+
     void Jump()
     {
         // jumpHeight is currently a magic number
-        Vector3 dirVector = new Vector3(0, jumpHeight, 0).normalized;
-        GetComponent<Rigidbody>().AddRelativeForce(transform.position + dirVector * jumpHeight);
+        if (IsGrounded())
+            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
     }
 
     void Movement()

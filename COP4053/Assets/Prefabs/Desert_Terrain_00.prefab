@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 4995096359078308}
   m_Layer: 0
   m_Name: Hills
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -830,8 +830,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.035415664, y: 0.0034975444, z: 0.066064514}
-  m_Center: {x: 0.018436598, y: -0.02058326, z: -0.034750026}
+  m_Size: {x: 0.038821228, y: 0.0034975426, z: 0.06606451}
+  m_Center: {x: 0.02013938, y: -0.02058326, z: -0.034750026}
 --- !u!65 &65258459715803528
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -926,8 +926,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.035902567, y: 0.002808867, z: 0.06606451}
-  m_Center: {x: 0.018680057, y: 0.018633112, z: -0.034750026}
+  m_Size: {x: 0.039204974, y: 0.002808868, z: 0.06606451}
+  m_Center: {x: 0.020331267, y: 0.018633112, z: -0.034750026}
 --- !u!65 &65560381732195470
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -998,8 +998,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0037942622, y: 0.0039152843, z: 0.0066223014}
-  m_Center: {x: -0.0012825235, y: 0.007474777, z: 0.0033161505}
+  m_Size: {x: 0.0043886877, y: 0.0039152843, z: 0.0066223014}
+  m_Center: {x: -0.0009853109, y: 0.007474777, z: 0.0033161507}
 --- !u!65 &65968195246544818
 BoxCollider:
   m_ObjectHideFlags: 1
