@@ -1,56 +1,56 @@
 fileFormatVersion: 2
-guid: dec658f6169004417a09f845fd1614ec
+guid: d0cdf386361d44f16ad3ca8e6867801f
 TextureImporter:
   fileIDToRecycleName:
-    21300000: cowboi 0
-    21300002: cowboi 1
-    21300004: cowboi 2
-    21300006: cowboi 3
-    21300008: cowboi 4
-    21300010: cowboi 5
-    21300012: cowboi 6
-    21300014: cowboi 7
-    21300016: cowboi 8
-    21300018: cowboi 9
-    21300020: cowboi 10
-    21300022: cowboi 11
-    21300024: cowboi 12
-    21300026: cowboi 13
-    21300028: cowboi 14
-    21300030: cowboi 15
-    21300032: cowboi 16
-    21300034: cowboi 17
-    21300036: cowboi 18
-    21300038: cowboi 19
-    21300040: cowboi 20
-    21300042: cowboi 21
-    21300044: cowboi 22
-    21300046: cowboi 23
-    21300048: cowboi 24
-    21300050: cowboi 25
-    21300052: cowboi 26
-    21300054: cowboi 27
-    21300056: cowboi 28
-    21300058: cowboi 29
-    21300060: cowboi 30
-    21300062: cowboi 31
-    21300064: cowboi 32
-    21300066: cowboi 33
-    21300068: cowboi 34
-    21300070: cowboi 35
-    21300072: cowboi 36
-    21300074: cowboi 37
-    21300076: cowboi 38
-    21300078: cowboi 39
-    21300080: cowboi 40
-    21300082: cowboi 41
-    21300084: cowboi 42
-    21300086: cowboi 43
-    21300088: cowboi 44
-    21300090: cowboi 45
-    21300092: cowboi 46
-    21300094: cowboi 47
-    21300096: cowboi 48
+    21300000: cowboi_flipped 0
+    21300002: cowboi_flipped 1
+    21300004: cowboi_flipped 2
+    21300006: cowboi_flipped 3
+    21300008: cowboi_flipped 4
+    21300010: cowboi_flipped 5
+    21300012: cowboi_flipped 6
+    21300014: cowboi_flipped 7
+    21300016: cowboi_flipped 8
+    21300018: cowboi_flipped 9
+    21300020: cowboi_flipped 10
+    21300022: cowboi_flipped 11
+    21300024: cowboi_flipped 12
+    21300026: cowboi_flipped 13
+    21300028: cowboi_flipped 14
+    21300030: cowboi_flipped 15
+    21300032: cowboi_flipped 16
+    21300034: cowboi_flipped 17
+    21300036: cowboi_flipped 18
+    21300038: cowboi_flipped 19
+    21300040: cowboi_flipped 20
+    21300042: cowboi_flipped 21
+    21300044: cowboi_flipped 22
+    21300046: cowboi_flipped 23
+    21300048: cowboi_flipped 24
+    21300050: cowboi_flipped 25
+    21300052: cowboi_flipped 26
+    21300054: cowboi_flipped 27
+    21300056: cowboi_flipped 28
+    21300058: cowboi_flipped 29
+    21300060: cowboi_flipped 30
+    21300062: cowboi_flipped 31
+    21300064: cowboi_flipped 32
+    21300066: cowboi_flipped 33
+    21300068: cowboi_flipped 34
+    21300070: cowboi_flipped 35
+    21300072: cowboi_flipped 36
+    21300074: cowboi_flipped 37
+    21300076: cowboi_flipped 38
+    21300078: cowboi_flipped 39
+    21300080: cowboi_flipped 40
+    21300082: cowboi_flipped 41
+    21300084: cowboi_flipped 42
+    21300086: cowboi_flipped 43
+    21300088: cowboi_flipped 44
+    21300090: cowboi_flipped 45
+    21300092: cowboi_flipped 46
+    21300094: cowboi_flipped 47
+    21300096: cowboi_flipped 48
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -144,7 +144,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cowboi 0
+      name: cowboi_flipped 0
       rect:
         serializedVersion: 2
         x: 0
@@ -158,13 +158,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db96d91dd06cb4fb48963ad3478db064
+      spriteID: 7ae434b85ee144515af56ad9a2f86389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 1
+      name: cowboi_flipped 1
       rect:
         serializedVersion: 2
         x: 32
@@ -178,13 +178,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a5af92173396e49d8b1d337213098717
+      spriteID: 34ceeba7559eb477cb5edeef0bed17c1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 2
+      name: cowboi_flipped 2
       rect:
         serializedVersion: 2
         x: 64
@@ -198,13 +198,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a5dbef3f0cd84d18963c1c8fac860b2
+      spriteID: ddceefd4dc2e24eff88b10dda4532133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 3
+      name: cowboi_flipped 3
       rect:
         serializedVersion: 2
         x: 96
@@ -218,13 +218,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cc32a74363a0348e6a1f40b438f27806
+      spriteID: 15628b990b1564f1292174d79b71e8ac
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 4
+      name: cowboi_flipped 4
       rect:
         serializedVersion: 2
         x: 128
@@ -238,13 +238,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 718fd9d0905304f3c8cb7fca82dda91b
+      spriteID: 1b03570652cf04aca833394f243f4eca
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 5
+      name: cowboi_flipped 5
       rect:
         serializedVersion: 2
         x: 160
@@ -258,13 +258,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c204e54b3f20b4285925b2b3301cd7cc
+      spriteID: 06cac9d8b41164a528aa217275ed37d3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 6
+      name: cowboi_flipped 6
       rect:
         serializedVersion: 2
         x: 192
@@ -278,13 +278,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dce643e23e92447dd83576c329f7fcbe
+      spriteID: 43a97bbe48fc747ea849e1254d1f8333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 7
+      name: cowboi_flipped 7
       rect:
         serializedVersion: 2
         x: 224
@@ -298,13 +298,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb7bd207b57bf4b3fafa0f1d9773043b
+      spriteID: b845fa9863b804e62b28bbe5e960d693
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 8
+      name: cowboi_flipped 8
       rect:
         serializedVersion: 2
         x: 0
@@ -318,13 +318,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ec975d1a944a4adc951bcc569fa61c4
+      spriteID: 62a63798eb532410dbea9f090eaff3c2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 9
+      name: cowboi_flipped 9
       rect:
         serializedVersion: 2
         x: 32
@@ -338,13 +338,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c355f09b6a73d4b8d854949769f6627f
+      spriteID: f0d5208ae265e47dc86b8872ff20c802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 10
+      name: cowboi_flipped 10
       rect:
         serializedVersion: 2
         x: 64
@@ -358,13 +358,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ceba729a66fd54dd0943ce7dad4b4d17
+      spriteID: 65fd3a54fcc6042b58dfe63d839608b9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 11
+      name: cowboi_flipped 11
       rect:
         serializedVersion: 2
         x: 96
@@ -378,13 +378,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3356671a1244a49ffbf3fc909fddcb96
+      spriteID: 9c8eb08563c0c428396026709fa6e8b3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 12
+      name: cowboi_flipped 12
       rect:
         serializedVersion: 2
         x: 128
@@ -398,13 +398,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9d3a45dcf00b342d2bfe7743204d81dc
+      spriteID: 042293367ad124be29c717f987557983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 13
+      name: cowboi_flipped 13
       rect:
         serializedVersion: 2
         x: 160
@@ -418,13 +418,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1bb07683d93cf442390ffd40afa73ca2
+      spriteID: 6b1748f91f2f24069bd98aa75db6511f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 14
+      name: cowboi_flipped 14
       rect:
         serializedVersion: 2
         x: 192
@@ -438,13 +438,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e6d3bef36cb3742f3804684640748286
+      spriteID: d3334d8c540d342d1beb4ab68290d2c9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 15
+      name: cowboi_flipped 15
       rect:
         serializedVersion: 2
         x: 224
@@ -458,13 +458,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af621e33482814ba4a8ea738eea23561
+      spriteID: bb2fb50263d7b44c392a124bb785c1a2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 16
+      name: cowboi_flipped 16
       rect:
         serializedVersion: 2
         x: 0
@@ -478,13 +478,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f1dc19eb408e4c4fb9a98557b40e379
+      spriteID: b646bf69653004a2dbf4ce9d34dc5cc0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 17
+      name: cowboi_flipped 17
       rect:
         serializedVersion: 2
         x: 32
@@ -498,13 +498,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ce9c50b3e75e44f088bf7bf0aeebbabb
+      spriteID: 62ac63e4196ab498e8064c1a4f51caeb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 18
+      name: cowboi_flipped 18
       rect:
         serializedVersion: 2
         x: 64
@@ -518,13 +518,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c891bb75a931944b1a34b60811a595b3
+      spriteID: da65b98574b3f4d2b9c2360ea73fbfcd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 19
+      name: cowboi_flipped 19
       rect:
         serializedVersion: 2
         x: 96
@@ -538,13 +538,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee30a63b4385147b8b5b87a8a5c50822
+      spriteID: 68c4a420cb8694db49fa709181e5136f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 20
+      name: cowboi_flipped 20
       rect:
         serializedVersion: 2
         x: 128
@@ -558,13 +558,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d8e3d8a3a386e4798ba0c1f54a371722
+      spriteID: c15e8024828f54f82a4ee8155b792311
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 21
+      name: cowboi_flipped 21
       rect:
         serializedVersion: 2
         x: 160
@@ -578,13 +578,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 834913e3a9a4d49359af2ae202443c59
+      spriteID: ad947422aab9446d99c843281adf541d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 22
+      name: cowboi_flipped 22
       rect:
         serializedVersion: 2
         x: 192
@@ -598,13 +598,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd72348dd724244168b2c6126a04018d
+      spriteID: 4e5e806b7447e48329d625fd495d1245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 23
+      name: cowboi_flipped 23
       rect:
         serializedVersion: 2
         x: 224
@@ -618,13 +618,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 42582971041be47dabd43a2bfc54841f
+      spriteID: c7b24b839716b47b1b1f5df4dfd8c017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 24
+      name: cowboi_flipped 24
       rect:
         serializedVersion: 2
         x: 0
@@ -638,13 +638,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9aa37c5ebac34a9db9f4545f557f459
+      spriteID: 7c612df75b11e4761916a34133eb7ee0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 25
+      name: cowboi_flipped 25
       rect:
         serializedVersion: 2
         x: 32
@@ -658,13 +658,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 222467ccb1fea40e9a05af0b5539a029
+      spriteID: 5555c7925e7494ad3a59ff1f3cd3ec65
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 26
+      name: cowboi_flipped 26
       rect:
         serializedVersion: 2
         x: 64
@@ -678,13 +678,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa08631962b904bdb961d2a368317c7e
+      spriteID: c27a046ecccec4cc0979fe04b9caa938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 27
+      name: cowboi_flipped 27
       rect:
         serializedVersion: 2
         x: 96
@@ -698,13 +698,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f083a3baef3f7426fbc1aa58b2a37dbe
+      spriteID: 087c900b4baf44b138fb391de176a45d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 28
+      name: cowboi_flipped 28
       rect:
         serializedVersion: 2
         x: 128
@@ -718,13 +718,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 909b57a6c2d764eafb6a1db05a7afe44
+      spriteID: 5d51ad3deb4f341e89e8727b60558421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 29
+      name: cowboi_flipped 29
       rect:
         serializedVersion: 2
         x: 160
@@ -738,13 +738,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61ae4081c20aa4bdeb18e65e75e88e2c
+      spriteID: 7c9dfb6bbbe8b477a9bd0a842f0abb3a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 30
+      name: cowboi_flipped 30
       rect:
         serializedVersion: 2
         x: 192
@@ -758,13 +758,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fe27b312080104e998a5e192a5b6f50a
+      spriteID: c08e6a8a765fb4061ba717c33cb5767b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 31
+      name: cowboi_flipped 31
       rect:
         serializedVersion: 2
         x: 224
@@ -778,13 +778,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c9d1353eeb01d416facce77c9e5aa1dc
+      spriteID: a126563f1c3204f8580edb18fdfefc4b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 32
+      name: cowboi_flipped 32
       rect:
         serializedVersion: 2
         x: 0
@@ -798,13 +798,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a7517993cfc8843a4bb970d2f8bfaf45
+      spriteID: aad356c69543a46eba3b456bdf5ee95d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 33
+      name: cowboi_flipped 33
       rect:
         serializedVersion: 2
         x: 32
@@ -818,13 +818,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b54f4ff74c85d402da71b5f68dc80fd1
+      spriteID: 7d0017af72ce64999b19e9ef11e15740
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 34
+      name: cowboi_flipped 34
       rect:
         serializedVersion: 2
         x: 64
@@ -838,13 +838,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f7bf66da2a97746199271d7c22a89767
+      spriteID: d03e8a34e619e4875acc6f914a5d0b14
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 35
+      name: cowboi_flipped 35
       rect:
         serializedVersion: 2
         x: 96
@@ -858,13 +858,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 626eb8d02ddaf4bf392a69f9ff31ee39
+      spriteID: d64552285b68c44e88f1cde07a7b81d9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 36
+      name: cowboi_flipped 36
       rect:
         serializedVersion: 2
         x: 128
@@ -878,13 +878,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94a2bc353374d4801af2b3b3c835ec87
+      spriteID: 3331c8c63bdff4be182c9bdf61841c98
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 37
+      name: cowboi_flipped 37
       rect:
         serializedVersion: 2
         x: 160
@@ -898,13 +898,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b116121cbe5a4708be4595c24bd7470
+      spriteID: 731e8308a41fa4ef4b98cd5b479971ff
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 38
+      name: cowboi_flipped 38
       rect:
         serializedVersion: 2
         x: 192
@@ -918,13 +918,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9ffc2fcc78b64985811cc454e98b06b
+      spriteID: 2b030ae32910445c2919788c7a9564bb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 39
+      name: cowboi_flipped 39
       rect:
         serializedVersion: 2
         x: 224
@@ -938,13 +938,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 37533c105c21f4b88b856815fc686e6d
+      spriteID: ee87292892a9f46f5b0b5937efc71b2b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 40
+      name: cowboi_flipped 40
       rect:
         serializedVersion: 2
         x: 0
@@ -958,13 +958,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d496680e37ef84cb59b3e92850e7e329
+      spriteID: 9f0001e9fa804437c81ba496ae9c1c9f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 41
+      name: cowboi_flipped 41
       rect:
         serializedVersion: 2
         x: 32
@@ -978,13 +978,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 968bf62802d044bbe80a9390f77bcadb
+      spriteID: 485dd3acc264848879846e6b05b3d07e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 42
+      name: cowboi_flipped 42
       rect:
         serializedVersion: 2
         x: 64
@@ -998,13 +998,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d65d13638c37f4a57bf354058d1c4db5
+      spriteID: 5c634b3092a414d35bcaff76c2bbea07
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 43
+      name: cowboi_flipped 43
       rect:
         serializedVersion: 2
         x: 96
@@ -1018,13 +1018,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f2ea3be2cb60140128f6834a63956676
+      spriteID: 40de2127ca0cb4885aebef28ad036665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 44
+      name: cowboi_flipped 44
       rect:
         serializedVersion: 2
         x: 128
@@ -1038,13 +1038,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8447d6e728a90419484e9602c552d550
+      spriteID: d3bebf65324c04e00a5cd1388e1d5270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 45
+      name: cowboi_flipped 45
       rect:
         serializedVersion: 2
         x: 160
@@ -1058,13 +1058,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 77318b5db84364e6694649cb50fc45e5
+      spriteID: 81719decc57ae40b19fb38ef7e6efa3b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 46
+      name: cowboi_flipped 46
       rect:
         serializedVersion: 2
         x: 192
@@ -1078,13 +1078,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee350282a758c47c8a390fc6ca78309f
+      spriteID: 857d687e2353341ebab87e75fa415259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 47
+      name: cowboi_flipped 47
       rect:
         serializedVersion: 2
         x: 224
@@ -1098,13 +1098,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c16622ae83c7243b99895a8b960ab1ca
+      spriteID: e590e0ad198a24b1e8991aa0d141b7ca
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cowboi 48
+      name: cowboi_flipped 48
       rect:
         serializedVersion: 2
         x: 0
@@ -1118,7 +1118,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db1314abfb0d948729f1115a5682899c
+      spriteID: 4e2f3ec95a46b47af974060fe891ae7c
       vertices: []
       indices: 
       edges: []
@@ -1126,7 +1126,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5d7d4138318674357b377f9ca5eb8dc8
+    spriteID: 
     vertices: []
     indices: 
     edges: []
