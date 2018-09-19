@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight = 5f;
     Rigidbody rb;
     Animator animator;
+    public float currZ;
+    public float currX;
 
 
 	// Use this for initialization
@@ -18,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        currZ = 0;
+        currX = 0;
     }
 	
 	// Update is called once per frame
@@ -76,8 +80,18 @@ public class PlayerMovement : MonoBehaviour
         // Direction we want to move
         var dir = forward * verticalAxis + right * horizontalAxis;
 
-        animator.SetFloat("FaceX", dir.z);
-        animator.SetFloat("FaceY", -dir.x);
+        if (!Mathf.Approximately(dir.z, 0f) && !Mathf.Approximately(dir.x, 0f))
+        {
+            currZ = dir.z;
+            currX = -dir.x;
+            animator.Play("Walk");
+        }
+        else
+            animator.Play("Idle");
+
+        animator.SetFloat("FaceZ", currZ);
+        animator.SetFloat("FaceX", currX);
+
 
 
         transform.Translate(dir * speed * Time.deltaTime);
