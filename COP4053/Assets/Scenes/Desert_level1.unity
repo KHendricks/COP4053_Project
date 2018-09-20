@@ -3052,7 +3052,7 @@ Animator:
   m_GameObject: {fileID: 1215608642}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 41a60d1acefe14395b17c3c7b71f4e72, type: 2}
+  m_Controller: {fileID: 9100000, guid: 473273bff84a945a4b940b743a7b727b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3642,6 +3642,8 @@ MonoBehaviour:
   speed: 2
   sprintMultiplier: 1.5
   jumpHeight: 5
+  currZ: 0
+  currX: 0
 --- !u!54 &1416046949
 Rigidbody:
   m_ObjectHideFlags: 0
