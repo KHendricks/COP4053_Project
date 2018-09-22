@@ -3640,10 +3640,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 513
   speed: 2
-  sprintMultiplier: 1.5
+  sprintMultiplier: 2
   jumpHeight: 5
   currZ: 0
   currX: 0
+  isStationary: 0
 --- !u!54 &1416046949
 Rigidbody:
   m_ObjectHideFlags: 0

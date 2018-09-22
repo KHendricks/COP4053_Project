@@ -37,11 +37,11 @@ public class PlayerMovement : MonoBehaviour
     void CheckInput()
     {
         Debug.Log(IsGrounded());
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.JoystickButton2))
             Jump();
-        if (Input.GetKeyDown("left shift"))
+        if (Input.GetKeyDown("left shift") || Input.GetKeyDown(KeyCode.JoystickButton3))
             Sprint(true);
-        if (Input.GetKeyUp("left shift"))
+        if (Input.GetKeyUp("left shift") || Input.GetKeyDown(KeyCode.JoystickButton3))
             Sprint(false);
     }
 
