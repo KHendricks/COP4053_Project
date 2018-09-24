@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerMovement : MonoBehaviour 
+public class PlayerMovement : Movement 
 {
     public LayerMask groundLayer;
-    public float speed = 3f;
     public float sprintMultiplier = 3f;
     public float jumpHeight = 5f;
     Rigidbody rb;
     Animator animator;
-    public float currZ;
-    public float currX;
-    public bool isStationary;
 
 
 	// Use this for initialization
@@ -21,8 +17,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
-        currZ = 0;
-        currX = 0;
         isStationary = true;
     }
 	
@@ -69,19 +63,7 @@ public class PlayerMovement : MonoBehaviour
         SetFacing(dir);
     }
 
-    // Determine what direction the character is facing and whether they
-    // are moving.
-    void SetFacing(Vector3 dir)
-    {
-        if (!Mathf.Approximately(dir.z, 0f) && !Mathf.Approximately(dir.x, 0f))
-        {
-            currZ = dir.z;
-            currX = -dir.x;
-            isStationary = false;
-        }
-        else
-            isStationary = true;
-    }
+
 
     private bool IsGrounded()
     {
@@ -113,8 +95,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Animate()
     {
-        animator.SetFloat("FaceZ", currZ);
-        animator.SetFloat("FaceX", currX);
+        animator.SetFloat("FaceZ", currentDirection.y);
+        animator.SetFloat("FaceX", currentDirection.x);
 
         if (!IsGrounded())
             animator.Play("Jump");
