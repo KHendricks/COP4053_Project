@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour {
     // Use this for initialization
     void Start () {
         currentDirection = new Vector2();
-        isStationary = false;
+        isStationary = true;
 	}
 
     // Determine what direction the character is facing and whether they
@@ -24,6 +24,7 @@ public class Movement : MonoBehaviour {
         {
             currentDirection.Set(-dir.x, dir.z);
             isStationary = false;
+            Debug.Log("supposedly moving");
         }
         else
             isStationary = true;

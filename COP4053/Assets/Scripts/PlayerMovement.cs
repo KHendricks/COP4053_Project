@@ -17,7 +17,6 @@ public class PlayerMovement : Movement
     {
         rb = gameObject.GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
-        isStationary = true;
     }
 	
 	// Update is called once per frame
@@ -30,7 +29,7 @@ public class PlayerMovement : Movement
 
     void CheckInput()
     {
-        Debug.Log(IsGrounded());
+        //Debug.Log(IsGrounded());
         if (Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.JoystickButton2))
             Jump();
         if (Input.GetKeyDown("left shift") || Input.GetKeyDown(KeyCode.JoystickButton3))

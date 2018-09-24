@@ -2,14 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class DogFollow : Movement 
 {
     public float distanceFromPlayer;
     public GameObject player;
+    Rigidbody rb;
     Animator animator;
 
-	// Update is called once per frame
-	void Update () 
+    private void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
+    }
+
+    // Update is called once per frame
+    void Update () 
     {
         Follow();
         Animate();
@@ -38,7 +46,11 @@ public class DogFollow : Movement
         animator.SetFloat("FaceZ", currentDirection.y);
         animator.SetFloat("FaceX", currentDirection.x);
 
-        if (!isStationary)
+        Debug.Log(isStationary);
+
+        if (isStationary)
+            animator.Play("Idle");
+        else
             animator.Play("Trot");
     }
 }
