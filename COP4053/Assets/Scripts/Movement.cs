@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        rb = gameObject.GetComponent<Rigidbody>();
         currentDirection = new Vector2();
         isStationary = true;
 	}
@@ -24,7 +25,6 @@ public class Movement : MonoBehaviour {
         {
             currentDirection.Set(-dir.x, dir.z);
             isStationary = false;
-            Debug.Log("supposedly moving");
         }
         else
             isStationary = true;

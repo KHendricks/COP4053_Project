@@ -8,14 +8,12 @@ public class PlayerMovement : Movement
     public LayerMask groundLayer;
     public float sprintMultiplier = 3f;
     public float jumpHeight = 5f;
-    Rigidbody rb;
     Animator animator;
 
 
 	// Use this for initialization
 	void Start () 
     {
-        rb = gameObject.GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
     }
 	

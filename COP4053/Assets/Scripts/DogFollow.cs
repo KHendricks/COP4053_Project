@@ -7,13 +7,14 @@ public class DogFollow : Movement
 {
     public float distanceFromPlayer;
     public GameObject player;
-    Rigidbody rb;
     Animator animator;
+    bool playerStopped;
 
     private void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        Debug.Log(isStationary);
+        playerStopped = true;
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class DogFollow : Movement
     {
         Follow();
         Animate();
+
     }
 
     void Follow ()
@@ -46,9 +48,7 @@ public class DogFollow : Movement
         animator.SetFloat("FaceZ", currentDirection.y);
         animator.SetFloat("FaceX", currentDirection.x);
 
-        Debug.Log(isStationary);
-
-        if (isStationary)
+        if (playerStopped)
             animator.Play("Idle");
         else
             animator.Play("Trot");
