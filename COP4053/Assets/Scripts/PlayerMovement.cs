@@ -77,7 +77,7 @@ public class PlayerMovement : Movement
     {
         // jumpHeight is currently a magic number
         if (IsGrounded())
-            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
 
     }
 
