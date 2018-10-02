@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class PlayerInventory : MonoBehaviour 
 {
     public GameObject[] inventorySlots;
+    public GameObject selector;
+
+    // These are hard coded x positions for the frame selector
 
 	// Use this for initialization
 	void Start ()
@@ -18,6 +21,8 @@ public class PlayerInventory : MonoBehaviour
             PlayerPrefs.SetInt("Whip", 0);
             PlayerPrefs.SetInt("Boomerang", 0);
             PlayerPrefs.SetInt("Slingshot", 0);
+
+            PlayerPrefs.SetInt("InventorySlotSelected", 0);
         }
 
         LoadInventory();
@@ -73,7 +78,37 @@ public class PlayerInventory : MonoBehaviour
     }
 
 	// Update is called once per frame
-	void Update () {
-		
+	void Update () 
+    {
+        ChangeSelection();
 	}
+
+    void ChangeSelection()
+    {
+        // Cycle selector to the left
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            int selectorIndex = (PlayerPrefs.GetInt("InventorySlotSelected") - 1);
+            if (selectorIndex <= -1)
+            {
+                selectorIndex = 4;
+            }
+         
+            selector.transform.position = new Vector3(inventorySlots[selectorIndex].transform.position.x, selector.transform.position.y, selector.transform.position.z);
+            PlayerPrefs.SetInt("InventorySlotSelected", selectorIndex);
+        }
+
+        // Cycle selector to the right
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            int selectorIndex = (PlayerPrefs.GetInt("InventorySlotSelected") + 1);
+            if (selectorIndex >= 5)
+            {
+                selectorIndex = 0;
+            }
+
+            selector.transform.position = new Vector3(inventorySlots[selectorIndex].transform.position.x, selector.transform.position.y, selector.transform.position.z);
+            PlayerPrefs.SetInt("InventorySlotSelected", selectorIndex);
+        }
+    }
 }
