@@ -57,6 +57,10 @@ public class PlayerMovement : Movement
         var dir = forward * verticalAxis + right * horizontalAxis;
         transform.Translate(dir * speed * Time.deltaTime);
 
+        PlayerPrefs.SetFloat("PlayerDirectionX", dir.x);
+        PlayerPrefs.SetFloat("PlayerDirectionY", dir.y);
+        PlayerPrefs.SetFloat("PlayerDirectionZ", dir.z);
+
         SetFacing(dir);
     }
 

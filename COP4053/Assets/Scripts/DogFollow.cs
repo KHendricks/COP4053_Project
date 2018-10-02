@@ -39,7 +39,9 @@ public class DogFollow : Movement
             //var dir = Vector3.MoveTowards(transform.position, player.transform.position, step);
             var dir = Vector3.Lerp(transform.position, player.transform.position, step);
             transform.position = dir;
-            SetFacing(dir);
+
+            Vector3 newDir = new Vector3(PlayerPrefs.GetFloat("PlayerDirectionX"), PlayerPrefs.GetFloat("PlayerDirectionY"), PlayerPrefs.GetFloat("PlayerDirectionZ"));
+            SetFacing(newDir);
         }
     }
 
