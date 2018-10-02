@@ -28,11 +28,13 @@ public class PlayerMovement : Movement
     void CheckInput()
     {
         //Debug.Log(IsGrounded());
-        if (Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.JoystickButton2))
+        // JoystickButton0 is the "A" button on an Xbox one controller
+        if (Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.JoystickButton0))
             Jump();
-        if (Input.GetKeyDown("left shift") || Input.GetKeyDown(KeyCode.JoystickButton3))
+        // JoystickButton8 is the left thumbstick on an Xbox one controller
+        if (Input.GetKeyDown("left shift") || Input.GetKeyDown(KeyCode.JoystickButton8))
             Sprint(true);
-        if (Input.GetKeyUp("left shift") || Input.GetKeyDown(KeyCode.JoystickButton3))
+        if (Input.GetKeyUp("left shift") || Input.GetKeyUp(KeyCode.JoystickButton8))
             Sprint(false);
     }
 
