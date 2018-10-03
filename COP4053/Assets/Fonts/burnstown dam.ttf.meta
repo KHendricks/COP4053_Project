@@ -1,18 +1,17 @@
 fileFormatVersion: 2
-guid: 231b6e746f7ee477882772be018cb8fd
+guid: 1153f40c3846f40419abc83dd4beed1c
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 100
+  fontSize: 500
   forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Edmunds
+  fontName: Burnstown Dam
   fontNames:
-  - Edmunds
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: 99fc08d77c6f34c7e943624dd8c4e75e, type: 3}
+  - Burnstown Dam
+  fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
