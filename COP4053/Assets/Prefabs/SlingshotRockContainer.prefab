@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4868535421429024}
   - component: {fileID: 33940861195553752}
   - component: {fileID: 23300363370709086}
-  - component: {fileID: 135357630701977964}
   m_Layer: 0
   m_Name: TempRockArt
   m_TagString: Untagged
@@ -130,18 +129,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &135357630701977964
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1813792581605590}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136175677008825094
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -149,7 +136,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1845833800429534}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1

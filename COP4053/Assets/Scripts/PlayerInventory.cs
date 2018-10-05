@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerInventory : MonoBehaviour 
+public class PlayerInventory : MonoBehaviour
 {
+    public GameObject player;
     public GameObject[] inventorySlots;
     public GameObject selector;
 
-    // These are hard coded x positions for the frame selector
+    // Weapon prefabs to load
+    public GameObject slingshotPrefab;
+
+    // Variables where the prefabs are loaded
+    public GameObject slingshot;
+
+    public bool slingshotDisplayed;
 
 	// Use this for initialization
 	void Start ()
@@ -24,6 +31,9 @@ public class PlayerInventory : MonoBehaviour
 
             PlayerPrefs.SetInt("InventorySlotSelected", 0);
         }
+
+        // Defaults the display of the weapons to false
+        slingshotDisplayed = false;
 
         LoadInventory();
 	}
@@ -58,6 +68,9 @@ public class PlayerInventory : MonoBehaviour
         {
             // Lasso
             case 0:
+                // Destroy the nonselected weapons
+                DestroySlingshot();
+
                 // Need to check if slot is active first (this is to ensure the
                 // the player has the item)
                 if (!inventorySlots[0].activeSelf)
@@ -68,6 +81,9 @@ public class PlayerInventory : MonoBehaviour
 
             // Knife
             case 1:
+                // Destroy the nonselected weapons
+                DestroySlingshot();
+
                 if (!inventorySlots[1].activeSelf)
                 {
                     break;
@@ -76,6 +92,9 @@ public class PlayerInventory : MonoBehaviour
 
             // Whip
             case 2:
+                // Destroy the nonselected weapons
+                DestroySlingshot();
+
                 if (!inventorySlots[2].activeSelf)
                 {
                     break;
@@ -84,6 +103,9 @@ public class PlayerInventory : MonoBehaviour
 
             // Boomerang
             case 3:
+                // Destroy the nonselected weapons
+                DestroySlingshot();
+
                 if (!inventorySlots[3].activeSelf)
                 {
                     break;
@@ -96,8 +118,31 @@ public class PlayerInventory : MonoBehaviour
                 {
                     break;
                 }
+
+                // Spawn the slingshot at the player's position
+                if (!slingshotDisplayed)
+                {
+                    slingshotDisplayed = true;
+                    slingshot = Instantiate(slingshotPrefab, player.transform.position, Quaternion.identity);
+                }
+
+                // Keep the slingshot attached to the player
+                float slingshotOffet = .5f;
+                if (slingshotDisplayed)
+                {
+                    slingshot.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + slingshotOffet, player.transform.position.z);
+                }
+
                 break;
         }
+    }
+
+    void DestroySlingshot()
+    {
+        Destroy(slingshot);
+
+        // Ensures only one slingshot will be active
+        slingshotDisplayed = false;
     }
 
     void LoadInventory()
