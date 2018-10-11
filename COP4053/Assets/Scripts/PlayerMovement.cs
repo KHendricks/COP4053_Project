@@ -8,6 +8,8 @@ public class PlayerMovement : Movement
     public LayerMask groundLayer;
     public float sprintMultiplier = 3f;
     public float jumpHeight = 5f;
+    public bool attack;
+    public PlayerState state;
     Animator animator;
 
 
@@ -15,11 +17,23 @@ public class PlayerMovement : Movement
 	void Start () 
     {
         animator = GetComponentInChildren<Animator>();
+        state = PlayerState.IDLE;
     }
 	
 	// Update is called once per frame
 	void Update () 
     {
+        switch (state) {
+            case PlayerState.IDLE:
+                //IDLE logic here
+                break;
+            case PlayerState.JUMP:
+                // Jump logic here 
+                break;
+            case PlayerState.ATTACK:
+                // Attack logic here
+                break;
+        }
         Movement();
         CheckInput();
         Animate();
@@ -36,6 +50,10 @@ public class PlayerMovement : Movement
             Sprint(true);
         if (Input.GetKeyUp("left shift") || Input.GetKeyUp(KeyCode.JoystickButton8))
             Sprint(false);
+        if (Input.GetKeyDown(KeyCode.B))
+            Attack(true);
+        if (Input.GetKeyUp(KeyCode.B))
+            Attack(false);
     }
 
     void Movement()
@@ -87,6 +105,14 @@ public class PlayerMovement : Movement
 
     }
 
+    void Attack(bool isAttacking)
+    {
+        if (isAttacking)
+            attack = true;
+        else
+            attack = false;
+    }
+
     void Sprint(bool isSprinting)
     {
         // Player holds down the key to move fatser. Sprinting ends when player stops holding the key down
@@ -103,9 +129,18 @@ public class PlayerMovement : Movement
 
         if (!IsGrounded())
             animator.Play("Jump");
+        if (attack)
+            animator.Play("Attack");
         else if (isStationary)
             animator.Play("Idle");
         else
             animator.Play("Walk");
     }
+}
+
+public enum PlayerState
+{
+    IDLE,
+    JUMP,
+    ATTACK
 }

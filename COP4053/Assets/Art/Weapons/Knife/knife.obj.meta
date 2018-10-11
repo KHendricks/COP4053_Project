@@ -1,14 +1,16 @@
 fileFormatVersion: 2
-guid: 14959239fae3b4c0197824522a2fb1f0
+guid: 4cac12ddd2e554349b197acd2122a461
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: No Name
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Plane.002
+    100000: knife
+    100002: //RootNode
+    400000: knife
+    400002: //RootNode
+    2100000: palette
+    2300000: knife
+    3300000: knife
+    4300000: knife
   externalObjects: {}
   materials:
     importMaterials: 1
