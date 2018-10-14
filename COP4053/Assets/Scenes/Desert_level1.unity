@@ -5965,6 +5965,7 @@ GameObject:
   - component: {fileID: 1416046948}
   - component: {fileID: 1416046950}
   - component: {fileID: 1416046951}
+  - component: {fileID: 1416046952}
   m_Layer: 0
   m_Name: PlayerContainer
   m_TagString: Player
@@ -5994,7 +5995,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1416046946}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecf7f2a4b1e844ac3b11fe1d16b6f984, type: 3}
   m_Name: 
@@ -6007,6 +6008,8 @@ MonoBehaviour:
     m_Bits: 513
   sprintMultiplier: 2
   jumpHeight: 5.5
+  attack: 0
+  state: 0
 --- !u!54 &1416046949
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6050,6 +6053,26 @@ MonoBehaviour:
   playerScore: {fileID: 796765526}
   startingHealth: 100
   startingDamage: 10
+--- !u!114 &1416046952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1416046946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d36ad892c63af4e1d89e013481909184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDirection: {x: 0, y: 0}
+  isStationary: 0
+  speed: 3
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  sprintMultiplier: 3
+  jumpHeight: 5
+  animator: {fileID: 0}
 --- !u!1 &1434517567
 GameObject:
   m_ObjectHideFlags: 0

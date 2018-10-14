@@ -17,26 +17,38 @@ public class PlayerMovement : Movement
 	void Start () 
     {
         animator = GetComponentInChildren<Animator>();
-        state = PlayerState.IDLE;
+        state = PlayerState.NORMAL;
     }
 	
 	// Update is called once per frame
 	void Update () 
     {
         switch (state) {
-            case PlayerState.IDLE:
-                //IDLE logic here
+            case PlayerState.NORMAL:
+                if (!IsGrounded())
+                {
+                    state = PlayerState.JUMP;
+                    Animate("Jump");
+                    break;
+                }
+                Movement();
+                CheckInput();
+                if (isStationary)
+                    Animate("Idle");
+                else
+                    Animate("Walk");
                 break;
             case PlayerState.JUMP:
-                // Jump logic here 
+                if(IsGrounded()) {
+                    state = PlayerState.NORMAL;
+                    break;
+                }
+                Movement();
                 break;
             case PlayerState.ATTACK:
-                // Attack logic here
+                Animate("Attack");
                 break;
         }
-        Movement();
-        CheckInput();
-        Animate();
 	}
 
     void CheckInput()
@@ -122,7 +134,7 @@ public class PlayerMovement : Movement
             speed /= sprintMultiplier;
     }
 
-    void Animate()
+    void Animate(string action)
     {
         animator.SetFloat("FaceZ", currentDirection.y);
         animator.SetFloat("FaceX", currentDirection.x);
@@ -140,7 +152,7 @@ public class PlayerMovement : Movement
 
 public enum PlayerState
 {
-    IDLE,
+    NORMAL,
     JUMP,
     ATTACK
 }
