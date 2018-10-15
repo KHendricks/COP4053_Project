@@ -13,7 +13,6 @@ public class DogFollow : Movement
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        Debug.Log(isStationary);
         playerStopped = true;
     }
 
