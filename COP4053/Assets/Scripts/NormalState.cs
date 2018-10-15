@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NormalState : IState<Ranger> {
+public class NormalState : IState<Player> {
 
-    public void OnEnter(Ranger owner)
+    public void OnEnter(Player owner)
     {
 
     }
 
     // Update is called once per frame
-    public void Update (Ranger owner) 
+    public void Update (Player owner) 
     {
         owner.Movement();
         if (!owner.IsGrounded()) {
@@ -33,7 +33,7 @@ public class NormalState : IState<Ranger> {
             owner.stateManager.Switch("attack");
     }
 
-    public void OnExit(Ranger owner)
+    public void OnExit(Player owner)
     {
 
     }

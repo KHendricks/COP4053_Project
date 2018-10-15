@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Ranger : Movement {
+public class Player : Movement {
 
     public LayerMask groundLayer;
     public float sprintMultiplier = 3f;
     public float jumpHeight = 5f;
     public Animator animator;
-    public StateManager<Ranger> stateManager;
+    public StateManager<Player> stateManager;
+    public GameObject knife;
+    public bool showKnife;
 
 	// Use this for initialization
 	void Start () {
+        showKnife = false;
         animator = GetComponentInChildren<Animator>();
-        stateManager = new StateManager<Ranger>();
+        stateManager = new StateManager<Player>();
         stateManager.Add("normal", new NormalState());
         stateManager.Add("freefall", new FreefallState());
         stateManager.Add("attack", new AttackState());
