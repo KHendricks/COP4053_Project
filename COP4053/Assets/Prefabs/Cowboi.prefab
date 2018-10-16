@@ -20,7 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4927239187243998}
   - component: {fileID: 212254109680252522}
-  - component: {fileID: 114786898988770556}
+  - component: {fileID: 95205495738690616}
+  - component: {fileID: 114510108635696930}
   m_Layer: 0
   m_Name: Cowboi
   m_TagString: Untagged
@@ -34,14 +35,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1297445300672990}
-  m_LocalRotation: {x: -0.060863722, y: 0.65451324, z: -0.05680992, w: -0.7514524}
-  m_LocalPosition: {x: 5.6390553, y: 0.14936483, z: 0.2803002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 9.5460005, y: 277.916, z: 0.33200002}
---- !u!114 &114786898988770556
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95205495738690616
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297445300672990}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 473273bff84a945a4b940b743a7b727b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114510108635696930
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
