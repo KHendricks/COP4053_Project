@@ -11,18 +11,33 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1705997689007118}
   m_IsPrefabAsset: 1
---- !u!1 &1369558455639850
+--- !u!1 &1023025407475660
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4790573958782546}
+  - component: {fileID: 33731674346056078}
+  - component: {fileID: 23952303956255058}
+  m_Layer: 0
+  m_Name: slingshot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1613979654412422
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4856239615738188}
-  - component: {fileID: 33050034606788996}
-  - component: {fileID: 23193388810666530}
+  - component: {fileID: 4685869579353350}
   m_Layer: 0
-  m_Name: TempSlingshotArt
+  m_Name: slingshot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,29 +69,43 @@ Transform:
   m_LocalPosition: {x: 7.0210295, y: 0.8714473, z: -2.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4856239615738188}
+  - {fileID: 4685869579353350}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4856239615738188
+--- !u!4 &4685869579353350
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1369558455639850}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1613979654412422}
+  m_LocalRotation: {x: -0, y: -0.7795302, z: -0, w: 0.6263647}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_Children: []
+  m_LocalScale: {x: 0.009181978, y: 0.009181971, z: 0.009181978}
+  m_Children:
+  - {fileID: 4790573958782546}
   m_Father: {fileID: 4459096049513182}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -102.435005, z: 0}
+--- !u!4 &4790573958782546
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1023025407475660}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4685869579353350}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23193388810666530
+--- !u!23 &23952303956255058
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1369558455639850}
+  m_GameObject: {fileID: 1023025407475660}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,7 +115,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: eb48d58c2ce4448e79a3f9c49104e7e2, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,13 +135,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33050034606788996
+--- !u!33 &33731674346056078
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1369558455639850}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_GameObject: {fileID: 1023025407475660}
+  m_Mesh: {fileID: 4300000, guid: eb48d58c2ce4448e79a3f9c49104e7e2, type: 3}
 --- !u!114 &114768241007532034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,6 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af47ede0a52a341c6a701576a2b71af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentDirection: {x: 0, y: 0}
+  isStationary: 0
+  speed: 3
   slingshotRockPrefab: {fileID: 1845833800429534, guid: 210a89fac56fc4e699852fa50781c2f1,
     type: 2}
   rockSpeed: 3

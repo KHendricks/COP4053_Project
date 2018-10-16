@@ -130,7 +130,7 @@ public class PlayerInventory : MonoBehaviour
                 float slingshotOffet = .5f;
                 if (slingshotDisplayed)
                 {
-                    slingshot.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + slingshotOffet, player.transform.position.z);
+                    slingshot.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + slingshotOffet, player.transform.position.z + slingshotOffet);
                 }
 
                 break;
