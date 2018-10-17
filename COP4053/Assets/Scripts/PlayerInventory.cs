@@ -124,6 +124,7 @@ public class PlayerInventory : MonoBehaviour
                 {
                     slingshotDisplayed = true;
                     slingshot = Instantiate(slingshotPrefab, player.transform.position, Quaternion.identity);
+                    PlayerPrefs.SetInt("SlingshotDamage", 10);
                 }
 
                 // Keep the slingshot attached to the player
