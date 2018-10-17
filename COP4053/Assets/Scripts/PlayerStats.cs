@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour 
 {
-    public Text playerHealth, playerScore;
+    public Text playerHealth, playerScore, playerAmmo;
     public int startingHealth, startingDamage;
 
 	// Use this for initialization
@@ -21,17 +21,21 @@ public class PlayerStats : MonoBehaviour
             PlayerPrefs.SetInt("PlayerHealth", startingHealth);
             PlayerPrefs.SetInt("PlayerScore", 0);
             PlayerPrefs.SetInt("PlayerBaseDamage", startingDamage);
+
+            // Slingshot ammo
+            PlayerPrefs.SetInt("SlingshotAmmo", 30);
         }
 
         // Update the UI
         playerHealth.text = PlayerPrefs.GetInt("PlayerHealth").ToString();
         playerScore.text = PlayerPrefs.GetInt("PlayerScore").ToString();
+        playerAmmo.text = PlayerPrefs.GetInt("SlingshotAmmo").ToString();
 
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-		
+        playerAmmo.text = PlayerPrefs.GetInt("SlingshotAmmo").ToString();
 	}
 }

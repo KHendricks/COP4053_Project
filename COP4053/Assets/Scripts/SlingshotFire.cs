@@ -27,14 +27,18 @@ public class SlingshotFire : Movement
 
     public void FireSlingshot()
     {
+        int ammo = PlayerPrefs.GetInt("SlingshotAmmo");
         // On enter press instantiate a rock projectile
-        if (Input.GetKeyDown(KeyCode.Return) && enableFire)
+        if (Input.GetKeyDown(KeyCode.Return) && enableFire && ammo > 0)
         {
             if (mutex)
             {
                 mutex = false;
                 StartCoroutine("EnableShot");
             }
+
+            // Sets the ammo
+            PlayerPrefs.SetInt("SlingshotAmmo", ammo - 1);
 
             GameObject rockProjectile = Instantiate(slingshotRockPrefab, gameObject.transform.position, Quaternion.identity);
             rockProjectile.GetComponent<Rigidbody>().velocity = dir.normalized * rockSpeed;

@@ -158,4 +158,4 @@ MonoBehaviour:
   speed: 3
   slingshotRockPrefab: {fileID: 1845833800429534, guid: 210a89fac56fc4e699852fa50781c2f1,
     type: 2}
-  rockSpeed: 3
+  rockSpeed: 6
