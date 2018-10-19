@@ -59,7 +59,8 @@ public class PlayerInventory : MonoBehaviour
     void DisplayCurrent()
     {
         // This number will hold the index of the inventory
-        // 0: Lasso
+        // 0: 
+
         // 1: Knife
         // 2: Whip
         // 3: Boomerang

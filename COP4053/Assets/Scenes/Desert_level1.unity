@@ -5473,8 +5473,6 @@ MonoBehaviour:
   - {fileID: 919833148}
   - {fileID: 108866523}
   - {fileID: 539101079}
-  - {fileID: 1941240102}
-  - {fileID: 539101079}
   selector: {fileID: 650035526}
   slingshotPrefab: {fileID: 1705997689007118, guid: 33ba4a017a37049388bec7fdf5333284,
     type: 2}
@@ -6915,7 +6913,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 0}
+  m_AnchoredPosition: {x: 30, y: 0}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1660099981
@@ -8305,7 +8303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 30, y: 0.00015258789}
+  m_AnchoredPosition: {x: 150, y: 0.00015258789}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2084726255
