@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TutorialEnemy : MonoBehaviour 
+public class Enemy : MonoBehaviour 
 {
     public int health;
-    public GameObject knifeForInventory;
+
+    // Assign dropIndex to corresponding item 
+    // to get drop from enemy
+    public int dropIndex;
+    public GameObject[] dropItem;
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start () 
+    {
 	}
 	
 	// Update is called once per frame
@@ -23,7 +27,7 @@ public class TutorialEnemy : MonoBehaviour
         if (other.gameObject.tag == "SlingshotRock")
         {
             Destroy(other.gameObject);
-            health -= PlayerPrefs.GetInt("SlingshotDamage");
+            health -= PlayerPrefs.GetInt("PlayerBaseDamage");
             KillEnemy();
         }
     }
@@ -33,17 +37,15 @@ public class TutorialEnemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-
-            // If on first level let enemy drop knife
-            if (SceneManager.GetActiveScene().name == "Desert_level1")
-            {
-                DropKnife();
-            }
+            DropItem();
         }
     }
 
-    void DropKnife()
+    void DropItem()
     {
-        Instantiate(knifeForInventory, gameObject.transform.position, Quaternion.identity);
+        if (dropIndex != -1)
+        {
+            Instantiate(dropItem[dropIndex], gameObject.transform.position, Quaternion.identity);
+        }
     }
 }
