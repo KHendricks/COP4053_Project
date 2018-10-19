@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerInventory : MonoBehaviour
     public GameObject slingshot;
 
     public bool slingshotDisplayed;
+    public GameObject slingshotAmmoAmount;
 
 	// Use this for initialization
 	void Start ()
@@ -25,8 +27,8 @@ public class PlayerInventory : MonoBehaviour
         {
             PlayerPrefs.SetInt("Lasso", 0);
             PlayerPrefs.SetInt("Knife", 0);
-            PlayerPrefs.SetInt("Whip", 0);
-            PlayerPrefs.SetInt("Boomerang", 0);
+            //PlayerPrefs.SetInt("Whip", 0);
+            //PlayerPrefs.SetInt("Boomerang", 0);
             PlayerPrefs.SetInt("Slingshot", 0);
 
             PlayerPrefs.SetInt("InventorySlotSelected", 0);
@@ -89,7 +91,7 @@ public class PlayerInventory : MonoBehaviour
                     break;
                 }
                 break;
-
+/*
             // Whip
             case 2:
                 // Destroy the nonselected weapons
@@ -111,10 +113,10 @@ public class PlayerInventory : MonoBehaviour
                     break;
                 }
                 break;
-
+*/
             // Slingshot
-            case 4:
-                if (!inventorySlots[4].activeSelf)
+            case 2:
+                if (!inventorySlots[2].activeSelf)
                 {
                     break;
                 }
@@ -167,6 +169,7 @@ public class PlayerInventory : MonoBehaviour
             inventorySlots[1].SetActive(false);
         }
 
+        /*
         if (PlayerPrefs.GetInt("Whip") == 1)
         {
             inventorySlots[2].SetActive(true);
@@ -184,14 +187,17 @@ public class PlayerInventory : MonoBehaviour
         {
             inventorySlots[3].SetActive(false);
         }
+        */
 
         if (PlayerPrefs.GetInt("Slingshot") == 1)
         {
-            inventorySlots[4].SetActive(true);
+            inventorySlots[2].SetActive(true);
+            slingshotAmmoAmount.SetActive(true);
         }
         else
         {
-            inventorySlots[4].SetActive(false);
+            inventorySlots[2].SetActive(false);
+            slingshotAmmoAmount.SetActive(false);
         }
     }
 
@@ -204,7 +210,7 @@ public class PlayerInventory : MonoBehaviour
             int selectorIndex = (PlayerPrefs.GetInt("InventorySlotSelected") - 1);
             if (selectorIndex <= -1)
             {
-                selectorIndex = 4;
+                selectorIndex = 2;
             }
          
             selector.transform.position = new Vector3(inventorySlots[selectorIndex].transform.position.x, selector.transform.position.y, selector.transform.position.z);
@@ -216,7 +222,7 @@ public class PlayerInventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton5))
         {
             int selectorIndex = (PlayerPrefs.GetInt("InventorySlotSelected") + 1);
-            if (selectorIndex >= 5)
+            if (selectorIndex >= 3)
             {
                 selectorIndex = 0;
             }
