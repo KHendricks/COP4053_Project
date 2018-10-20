@@ -24,9 +24,16 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        // When attacked by slingshot projectile
         if (other.gameObject.tag == "SlingshotRock")
         {
             Destroy(other.gameObject);
+            health -= PlayerPrefs.GetInt("PlayerBaseDamage");
+            KillEnemy();
+        }
+
+        if (other.gameObject.tag == "Knife")
+        {
             health -= PlayerPrefs.GetInt("PlayerBaseDamage");
             KillEnemy();
         }

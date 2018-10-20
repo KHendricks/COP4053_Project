@@ -11,12 +11,12 @@ public class PlayerInventory : MonoBehaviour
     public GameObject selector;
 
     // Weapon prefabs to load
-    public GameObject slingshotPrefab;
+    public GameObject slingshotPrefab, knifePrefab;
 
     // Variables where the prefabs are loaded
-    public GameObject slingshot;
+    public GameObject slingshot, knife;
 
-    public bool slingshotDisplayed;
+    public bool slingshotDisplayed, knifeDisplayed;
     public GameObject slingshotAmmoAmount;
 
 	// Use this for initialization
@@ -27,15 +27,13 @@ public class PlayerInventory : MonoBehaviour
         {
             PlayerPrefs.SetInt("Lasso", 0);
             PlayerPrefs.SetInt("Knife", 0);
-            //PlayerPrefs.SetInt("Whip", 0);
-            //PlayerPrefs.SetInt("Boomerang", 0);
             PlayerPrefs.SetInt("Slingshot", 0);
 
             PlayerPrefs.SetInt("InventorySlotSelected", 0);
         }
 
         // Defaults the display of the weapons to false
-        slingshotDisplayed = false;
+        slingshotDisplayed = knifeDisplayed = false;
 
         LoadInventory();
 	}
@@ -59,12 +57,9 @@ public class PlayerInventory : MonoBehaviour
     void DisplayCurrent()
     {
         // This number will hold the index of the inventory
-        // 0: 
-
+        // 0: Lasso
         // 1: Knife
-        // 2: Whip
-        // 3: Boomerang
-        // 4: Slingshot
+        // 2: Slingshot
         int selectorIndex = PlayerPrefs.GetInt("InventorySlotSelected");
 
         switch(selectorIndex)
@@ -73,6 +68,7 @@ public class PlayerInventory : MonoBehaviour
             case 0:
                 // Destroy the nonselected weapons
                 DestroySlingshot();
+                DestroyKnife();
 
                 // Need to check if slot is active first (this is to ensure the
                 // the player has the item)
@@ -91,32 +87,28 @@ public class PlayerInventory : MonoBehaviour
                 {
                     break;
                 }
-                break;
-/*
-            // Whip
-            case 2:
-                // Destroy the nonselected weapons
-                DestroySlingshot();
 
-                if (!inventorySlots[2].activeSelf)
+                // Spawn the slingshot at the player's position
+                if (!knifeDisplayed)
                 {
-                    break;
+                    knifeDisplayed = true;
+                    knife = Instantiate(knifePrefab, player.transform.position, Quaternion.identity);
                 }
-                break;
 
-            // Boomerang
-            case 3:
-                // Destroy the nonselected weapons
-                DestroySlingshot();
-
-                if (!inventorySlots[3].activeSelf)
+                // Keep the slingshot attached to the player
+                float knifeOffset = .5f;
+                if (knifeDisplayed)
                 {
-                    break;
+                    knife.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + knifeOffset, player.transform.position.z + knifeOffset);
                 }
+
                 break;
-*/
+
             // Slingshot
             case 2:
+                // Destroy the nonselected weapons
+                DestroyKnife();
+
                 if (!inventorySlots[2].activeSelf)
                 {
                     break;
@@ -148,6 +140,14 @@ public class PlayerInventory : MonoBehaviour
         slingshotDisplayed = false;
     }
 
+    void DestroyKnife()
+    {
+        Destroy(knife);
+
+        // Ensures only one knife will be active
+        knifeDisplayed = false;
+    }
+
     void LoadInventory()
     {
         // Loads the inventory UI based on the playerprefs
@@ -168,27 +168,6 @@ public class PlayerInventory : MonoBehaviour
         {
             inventorySlots[1].SetActive(false);
         }
-
-        /*
-        if (PlayerPrefs.GetInt("Whip") == 1)
-        {
-            inventorySlots[2].SetActive(true);
-        }
-        else
-        {
-            inventorySlots[2].SetActive(false);
-        }
-
-        if (PlayerPrefs.GetInt("Boomerang") == 1)
-        {
-            inventorySlots[3].SetActive(true);
-        }
-        else
-        {
-            inventorySlots[3].SetActive(false);
-        }
-        */
-
         if (PlayerPrefs.GetInt("Slingshot") == 1)
         {
             inventorySlots[2].SetActive(true);

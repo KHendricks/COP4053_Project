@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - SlingshotRock
+  - Knife
   layers:
   - Default
   - TransparentFX
