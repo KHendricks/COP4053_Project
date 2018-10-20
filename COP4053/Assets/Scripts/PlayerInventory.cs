@@ -99,7 +99,9 @@ public class PlayerInventory : MonoBehaviour
                 float knifeOffset = .5f;
                 if (knifeDisplayed)
                 {
-                    knife.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + knifeOffset, player.transform.position.z + knifeOffset);
+                    float xDir = PlayerPrefs.GetFloat("PlayerDirectionX") / 2;
+                    float zDir = PlayerPrefs.GetFloat("PlayerDirectionZ") / 2;
+                    knife.transform.position = new Vector3(player.transform.position.x + xDir, player.transform.position.y + knifeOffset, player.transform.position.z + zDir);
                 }
 
                 break;
@@ -125,7 +127,9 @@ public class PlayerInventory : MonoBehaviour
                 float slingshotOffet = .5f;
                 if (slingshotDisplayed)
                 {
-                    slingshot.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + slingshotOffet, player.transform.position.z + slingshotOffet);
+                    float xDir = PlayerPrefs.GetFloat("PlayerDirectionX") / 2;
+                    float zDir = PlayerPrefs.GetFloat("PlayerDirectionZ") / 2;
+                    slingshot.transform.position = new Vector3(player.transform.position.x + xDir, player.transform.position.y + slingshotOffet, player.transform.position.z + zDir);
                 }
 
                 break;
