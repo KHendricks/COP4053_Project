@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GuardState : IState<GuardEnemy> {
-
+    
     public void OnEnter(GuardEnemy owner) 
     {
 
@@ -12,9 +12,9 @@ public class GuardState : IState<GuardEnemy> {
     public void Update(GuardEnemy owner)
     {
         owner.animator.Play("Idle");
+        if (owner.spotted)
+            owner.stateManager.Switch("attack");
     }
-
-
 
     public void OnExit(GuardEnemy owner)
     {
