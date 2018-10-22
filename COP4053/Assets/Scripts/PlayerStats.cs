@@ -28,8 +28,8 @@ public class PlayerStats : MonoBehaviour
         }
 
         // Update the UI
-        playerHealth.text = PlayerPrefs.GetInt("PlayerHealth").ToString();
-        playerScore.text = PlayerPrefs.GetInt("PlayerScore").ToString();
+        //playerHealth.text = PlayerPrefs.GetInt("PlayerHealth").ToString();
+        //playerScore.text = PlayerPrefs.GetInt("PlayerScore").ToString();
         playerAmmo.text = PlayerPrefs.GetInt("SlingshotAmmo").ToString();
 
 	}

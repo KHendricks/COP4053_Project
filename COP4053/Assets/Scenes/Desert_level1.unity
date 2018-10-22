@@ -7080,9 +7080,10 @@ MonoBehaviour:
   isStationary: 0
   speed: 2
   dropIndex: 0
-  dropItem: []
+  dropItem:
+  - {fileID: 1840853037532290, guid: 21d850dea2f344d439cea2358085c61c, type: 2}
   animator: {fileID: 0}
-  health: 0
+  health: 3
   knifeForInventory: {fileID: 0}
   spotted: 0
   player: {fileID: 1416046946}
@@ -7362,7 +7363,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: eb48d58c2ce4448e79a3f9c49104e7e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3519
+      value: -2.389
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: eb48d58c2ce4448e79a3f9c49104e7e2, type: 3}
       propertyPath: m_LocalRotation.x
