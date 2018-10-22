@@ -29,7 +29,8 @@ public class SlingshotFire : Movement
     {
         int ammo = PlayerPrefs.GetInt("SlingshotAmmo");
         // On enter press instantiate a rock projectile
-        if (Input.GetKeyDown(KeyCode.Return) && enableFire && ammo > 0)
+        // "x" button on an Xbox One controller
+        if ((Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton2)) && enableFire && ammo > 0)
         {
             if (mutex)
             {
