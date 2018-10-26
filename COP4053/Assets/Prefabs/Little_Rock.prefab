@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4891821663878350}
   - component: {fileID: 33011045561406962}
   - component: {fileID: 23018745479149286}
-  - component: {fileID: 65332281935492862}
+  - component: {fileID: 64392505390690698}
   m_Layer: 0
   m_Name: Little_Rock
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1675490954515202}
   m_Mesh: {fileID: 4300000, guid: ec64b36ab5ee04dbaaab499f34186ecb, type: 3}
---- !u!65 &65332281935492862
-BoxCollider:
+--- !u!64 &64392505390690698
+MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -93,6 +93,8 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0059312386, y: 0.0065713357, z: 0.016864158}
-  m_Center: {x: -0.00018746361, y: -0.00018961936, z: 0.012230605}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: ec64b36ab5ee04dbaaab499f34186ecb, type: 3}

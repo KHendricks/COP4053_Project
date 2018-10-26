@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4307850643852364}
   - component: {fileID: 33867092669200864}
   - component: {fileID: 23070706926082780}
-  - component: {fileID: 65860307939259784}
+  - component: {fileID: 64894354472186190}
   m_Layer: 0
   m_Name: Large_Rock
   m_TagString: Untagged
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1932363308774484}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 73.74, y: 12.66, z: -15.52}
-  m_LocalScale: {x: 336.19598, y: 336.19586, z: 269.8196}
+  m_LocalPosition: {x: 73.38, y: 13.11, z: -13.58}
+  m_LocalScale: {x: 336.19598, y: 336.19568, z: 269.81943}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -84,8 +84,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1932363308774484}
   m_Mesh: {fileID: 4300000, guid: 03f4c2ae5c15440c6868140e4d23f5c6, type: 3}
---- !u!65 &65860307939259784
-BoxCollider:
+--- !u!64 &64894354472186190
+MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -93,6 +93,8 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0058530564, y: 0.006265451, z: 0.01679773}
-  m_Center: {x: 0.00017315373, y: -0.00019168042, z: 0.012197379}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 03f4c2ae5c15440c6868140e4d23f5c6, type: 3}
