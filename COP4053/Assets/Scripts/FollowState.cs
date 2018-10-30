@@ -15,11 +15,19 @@ public class FollowState : IState<Dog> {
 	// Update is called once per frame
 	public void Update (Dog owner) 
     {
-        owner.Follow();
-        if (owner.isStationary)
-            owner.animator.Play("Idle");
+        if(!owner.followPlayer)
+        {
+            owner.stateManager.Switch("stay");
+        }
         else
-            owner.animator.Play("Trot");
+        {
+            owner.Follow();
+            if (owner.player.isStationary)
+                owner.animator.Play("Idle");
+            else
+                owner.animator.Play("Trot");
+        }
+
 
 	}
 

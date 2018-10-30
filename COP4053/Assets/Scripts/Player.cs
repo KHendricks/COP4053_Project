@@ -12,6 +12,7 @@ public class Player : Movement {
     public StateManager<Player> stateManager;
     public GameObject knife;
     public bool showKnife;
+    public Dog dog;
 
 	// Use this for initialization
 	void Start () {

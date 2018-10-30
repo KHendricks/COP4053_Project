@@ -9,7 +9,8 @@ public class Dog : Movement
     public Animator animator;
     public StateManager<Dog> stateManager;
     public bool rescued;
-    public GameObject player;
+    public bool followPlayer;
+    public Player player;
     public float distanceFromPlayer;
 
 	// Use this for initialization
@@ -18,9 +19,10 @@ public class Dog : Movement
         rescued = false;
         animator = GetComponentInChildren<Animator>();
         stateManager = new StateManager<Dog>();
-        stateManager.Add("caged", new CagedState());
+        //stateManager.Add("caged", new CagedState());
+        stateManager.Add("stay", new StayState());
         stateManager.Add("follow", new FollowState());
-        stateManager.Switch("caged");
+        stateManager.Switch("stay");
     }
 
     public void Follow()

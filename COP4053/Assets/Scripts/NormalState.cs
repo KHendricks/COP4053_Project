@@ -29,8 +29,22 @@ public class NormalState : IState<Player> {
 
         }
         // Attack
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.X))
             owner.stateManager.Switch("attack");
+
+        // Make dog stay/come
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            if (owner.dog.followPlayer)
+                owner.dog.followPlayer = false;
+            else
+            {
+                float distance = Vector3.Distance(owner.transform.position, owner.dog.transform.position);
+                if (distance <= owner.dog.distanceFromPlayer)
+                    owner.dog.followPlayer = true;
+            }
+
+        }
     }
 
     public void OnExit(Player owner)
