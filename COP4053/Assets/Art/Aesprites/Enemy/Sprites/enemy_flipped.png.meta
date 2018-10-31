@@ -1,55 +1,55 @@
 fileFormatVersion: 2
-guid: 0ac938310c1e64098a52ad3e9ccd66f2
+guid: 3a18782bc2b1b4dd3833b1613a7f59a5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: enemy 0
-    21300002: enemy 1
-    21300004: enemy 2
-    21300006: enemy 3
-    21300008: enemy 4
-    21300010: enemy 5
-    21300012: enemy 6
-    21300014: enemy 7
-    21300016: enemy 8
-    21300018: enemy 9
-    21300020: enemy 10
-    21300022: enemy 11
-    21300024: enemy 12
-    21300026: enemy 13
-    21300028: enemy 14
-    21300030: enemy 15
-    21300032: enemy 16
-    21300034: enemy 17
-    21300036: enemy 18
-    21300038: enemy 19
-    21300040: enemy 20
-    21300042: enemy 21
-    21300044: enemy 22
-    21300046: enemy 23
-    21300048: enemy 24
-    21300050: enemy 25
-    21300052: enemy 26
-    21300054: enemy 27
-    21300056: enemy 28
-    21300058: enemy 29
-    21300060: enemy 30
-    21300062: enemy 31
-    21300064: enemy 32
-    21300066: enemy 33
-    21300068: enemy 34
-    21300070: enemy 35
-    21300072: enemy 36
-    21300074: enemy 37
-    21300076: enemy 38
-    21300078: enemy 39
-    21300080: enemy 40
-    21300082: enemy 41
-    21300084: enemy 42
-    21300086: enemy 43
-    21300088: enemy 44
-    21300090: enemy 45
-    21300092: enemy 46
-    21300094: enemy 47
+    21300000: enemy_flipped 0
+    21300002: enemy_flipped 1
+    21300004: enemy_flipped 2
+    21300006: enemy_flipped 3
+    21300008: enemy_flipped 4
+    21300010: enemy_flipped 5
+    21300012: enemy_flipped 6
+    21300014: enemy_flipped 7
+    21300016: enemy_flipped 8
+    21300018: enemy_flipped 9
+    21300020: enemy_flipped 10
+    21300022: enemy_flipped 11
+    21300024: enemy_flipped 12
+    21300026: enemy_flipped 13
+    21300028: enemy_flipped 14
+    21300030: enemy_flipped 15
+    21300032: enemy_flipped 16
+    21300034: enemy_flipped 17
+    21300036: enemy_flipped 18
+    21300038: enemy_flipped 19
+    21300040: enemy_flipped 20
+    21300042: enemy_flipped 21
+    21300044: enemy_flipped 22
+    21300046: enemy_flipped 23
+    21300048: enemy_flipped 24
+    21300050: enemy_flipped 25
+    21300052: enemy_flipped 26
+    21300054: enemy_flipped 27
+    21300056: enemy_flipped 28
+    21300058: enemy_flipped 29
+    21300060: enemy_flipped 30
+    21300062: enemy_flipped 31
+    21300064: enemy_flipped 32
+    21300066: enemy_flipped 33
+    21300068: enemy_flipped 34
+    21300070: enemy_flipped 35
+    21300072: enemy_flipped 36
+    21300074: enemy_flipped 37
+    21300076: enemy_flipped 38
+    21300078: enemy_flipped 39
+    21300080: enemy_flipped 40
+    21300082: enemy_flipped 41
+    21300084: enemy_flipped 42
+    21300086: enemy_flipped 43
+    21300088: enemy_flipped 44
+    21300090: enemy_flipped 45
+    21300092: enemy_flipped 46
+    21300094: enemy_flipped 47
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -119,7 +119,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 64
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -130,7 +130,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: iPhone
-    maxTextureSize: 64
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -143,7 +143,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy 0
+      name: enemy_flipped 0
       rect:
         serializedVersion: 2
         x: 0
@@ -157,13 +157,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d1e23317a62942eaa9747de9f829202
+      spriteID: b962689e62ef14d1c97569ec80854755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 1
+      name: enemy_flipped 1
       rect:
         serializedVersion: 2
         x: 32
@@ -177,13 +177,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c3553deb57384f3caca91ece07e6e08
+      spriteID: 87a2b45c775f9473eb33cf6520737ce7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 2
+      name: enemy_flipped 2
       rect:
         serializedVersion: 2
         x: 64
@@ -197,13 +197,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 659f37f5e27f044f986e4edb40228c96
+      spriteID: bdf9013922ea34ef0b6aa3ce99dd4396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 3
+      name: enemy_flipped 3
       rect:
         serializedVersion: 2
         x: 96
@@ -217,13 +217,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0df316fa1b6154741a05eefa457d7058
+      spriteID: 4548eeabc521f4475906d7fd7e05519b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 4
+      name: enemy_flipped 4
       rect:
         serializedVersion: 2
         x: 128
@@ -237,13 +237,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b1ca2f126fc6943b6bff9983d6f4fe98
+      spriteID: e71882cc04c2a4c2dbe34683d29ef1b8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 5
+      name: enemy_flipped 5
       rect:
         serializedVersion: 2
         x: 160
@@ -257,13 +257,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 261d6497ca284401c8df22916e6318bb
+      spriteID: f90c657d814584322807288559c48890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 6
+      name: enemy_flipped 6
       rect:
         serializedVersion: 2
         x: 192
@@ -277,13 +277,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3671ebe0a410a46b2a141dbdfd2136ac
+      spriteID: b984899a4875c4c2ca0c8180b9e7132f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 7
+      name: enemy_flipped 7
       rect:
         serializedVersion: 2
         x: 224
@@ -297,13 +297,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b17a82a6e75984549b6591eadd41694c
+      spriteID: 2737fe9f7d2eb47c5ba3b8d2bac10292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 8
+      name: enemy_flipped 8
       rect:
         serializedVersion: 2
         x: 0
@@ -317,13 +317,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fec7e13534179478f8499277733565fb
+      spriteID: 5d6fe72f9bf2c41f689a237bca7aa081
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 9
+      name: enemy_flipped 9
       rect:
         serializedVersion: 2
         x: 32
@@ -337,13 +337,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f81f89f0a1384443b72d0766da63031
+      spriteID: 5aab4a0f1d64d48d0af7be6b80c26519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 10
+      name: enemy_flipped 10
       rect:
         serializedVersion: 2
         x: 64
@@ -357,13 +357,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e63c7f941f35f4b52a4fd7b4c93998fa
+      spriteID: 6f4b74bf1a4ae40fa94345a2078a8118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 11
+      name: enemy_flipped 11
       rect:
         serializedVersion: 2
         x: 96
@@ -377,13 +377,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4629eaa02cf3a4640a07e8dfdb5f6d13
+      spriteID: 83327e62c66384361827cacf45e4642b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 12
+      name: enemy_flipped 12
       rect:
         serializedVersion: 2
         x: 128
@@ -397,13 +397,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8bf3584d6bf7745568103ed627f2e263
+      spriteID: 7daf608a9ed384a3885cc3afed2eadf4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 13
+      name: enemy_flipped 13
       rect:
         serializedVersion: 2
         x: 160
@@ -417,13 +417,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5539ed2138f224516922041515632827
+      spriteID: 357c4b43beb304ca691774fadf5bdea5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 14
+      name: enemy_flipped 14
       rect:
         serializedVersion: 2
         x: 192
@@ -437,13 +437,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9cfb3e07983954c2eac18cb0e85dbd8f
+      spriteID: 6e5260eb179bc40908e8709e44eff4dc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 15
+      name: enemy_flipped 15
       rect:
         serializedVersion: 2
         x: 224
@@ -457,13 +457,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 029252797734c454baf0c2a4d3b6d3fa
+      spriteID: a861895a47d4a4dc7bb6782f430a3d06
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 16
+      name: enemy_flipped 16
       rect:
         serializedVersion: 2
         x: 0
@@ -477,13 +477,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9c3459f6132a4a559ec7089fab4e0da
+      spriteID: a41720b5a9ea44d7fac1a2fffa3d65db
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 17
+      name: enemy_flipped 17
       rect:
         serializedVersion: 2
         x: 32
@@ -497,13 +497,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ee56606e6dc14c4ba38eaf3794e2684
+      spriteID: 10c283ecd1cdb42e1b7c521ee829a347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 18
+      name: enemy_flipped 18
       rect:
         serializedVersion: 2
         x: 64
@@ -517,13 +517,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9488f060bab7b4d2e8226f5d0d7eadc6
+      spriteID: 59f30e071e1da4f1cb29abad1b23b485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 19
+      name: enemy_flipped 19
       rect:
         serializedVersion: 2
         x: 96
@@ -537,13 +537,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 321b7158ce4db4177a6b21d3c9f98f69
+      spriteID: 3742aa3314616444ea54923411aced3b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 20
+      name: enemy_flipped 20
       rect:
         serializedVersion: 2
         x: 128
@@ -557,13 +557,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61c5cdad277a64901b87c30afe5ce162
+      spriteID: 25d00f7b462d345368596e8b8ab9814b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 21
+      name: enemy_flipped 21
       rect:
         serializedVersion: 2
         x: 160
@@ -577,13 +577,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b4af477393e874e259d1c1e4949b2ad9
+      spriteID: e695595f3710d4939b62d6ae7a73e695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 22
+      name: enemy_flipped 22
       rect:
         serializedVersion: 2
         x: 192
@@ -597,13 +597,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 377e13c40619641008b7fe149b643282
+      spriteID: 994010dc7fab44713bb27d0f1be5d3cf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 23
+      name: enemy_flipped 23
       rect:
         serializedVersion: 2
         x: 224
@@ -617,13 +617,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8346d42fc7b3a45859eca1ebdba5b6ef
+      spriteID: f192995222a874e33814f10c07eaff8e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 24
+      name: enemy_flipped 24
       rect:
         serializedVersion: 2
         x: 0
@@ -637,13 +637,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d3aae13e187a42a4bbda9dfdb61ea3d
+      spriteID: 77bbe8eb903f543e4bc4622deddf2d17
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 25
+      name: enemy_flipped 25
       rect:
         serializedVersion: 2
         x: 32
@@ -657,13 +657,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 29f689608bf494f309743f3ce06ddf94
+      spriteID: 616b8f11823eb47318e3323336dab646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 26
+      name: enemy_flipped 26
       rect:
         serializedVersion: 2
         x: 64
@@ -677,13 +677,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3e6933031ad3494395521a22c9eb8e6
+      spriteID: bf487857703fb4cb1b2aa047365472c3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 27
+      name: enemy_flipped 27
       rect:
         serializedVersion: 2
         x: 96
@@ -697,13 +697,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7143c2ee74cf9491a9dc3e188be5ad59
+      spriteID: ec7d6b4247c784c0aa6cd4d6c8fa0bba
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 28
+      name: enemy_flipped 28
       rect:
         serializedVersion: 2
         x: 128
@@ -717,13 +717,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 403ba11ee57a64e3d9aad7fdfc34b2b5
+      spriteID: b11e4741bf1204516a31033976502ff7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 29
+      name: enemy_flipped 29
       rect:
         serializedVersion: 2
         x: 160
@@ -737,13 +737,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 676be9576f6a448628d57cdea09db3d7
+      spriteID: f3b0d84086e094b68808e44981c3c181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 30
+      name: enemy_flipped 30
       rect:
         serializedVersion: 2
         x: 192
@@ -757,13 +757,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 204f3b50e2d404feb8f6d1d1ca8b673a
+      spriteID: 2f3f63c2e22484685b0e2bd267622e4b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 31
+      name: enemy_flipped 31
       rect:
         serializedVersion: 2
         x: 224
@@ -777,13 +777,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8f463be2279114ad5aff619049d8bd49
+      spriteID: 92d993d2e3ea5448c9ba032b27a6b1c7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 32
+      name: enemy_flipped 32
       rect:
         serializedVersion: 2
         x: 0
@@ -797,13 +797,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d04db695e20f64bd4b2abd255c8d82fb
+      spriteID: 32baf851ab4e34d1d9c8aaaeeb6cae2e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 33
+      name: enemy_flipped 33
       rect:
         serializedVersion: 2
         x: 32
@@ -817,13 +817,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 935867460965148eaa92259df67303bc
+      spriteID: 61669b95800f24b7f87009f2005e0b66
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 34
+      name: enemy_flipped 34
       rect:
         serializedVersion: 2
         x: 64
@@ -837,13 +837,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd051e666590d4df3ae6847ddf248af6
+      spriteID: be1b747e02870483abf721e167a8bb24
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 35
+      name: enemy_flipped 35
       rect:
         serializedVersion: 2
         x: 96
@@ -857,13 +857,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 36c08d3bfe009486288dbcfd41b2b01a
+      spriteID: d8eaa66c452c84ef9bedd2f0b51cac01
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 36
+      name: enemy_flipped 36
       rect:
         serializedVersion: 2
         x: 128
@@ -877,13 +877,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6559ce0246c343b4b331a161ff2d894
+      spriteID: d80b190d127c8497082a1bc7db2fbe63
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 37
+      name: enemy_flipped 37
       rect:
         serializedVersion: 2
         x: 160
@@ -897,13 +897,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 97d255a0da44c40829873b0cf61e176e
+      spriteID: 0a5d1651d453b4f71ac47878593d2ccf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 38
+      name: enemy_flipped 38
       rect:
         serializedVersion: 2
         x: 192
@@ -917,13 +917,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a36b175002a354861b5d75706f2741c1
+      spriteID: ea56ed63df382416eaa0d8fea3a32d79
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 39
+      name: enemy_flipped 39
       rect:
         serializedVersion: 2
         x: 224
@@ -937,13 +937,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f1e515235c13044ff99cf283001a7df8
+      spriteID: ce65795a6a5c641898ee9d5eb2d2d57b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 40
+      name: enemy_flipped 40
       rect:
         serializedVersion: 2
         x: 0
@@ -957,13 +957,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ddb25f6c979a14ba8b460a31c0a592c0
+      spriteID: ec074adbcb3f84d39821393764a66723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 41
+      name: enemy_flipped 41
       rect:
         serializedVersion: 2
         x: 32
@@ -977,13 +977,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71afc2a03a7bd474e93ea1a598599c5a
+      spriteID: 8a483187efcc94ed480ad20307f03479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 42
+      name: enemy_flipped 42
       rect:
         serializedVersion: 2
         x: 64
@@ -997,13 +997,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e408851113b264d2a81e639ba759209e
+      spriteID: 1ecdb1ef952fb466b915783d645b08c4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 43
+      name: enemy_flipped 43
       rect:
         serializedVersion: 2
         x: 96
@@ -1017,13 +1017,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 14ac32d619deb4de6b005f3bde698a9a
+      spriteID: f83a3d76337dd4f6d8f6170d09b3200a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 44
+      name: enemy_flipped 44
       rect:
         serializedVersion: 2
         x: 128
@@ -1037,13 +1037,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 075a1c0770ee941b589c418e0081ccfb
+      spriteID: c85a9f4c0c90d4168adb5882e100f2cc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 45
+      name: enemy_flipped 45
       rect:
         serializedVersion: 2
         x: 160
@@ -1057,13 +1057,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 269fd35e216824532827b17f5dda312b
+      spriteID: 1b98539cb5f144af8b55f723fd903c1a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 46
+      name: enemy_flipped 46
       rect:
         serializedVersion: 2
         x: 192
@@ -1077,13 +1077,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6cafde70d4c2243218d6565133db9c8f
+      spriteID: b6d8a30082d3b417f8fa8810c79c7048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy 47
+      name: enemy_flipped 47
       rect:
         serializedVersion: 2
         x: 224
@@ -1097,7 +1097,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b5eda3caad5154cc6920f59e8023a353
+      spriteID: 1297c6f3baee547ffa2512484230f172
       vertices: []
       indices: 
       edges: []

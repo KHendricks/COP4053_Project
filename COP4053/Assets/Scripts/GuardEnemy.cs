@@ -13,7 +13,7 @@ public class GuardEnemy : Movement {
     public int health;
     public GameObject knifeForInventory;
     public bool spotted;
-    public GameObject player;
+    public Player player;
     public float distanceFromPlayer;
 
     // Use this for initialization
@@ -58,7 +58,7 @@ public class GuardEnemy : Movement {
             DropItem();
         }
     }
-
+    
     public void Chase()
     {
         // The step size is equal to speed times frame time.
@@ -73,11 +73,22 @@ public class GuardEnemy : Movement {
             //var dir = Vector3.MoveTowards(transform.position, player.transform.position, step);
             var dir = Vector3.Lerp(transform.position, player.transform.position, step);
             transform.position = dir;
+        }
 
-            Vector3 newDir = new Vector3(PlayerPrefs.GetFloat("PlayerDirectionX"), PlayerPrefs.GetFloat("PlayerDirectionY"), PlayerPrefs.GetFloat("PlayerDirectionZ"));
-            SetFacing(newDir);
-            animator.SetFloat("FaceZ", -currentDirection.y);
-            animator.SetFloat("FaceX", -currentDirection.x);
+        Vector3 newDir = new Vector3(PlayerPrefs.GetFloat("PlayerDirectionX"), PlayerPrefs.GetFloat("PlayerDirectionY"), PlayerPrefs.GetFloat("PlayerDirectionZ"));
+        Vector3 dip = (player.transform.position - transform.position).normalized;
+        SetFacing(dip);
+
+        animator.SetFloat("FaceZ", currentDirection.y);
+        animator.SetFloat("FaceX", currentDirection.x);
+
+        if (isStationary)
+        {
+            animator.Play("Idle");
+        }
+        else if(!isStationary)
+        {
+            animator.Play("Walk");
         }
     }
 

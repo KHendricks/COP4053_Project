@@ -74,7 +74,6 @@ public class Player : Movement {
         Debug.DrawRay(playerPosition, Vector3.down, Color.red);
         bool isGrounded = Physics.Raycast(playerPosition, Vector3.down, distanceToGround, groundLayer);
 
-        Debug.Log(isGrounded);
         return isGrounded;
     }
 
