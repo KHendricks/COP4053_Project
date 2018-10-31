@@ -75,7 +75,6 @@ public class GuardEnemy : Movement {
             transform.position = dir;
         }
 
-        Vector3 newDir = new Vector3(PlayerPrefs.GetFloat("PlayerDirectionX"), PlayerPrefs.GetFloat("PlayerDirectionY"), PlayerPrefs.GetFloat("PlayerDirectionZ"));
         Vector3 dip = (player.transform.position - transform.position).normalized;
         SetFacing(dip);
 
