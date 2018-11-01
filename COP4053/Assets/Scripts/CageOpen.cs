@@ -16,6 +16,11 @@ public class CageOpen : MonoBehaviour {
             {
                 dog.followPlayer = true;
                 context.Deactivate(context.a);
+
+                // Replenishes the players heatlh
+                // Can set an animation to play here
+                PlayerPrefs.SetInt("PlayerHealth", 3);
+
                 Destroy(this.gameObject);
             }
 
