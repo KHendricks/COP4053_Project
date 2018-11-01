@@ -15,9 +15,12 @@ public class GuardEnemy : Movement {
     public bool spotted;
     public Player player;
     public float distanceFromPlayer;
+    public bool notAttackedRecently;
+    public bool mutex;
 
     // Use this for initialization
     void Start () {
+        notAttackedRecently = mutex = true;
         spotted = false;
         distanceFromPlayer = 0.5f;
         animator = GetComponentInChildren<Animator>();
@@ -103,6 +106,22 @@ public class GuardEnemy : Movement {
     public void Attack()
     {
         // use whatever weapon he has to attack player
+
+        // For now I'm just setting it to deduct one health from the player
+        // and locks it from happening again for 2 seconds
+        if (notAttackedRecently)
+        {
+            Debug.Log(PlayerPrefs.GetInt("PlayerHealth"));
+            PlayerPrefs.SetInt("PlayerHealth", PlayerPrefs.GetInt("PlayerHealth") - 1);
+            Debug.Log(PlayerPrefs.GetInt("PlayerHealth"));
+            notAttackedRecently = false;
+        }
+
+        if (mutex)
+        {
+            mutex = false;
+            StartCoroutine("AttackTimer");
+        }
     }
 
     void DropItem()
@@ -111,5 +130,11 @@ public class GuardEnemy : Movement {
         {
             Instantiate(dropItem[dropIndex], gameObject.transform.position, Quaternion.identity);
         }
+    }
+
+    IEnumerator AttackTimer()
+    {
+        yield return new WaitForSeconds(2f);
+        notAttackedRecently = mutex = true;
     }
 }

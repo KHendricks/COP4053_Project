@@ -10255,7 +10255,7 @@ MonoBehaviour:
   currentDirection: {x: 0, y: 0}
   isStationary: 0
   speed: 1
-  dropIndex: 0
+  dropIndex: -1
   dropItem:
   - {fileID: 1840853037532290, guid: 21d850dea2f344d439cea2358085c61c, type: 2}
   animator: {fileID: 0}
@@ -10264,6 +10264,8 @@ MonoBehaviour:
   spotted: 0
   player: {fileID: 1416046952}
   distanceFromPlayer: 0
+  notAttackedRecently: 0
+  mutex: 0
 --- !u!1001 &1662836929
 Prefab:
   m_ObjectHideFlags: 0

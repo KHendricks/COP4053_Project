@@ -32,12 +32,12 @@ public class PlayerStats : MonoBehaviour
         //playerScore.text = PlayerPrefs.GetInt("PlayerScore").ToString();
         playerAmmo.text = PlayerPrefs.GetInt("SlingshotAmmo").ToString();
 
+        PlayerPrefs.SetInt("PlayerHealth", startingHealth);
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        PlayerPrefs.SetInt("PlayerHealth", startingHealth);
         playerAmmo.text = PlayerPrefs.GetInt("SlingshotAmmo").ToString();
         UpdateHealth();
 	}
@@ -71,6 +71,14 @@ public class PlayerStats : MonoBehaviour
             healthDisplay[1].SetActive(false);
             healthDisplay[2].SetActive(false);
             healthDisplay[3].SetActive(true);
+
+            Death();
         }
+    }
+
+    // Player is out of health so game is over
+    void Death()
+    {
+        SceneManager.LoadScene("LoseScreen");
     }
 }

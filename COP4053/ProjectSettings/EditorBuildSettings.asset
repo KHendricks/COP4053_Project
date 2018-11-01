@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Desert_level1.unity
     guid: 13e9e782d6ff841d9ab693e919c01d29
+  - enabled: 1
+    path: Assets/Scenes/LoseScreen.unity
+    guid: 2ce556fdfcac24d2b92df7c26fb52e41
   m_configObjects: {}
