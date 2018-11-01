@@ -96,11 +96,11 @@ public class PlayerInventory : MonoBehaviour
                 }
 
                 // Keep the slingshot attached to the player
-                float knifeOffset = .5f;
+                float knifeOffset = .2f;
                 if (knifeDisplayed)
                 {
-                    float xDir = PlayerPrefs.GetFloat("PlayerDirectionX") / 2;
-                    float zDir = PlayerPrefs.GetFloat("PlayerDirectionZ") / 2;
+                    float xDir = PlayerPrefs.GetFloat("PlayerDirectionX") / 6;
+                    float zDir = PlayerPrefs.GetFloat("PlayerDirectionZ") / 6;
                     knife.transform.position = new Vector3(player.transform.position.x + xDir, player.transform.position.y + knifeOffset, player.transform.position.z + zDir);
                 }
 
@@ -124,11 +124,11 @@ public class PlayerInventory : MonoBehaviour
                 }
 
                 // Keep the slingshot attached to the player
-                float slingshotOffet = .5f;
+                float slingshotOffet = .1f;
                 if (slingshotDisplayed)
                 {
-                    float xDir = PlayerPrefs.GetFloat("PlayerDirectionX") / 2;
-                    float zDir = PlayerPrefs.GetFloat("PlayerDirectionZ") / 2;
+                    float xDir = PlayerPrefs.GetFloat("PlayerDirectionX") / 6;
+                    float zDir = PlayerPrefs.GetFloat("PlayerDirectionZ") / 6;
                     slingshot.transform.position = new Vector3(player.transform.position.x + xDir, player.transform.position.y + slingshotOffet, player.transform.position.z + zDir);
                 } 
 

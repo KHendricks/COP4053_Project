@@ -12,6 +12,7 @@ public class PlayerStats : MonoBehaviour
     public Text playerHealth, playerScore, playerAmmo;
     public int startingHealth, startingDamage;
     public GameObject[] healthDisplay;
+    bool lostHealth = false;
 
 	// Use this for initialization
 	void Start () 
@@ -53,6 +54,7 @@ public class PlayerStats : MonoBehaviour
         }
         else if (PlayerPrefs.GetInt("PlayerHealth") == 2)
         {
+  
             healthDisplay[0].SetActive(false);
             healthDisplay[1].SetActive(true);
             healthDisplay[2].SetActive(false);

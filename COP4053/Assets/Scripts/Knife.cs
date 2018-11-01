@@ -2,52 +2,61 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Knife : MonoBehaviour 
+public class Knife : Movement
 {
-    private bool enableAttack, mutex;
+    // Have the rock prefab loaded into this variable
+    // through the editor
+    public GameObject knifeRockPrefab;
+    public float rockSpeed = 3f;
 
-	// Use this for initialization
-	void Start () 
-    {
-        enableAttack = mutex = true;
+    private bool enableFire, mutex;
+    private Vector3 dir;
 
-        // Disable the collider at the start
-        gameObject.GetComponent<Collider>().enabled = false;
-	}
-	
-	// Update is called once per frame
-	void Update () 
+    // Use this for initialization
+    void Start()
     {
-        KnifeAttack();	
-	}
+        enableFire = mutex = true;
+    }
 
-    void KnifeAttack()
+    // Update is called once per frame
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && enableAttack)
+        FireKnife();
+        UpdateDirection();
+    }
+
+    public void FireKnife()
+    {
+        // On enter press instantiate a rock projectile
+        if (Input.GetKeyDown(KeyCode.Return) && enableFire)
         {
             if (mutex)
             {
                 mutex = false;
                 StartCoroutine("EnableAttack");
             }
+
+            GameObject knifeProjectile = Instantiate(knifeRockPrefab, gameObject.transform.position, Quaternion.identity);
+            knifeProjectile.GetComponent<Rigidbody>().velocity = dir.normalized * rockSpeed;
+            Destroy(knifeProjectile, 1f);
+        }
+    }
+
+    public void UpdateDirection()
+    {
+        // This gives a warning but because the vector will only be 0 when the player
+        // is stationary this is the specific case needing to be check. This effectively
+        // saves the previous direction
+        if (PlayerPrefs.GetFloat("PlayerDirectionX") != 0f && PlayerPrefs.GetFloat("PlayerDirectionZ") != 0f)
+        {
+            dir = new Vector3(PlayerPrefs.GetFloat("PlayerDirectionX"), PlayerPrefs.GetFloat("PlayerDirectionY"), PlayerPrefs.GetFloat("PlayerDirectionZ"));
         }
     }
 
     IEnumerator EnableAttack()
     {
-        enableAttack = false;
-        gameObject.GetComponent<Collider>().enabled = true;
-
-        // Attack animation here
-
-        yield return new WaitForSeconds(.5f);
-        gameObject.GetComponent<Collider>().enabled = false;
-        enableAttack = true;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        // Disable the collider on enter to prevent multiple "attacks"
-        gameObject.GetComponent<Collider>().enabled = false;
+        enableFire = false;
+        yield return new WaitForSeconds(.7f);
+        enableFire = mutex = true;
     }
 }

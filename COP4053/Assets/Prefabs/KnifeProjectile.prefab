@@ -9,76 +9,75 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1742685323964492}
+  m_RootGameObject: {fileID: 1453623099400968}
   m_IsPrefabAsset: 1
---- !u!1 &1731072852242442
+--- !u!1 &1453623099400968
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4537027163419638}
-  - component: {fileID: 33981929879830142}
-  - component: {fileID: 23534794286881014}
+  - component: {fileID: 4271767972026982}
+  - component: {fileID: 54958212512657842}
+  - component: {fileID: 136606862346860200}
   m_Layer: 0
-  m_Name: knife
-  m_TagString: Untagged
+  m_Name: KnifeProjectile
+  m_TagString: SlingshotRock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1742685323964492
+--- !u!1 &1723395051586646
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4012873591019458}
-  - component: {fileID: 65462907153300610}
-  - component: {fileID: 54412849831036442}
-  - component: {fileID: 114093479367154748}
+  - component: {fileID: 4704461134827886}
+  - component: {fileID: 33021836031474426}
+  - component: {fileID: 23706474725501696}
   m_Layer: 0
-  m_Name: KnifeContainer
-  m_TagString: Knife
+  m_Name: KnifeProjectile
+  m_TagString: SlingshotRock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4012873591019458
+  m_IsActive: 0
+--- !u!4 &4271767972026982
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1742685323964492}
+  m_GameObject: {fileID: 1453623099400968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.0210295, y: 0.8714473, z: -2.25}
-  m_LocalScale: {x: 0.008, y: 0.008, z: 0.008}
+  m_LocalPosition: {x: 7.283, y: 0.8714473, z: -3.0250392}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
-  - {fileID: 4537027163419638}
+  - {fileID: 4704461134827886}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4537027163419638
+--- !u!4 &4704461134827886
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1731072852242442}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_GameObject: {fileID: 1723395051586646}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4012873591019458}
+  m_Father: {fileID: 4271767972026982}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23534794286881014
+--- !u!23 &23706474725501696
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1731072852242442}
+  m_GameObject: {fileID: 1723395051586646}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -88,7 +87,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 4cac12ddd2e554349b197acd2122a461, type: 3}
+  - {fileID: 2100000, guid: 9630d85d7dd28405bb70506944d1f995, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,54 +107,38 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33981929879830142
+--- !u!33 &33021836031474426
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1731072852242442}
-  m_Mesh: {fileID: 4300000, guid: 4cac12ddd2e554349b197acd2122a461, type: 3}
---- !u!54 &54412849831036442
+  m_GameObject: {fileID: 1723395051586646}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54958212512657842
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1742685323964492}
+  m_GameObject: {fileID: 1453623099400968}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65462907153300610
-BoxCollider:
+--- !u!136 &136606862346860200
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1742685323964492}
+  m_GameObject: {fileID: 1453623099400968}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 20.451187, y: 42.815334, z: 8.701501}
-  m_Center: {x: 4.0316577, y: 20.907665, z: -0.28514954}
---- !u!114 &114093479367154748
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1742685323964492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b861df538fd542369fa57813e1f1501, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentDirection: {x: 0, y: 0}
-  isStationary: 0
-  speed: 3
-  knifeRockPrefab: {fileID: 1453623099400968, guid: e034b25fabdaa46ad921808f17053ec5,
-    type: 2}
-  rockSpeed: 3
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
