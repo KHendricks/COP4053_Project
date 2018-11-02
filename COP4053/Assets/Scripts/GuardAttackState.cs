@@ -12,6 +12,16 @@ public class GuardAttackState : IState<GuardEnemy> {
     public void Update(GuardEnemy owner)
     {
         owner.Chase();
+
+        if (owner.isStationary)
+        {
+            owner.animator.Play("Idle");
+        }
+        else
+        {
+            owner.animator.Play("Walk");
+        }
+
         owner.TryAttack();
     }
 

@@ -66,7 +66,6 @@ public class GuardEnemy : Movement {
     {
         // The step size is equal to speed times frame time.
         float step = speed * Time.deltaTime;
-
         float distance = Vector3.Distance(transform.position, player.transform.position);
 
         // Move our position a step closer to the target, if player is far enough away
@@ -78,20 +77,9 @@ public class GuardEnemy : Movement {
             transform.position = dir;
         }
 
-        Vector3 dip = (player.transform.position - transform.position).normalized;
-        SetFacing(dip);
-
+        NormalizeDirection(player.transform.position, transform.position);
         animator.SetFloat("FaceZ", currentDirection.y);
         animator.SetFloat("FaceX", currentDirection.x);
-
-        if (isStationary)
-        {
-            animator.Play("Idle");
-        }
-        else if(!isStationary)
-        {
-            animator.Play("Walk");
-        }
     }
 
     public void TryAttack()
