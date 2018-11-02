@@ -27,8 +27,8 @@ public class Knife : Movement
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
         }
 
-        FireKnife();
         UpdateDirection();
+        FireKnife();
     }
 
     public void FireKnife()
@@ -39,15 +39,21 @@ public class Knife : Movement
             if (mutex)
             {
                 mutex = false;
-
-                // Shows the knife when attacking
-                gameObject.transform.GetChild(0).gameObject.SetActive(true);
                 StartCoroutine("EnableAttack");
             }
 
-            GameObject knifeProjectile = Instantiate(knifeRockPrefab, gameObject.transform.position, Quaternion.identity);
-            knifeProjectile.GetComponent<Rigidbody>().velocity = dir.normalized * rockSpeed;
-            Destroy(knifeProjectile, 1f);
+            // When player swaps inventory slots, direction gets reset to zero and if player
+            // doesn't move the shot will be stationary. This check is to prevent that shot
+            // from occuring
+            if (dir.normalized != Vector3.zero)
+            {
+                // Shows the knife when attacking
+                gameObject.transform.GetChild(0).gameObject.SetActive(true);
+
+                GameObject knifeProjectile = Instantiate(knifeRockPrefab, gameObject.transform.position, Quaternion.identity);
+                knifeProjectile.GetComponent<Rigidbody>().velocity = dir.normalized * rockSpeed;
+                Destroy(knifeProjectile, 1f);
+            }
         }
     }
 
@@ -56,7 +62,7 @@ public class Knife : Movement
         // This gives a warning but because the vector will only be 0 when the player
         // is stationary this is the specific case needing to be check. This effectively
         // saves the previous direction
-        if (PlayerPrefs.GetFloat("PlayerDirectionX") != 0f && PlayerPrefs.GetFloat("PlayerDirectionZ") != 0f)
+        if (!Mathf.Approximately(PlayerPrefs.GetFloat("PlayerDirectionX"), 0f) && !Mathf.Approximately(PlayerPrefs.GetFloat("PlayerDirectionZ"), 0f))
         {
             dir = new Vector3(PlayerPrefs.GetFloat("PlayerDirectionX"), PlayerPrefs.GetFloat("PlayerDirectionY"), PlayerPrefs.GetFloat("PlayerDirectionZ"));
         }

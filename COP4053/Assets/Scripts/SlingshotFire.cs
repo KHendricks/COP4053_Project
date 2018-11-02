@@ -27,8 +27,8 @@ public class SlingshotFire : Movement
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
         }
 
-        FireSlingshot();
         UpdateDirection();
+        FireSlingshot();
 	}
 
     public void FireSlingshot()
@@ -40,17 +40,24 @@ public class SlingshotFire : Movement
             if (mutex)
             {
                 mutex = false;
-                // enables the slingshot when fired
-                gameObject.transform.GetChild(0).gameObject.SetActive(true);
                 StartCoroutine("EnableShot");
             }
 
             // Sets the ammo
             PlayerPrefs.SetInt("SlingshotAmmo", ammo - 1);
 
-            GameObject rockProjectile = Instantiate(slingshotRockPrefab, gameObject.transform.position, Quaternion.identity);
-            rockProjectile.GetComponent<Rigidbody>().velocity = dir.normalized * rockSpeed;
-            Destroy(rockProjectile, 5);
+            // When player swaps inventory slots, direction gets reset to zero and if player
+            // doesn't move the shot will be stationary. This check is to prevent that shot
+            // from occuring
+            if (dir.normalized != Vector3.zero)
+            {
+                // enables the slingshot when fired
+                gameObject.transform.GetChild(0).gameObject.SetActive(true);
+
+                GameObject rockProjectile = Instantiate(slingshotRockPrefab, gameObject.transform.position, Quaternion.identity);
+                rockProjectile.GetComponent<Rigidbody>().velocity = dir.normalized * rockSpeed;
+                Destroy(rockProjectile, 5);
+            }
         }
     }
 
@@ -59,7 +66,7 @@ public class SlingshotFire : Movement
         // This gives a warning but because the vector will only be 0 when the player
         // is stationary this is the specific case needing to be check. This effectively
         // saves the previous direction
-        if (PlayerPrefs.GetFloat("PlayerDirectionX") != 0f && PlayerPrefs.GetFloat("PlayerDirectionZ") != 0f)
+        if (!Mathf.Approximately(PlayerPrefs.GetFloat("PlayerDirectionX"), 0f) && !Mathf.Approximately(PlayerPrefs.GetFloat("PlayerDirectionZ"), 0f))
         {
             dir = new Vector3(PlayerPrefs.GetFloat("PlayerDirectionX"), PlayerPrefs.GetFloat("PlayerDirectionY"), PlayerPrefs.GetFloat("PlayerDirectionZ"));
         }
