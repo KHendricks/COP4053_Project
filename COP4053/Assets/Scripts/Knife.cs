@@ -21,6 +21,12 @@ public class Knife : Movement
     // Update is called once per frame
     void Update()
     {
+        // Hides the knife when not being fired
+        if (mutex)
+        {
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        }
+
         FireKnife();
         UpdateDirection();
     }
@@ -33,6 +39,9 @@ public class Knife : Movement
             if (mutex)
             {
                 mutex = false;
+
+                // Shows the knife when attacking
+                gameObject.transform.GetChild(0).gameObject.SetActive(true);
                 StartCoroutine("EnableAttack");
             }
 

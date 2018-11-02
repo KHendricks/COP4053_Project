@@ -21,6 +21,12 @@ public class SlingshotFire : Movement
 	// Update is called once per frame
 	void Update ()
     {
+        // Hides the slingshot when not being fired
+        if (mutex)
+        {
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        }
+
         FireSlingshot();
         UpdateDirection();
 	}
@@ -34,6 +40,8 @@ public class SlingshotFire : Movement
             if (mutex)
             {
                 mutex = false;
+                // enables the slingshot when fired
+                gameObject.transform.GetChild(0).gameObject.SetActive(true);
                 StartCoroutine("EnableShot");
             }
 
