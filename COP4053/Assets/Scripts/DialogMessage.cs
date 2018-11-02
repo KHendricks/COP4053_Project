@@ -12,6 +12,7 @@ public class DialogMessage : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         messageContainer.SetActive(false);
+        dismissed = false;
     }
 	
 	// Update is called once per frame

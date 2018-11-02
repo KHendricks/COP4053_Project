@@ -13,10 +13,12 @@ public class Player : Movement {
     public GameObject knife;
     public bool showKnife;
     public Dog dog;
+    public bool hasKey;
 
 	// Use this for initialization
 	void Start () {
         showKnife = false;
+        hasKey = false;
         animator = GetComponentInChildren<Animator>();
         stateManager = new StateManager<Player>();
         stateManager.Add("normal", new NormalState());

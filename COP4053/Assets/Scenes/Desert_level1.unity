@@ -287,8 +287,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946f90f2b8f254e16a3d993b1d7e9bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1416046952}
   dog: {fileID: 470538754}
   context: {fileID: 1921409671}
+  dialog: {fileID: 1408187289}
 --- !u!65 &37947257
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2943,11 +2945,75 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481970164}
   m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.033347216, y: 0.028012522, z: 0.030155139}
+  m_Center: {x: -0.005903319, y: 0.0012608037, z: 0.010916372}
+--- !u!114 &481970166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 481970164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927f831f5f2b84db085886931a6bdec3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  context: {fileID: 1921409671}
+  dialog: {fileID: 1408187289}
+  player: {fileID: 1416046952}
+  treasure: {fileID: 661201017}
+  treasureName: slingshot
+--- !u!65 &481970167
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 481970164}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.022320805, y: 0.019667568, z: 0.023390463}
-  m_Center: {x: -0.00039011356, y: -0.000008889674, z: 0.007534031}
+  m_Size: {x: 0.004500675, y: 0.017852515, z: 0.023390463}
+  m_Center: {x: 0.008519959, y: 0.00089864526, z: 0.0075340294}
+--- !u!65 &481970168
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 481970164}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0043790564, y: 0.017496701, z: 0.023390463}
+  m_Center: {x: -0.009361002, y: 0.0010765465, z: 0.0075340294}
+--- !u!65 &481970169
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 481970164}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.022320805, y: 0.001862529, z: 0.023390463}
+  m_Center: {x: -0.0003901116, y: -0.007144589, z: 0.0075340294}
+--- !u!65 &481970170
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 481970164}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.022320805, y: 0.00198269, z: 0.023390463}
+  m_Center: {x: -0.00039011246, y: 0.008833554, z: 0.0075340294}
 --- !u!1 &499945093
 GameObject:
   m_ObjectHideFlags: 0
@@ -9175,6 +9241,7 @@ MonoBehaviour:
   knife: {fileID: 0}
   showKnife: 0
   dog: {fileID: 470538754}
+  hasKey: 0
 --- !u!1 &1434517567
 GameObject:
   m_ObjectHideFlags: 0

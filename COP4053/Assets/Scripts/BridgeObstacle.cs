@@ -7,6 +7,7 @@ public class BridgeObstacle : MonoBehaviour {
     public Dog dog;
     public DialogMessage dialog;
 
+
     void OnTriggerStay(Collider other)
     {
         if(other.gameObject.tag == "Dog" && !dialog.dismissed)
