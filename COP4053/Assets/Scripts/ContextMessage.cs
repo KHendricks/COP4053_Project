@@ -34,14 +34,14 @@ public class ContextMessage : MonoBehaviour
     {
         messageContainer.SetActive(true);
         actionOption.text = message;
-        button.SetActive(true);
+        //button.SetActive(true);
     }
 
     public void Deactivate(GameObject button)
     {
         messageContainer.SetActive(false);
         actionOption.text = "";
-        button.SetActive(false);
+        //button.SetActive(false);
     }
 
 }
