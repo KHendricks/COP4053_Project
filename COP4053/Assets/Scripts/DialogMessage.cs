@@ -22,14 +22,20 @@ public class DialogMessage : MonoBehaviour {
 
     public void Activate(string message)
     {
+        dismissed = false;
         messageContainer.SetActive(true);
+        //Debug.Log("Trying to activate " + message + " dialog");
         this.message.text = message;
     }
 
     public void Deactivate()
     {
-        messageContainer.SetActive(false);
-        message.text = "";
+        if(dismissed)
+        {
+            messageContainer.SetActive(false);
+            message.text = "";
+        }
+
     }
 
 }

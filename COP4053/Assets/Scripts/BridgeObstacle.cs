@@ -6,22 +6,48 @@ public class BridgeObstacle : MonoBehaviour {
 
     public Dog dog;
     public DialogMessage dialog;
+    bool crossing;
 
-
-    void OnTriggerStay(Collider other)
+    void Start()
     {
-        if(other.gameObject.tag == "Dog" && !dialog.dismissed)
+        crossing = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Dog")
         {
+            crossing = true;
             dog.followPlayer = false;
             dog.stateManager.Switch("stay");
-            dialog.Activate("Boof boof! /n(That bridge looks sketchy...I'll wait for you here.)");
+            dialog.Activate("Boof boof! (That bridge looks sketchy...I'll wait for you here.)");
+        }
+    }
 
+    void Update()
+    {
+        if(crossing)
+        {
             if(Input.GetKeyDown(KeyCode.Z))
             {
-                dialog.Deactivate();
                 dialog.dismissed = true;
+                dialog.Deactivate();
             }
         }
     }
+
+    //void OnTriggerStay(Collider other)
+    //{
+    //    if(other.gameObject.tag == "Dog" && !dialog.dismissed)
+    //    {
+    //        dog.followPlayer = false;
+    //        dog.stateManager.Switch("stay");
+    //        dialog.Activate("Boof boof! (That bridge looks sketchy...I'll wait for you here.)");
+
+    //        dialog.dismissed |= Input.GetKeyDown(KeyCode.Z);
+
+    //    }
+    //    dialog.Deactivate();
+    //}
 
 }

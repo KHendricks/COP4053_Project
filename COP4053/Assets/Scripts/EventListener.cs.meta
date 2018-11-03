@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: af47ede0a52a341c6a701576a2b71af6
+guid: 981ebdc6f98a4448cac819ad607d30c5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - slingshotRockPrefab: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
