@@ -156,6 +156,6 @@ MonoBehaviour:
   currentDirection: {x: 0, y: 0}
   isStationary: 0
   speed: 3
-  slingshotRockPrefab: {fileID: 1845833800429534, guid: 210a89fac56fc4e699852fa50781c2f1,
+  slingshotRockPrefab: {fileID: 1212781949971036, guid: 320f14a82bbcc413a8f4025cc7c63e05,
     type: 2}
   rockSpeed: 6

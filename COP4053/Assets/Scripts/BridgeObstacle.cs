@@ -24,6 +24,16 @@ public class BridgeObstacle : MonoBehaviour {
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            crossing = false;
+            dog.followPlayer = true;
+            dog.stateManager.Switch("follow");
+        }
+    }
+
     void Update()
     {
         if(crossing)
