@@ -1,27 +1,156 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour {
+public enum InputAction
+{
+    Interact,
+    Attack,
+    Jump,
+    FollowToggle,
+    Dismiss
+}
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public static class InputManager {
 
-    public bool Interact()
+    public static bool isGamepad;
+
+    public static bool JustPressed(InputAction action)
     {
-        return Input.GetKeyDown(KeyCode.Z);
+        switch(action)
+        {
+            // Pressing 'X' key or 'X' button.
+            case InputAction.Interact:
+                if (Input.GetKeyDown(KeyCode.X))
+                {
+                    isGamepad = false;
+                    return true;
+                }
+                if (Input.GetKeyDown(KeyCode.JoystickButton0)) // **note: none of these joystick buttons are correct, just placeholders
+                {
+                    isGamepad = true;
+                    return true;
+                }
+                return false;
+            // Pressing left shift key or 'B' button.
+            case InputAction.Attack:
+                if (Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                    isGamepad = false;
+                    return true;
+                }
+                if (Input.GetKeyDown(KeyCode.JoystickButton1))
+                {
+                    isGamepad = true;
+                    return true;
+                }
+                return false;
+            // Pressing space bar or 'A' button
+            case InputAction.Jump:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    isGamepad = false;
+                    return true;
+                }
+                if (Input.GetKeyDown(KeyCode.JoystickButton2))
+                {
+                    isGamepad = true;
+                    return true;
+                }
+                return false;
+                // Pressing 'Z' key or 'Y' button.
+            case InputAction.FollowToggle:
+                if (Input.GetKeyDown(KeyCode.Z))
+                {
+                    isGamepad = false;
+                    return true;
+                }
+                if (Input.GetKeyDown(KeyCode.JoystickButton3))
+                {
+                    isGamepad = true;
+                    return true;
+                }
+                return false;
+            // Pressing 'C' key or 'Z' button.
+            case InputAction.Dismiss:
+                if (Input.GetKeyDown(KeyCode.C))
+                {
+                    isGamepad = false;
+                    return true;
+                }
+                if (Input.GetKeyDown(KeyCode.JoystickButton4)) // **note: none of these joystick buttons are correct, just placeholders
+                {
+                    isGamepad = true;
+                    return true;
+                }
+                return false;
+            default:
+                return false;
+        }
     }
 
-    public bool Dismiss()
+    public static bool JustReleased(InputAction action)
     {
-        return Input.GetKeyDown(KeyCode.X);
+        switch (action)
+        {
+            // Releasing 'X' key or 'X' button.
+            case InputAction.Interact:
+                if (Input.GetKeyUp(KeyCode.X))
+                {
+                    return true;
+                }
+                if (Input.GetKeyUp(KeyCode.JoystickButton0)) // **note: none of these joystick buttons are correct, just placeholders
+                {
+                    return true;
+                }
+                return false;
+            // Releasing left shift key or 'B' button.
+            case InputAction.Attack:
+                if (Input.GetKeyUp(KeyCode.LeftShift))
+                {
+                    return true;
+                }
+                if (Input.GetKeyUp(KeyCode.JoystickButton1))
+                {
+                    return true;
+                }
+                return false;
+            // Releasing space bar or 'A' button
+            case InputAction.Jump:
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    return true;
+                }
+                if (Input.GetKeyUp(KeyCode.JoystickButton2))
+                {
+                    return true;
+                }
+                return false;
+            // Releasing 'Z' key or 'Y' button.
+            case InputAction.FollowToggle:
+                if (Input.GetKeyUp(KeyCode.Z))
+                {
+                    return true;
+                }
+                if (Input.GetKeyUp(KeyCode.JoystickButton3))
+                {
+                    return true;
+                }
+                return false;
+            // Releasing 'C' key or 'Z' button.
+            case InputAction.Dismiss:
+                if (Input.GetKeyUp(KeyCode.C))
+                {
+                    return true;
+                }
+                if (Input.GetKeyUp(KeyCode.JoystickButton4))
+                {
+                    return true;
+                }
+                return false;
+            default:
+                return false;
+        }
     }
-
 }

@@ -12,16 +12,32 @@ public class Dog : Movement
     public bool followPlayer;
     public Player player;
     public float distanceFromPlayer;
+    public ContextMessage context;
+    public bool closeEnough;
 
 	// Use this for initialization
 	void Start () 
     {
+        closeEnough = false;
+        followPlayer = false;
         rescued = false;
         animator = GetComponentInChildren<Animator>();
         stateManager = new StateManager<Dog>();
         stateManager.Add("stay", new StayState());
         stateManager.Add("follow", new FollowState());
         stateManager.Switch("stay");
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag == "Player" && rescued && !context.shown)
+        {
+            closeEnough = true;
+            if (followPlayer)
+                context.Activate("stay", InputAction.FollowToggle);
+            else
+                context.Activate("come", InputAction.FollowToggle);
+        }
     }
 
     public void Follow()
@@ -50,4 +66,14 @@ public class Dog : Movement
     {
         stateManager.Update(this);
 	}
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            closeEnough = false;
+            context.Deactivate();
+        }
+            
+    }
 }

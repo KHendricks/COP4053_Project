@@ -7,35 +7,37 @@ public class DialogMessage : MonoBehaviour {
 
     public Text message;
     public GameObject messageContainer;
-    public bool dismissed;
+    public ContextMessage context;
+    public bool active;
 
 	// Use this for initialization
 	void Start () {
         messageContainer.SetActive(false);
-        dismissed = false;
+        active = false;
     }
-	
-	// Update is called once per frame
-	void Update () {
 
+    void Update()
+    {
+        if (active && InputManager.JustPressed(InputAction.Dismiss))
+            Deactivate();
     }
 
     public void Activate(string message)
     {
-        dismissed = false;
+        active = true;
         messageContainer.SetActive(true);
-        //Debug.Log("Trying to activate " + message + " dialog");
+        Debug.Log("Trying to activate " + message + " dialog");
         this.message.text = message;
+        context.Activate("(dismiss)", InputAction.Dismiss);
     }
 
     public void Deactivate()
     {
-        if(dismissed)
-        {
-            messageContainer.SetActive(false);
-            message.text = "";
-        }
-
+        context.Deactivate();
+        messageContainer.SetActive(false);
+        Debug.Log("Deactivating " + message + " dialog");
+        message.text = "";
+        active = false;
     }
 
 }

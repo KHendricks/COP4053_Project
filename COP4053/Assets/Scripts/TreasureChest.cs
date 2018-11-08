@@ -10,15 +10,13 @@ public class TreasureChest : MonoBehaviour {
     public DialogMessage dialog;
     public Player player;
     public string treasureName;
-    bool openAttempted;
-    bool interacted;
     bool present;
+    bool opened;
 
     private void Start()
     {
-        openAttempted = false;
-        interacted = false;
         present = false;
+        opened = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,72 +24,51 @@ public class TreasureChest : MonoBehaviour {
         if(other.gameObject.tag == "Player")
         {
             present = true;
-            context.Activate("(open chest)", context.a);
+            context.Activate("(open chest)", InputAction.Interact);
         }
     }
 
     void Update()
     {
-        if(present)
+        if (present)
         {
-            if(Input.GetKeyDown(KeyCode.Z))
+            if(InputManager.JustPressed(InputAction.Interact))
             {
-                context.Deactivate(context.a);
+                context.Deactivate();
 
                 if(player.hasKey)
                 {
+                    opened = true;
                     PlayerPrefs.SetInt(treasureName, 1);
                     Debug.Log("should be getting slingshot");
-                    dialog.Activate("You got the " + treasureName + "!");
+                    if (!dialog.active)
+                        dialog.Activate("You got the " + treasureName + "!");
                     Debug.Log("did it show message?");
                     player.hasKey = false;
                     Destroy(chest);
                 }
                 else
                 {
-                    dialog.Activate("It's locked.");
+                    if (!dialog.active)
+                        dialog.Activate("It's locked.");
                 }
             }
         }
+        //if (dialog.active && InputManager.JustReleased(InputAction.Interact))
+        //{
+        //    Debug.Log("just released interact with treasure");
+        //    if (InputManager.JustPressed(InputAction.Interact))
+        //        dialog.Deactivate();
+        //}
+
     }
-
-    //void OnTriggerStay(Collider other)
-    //{
-    //    if(other.gameObject.tag == "Player" && !openAttempted)
-    //    {
-    //        context.Activate("open chest", context.a);
-    //        interacted |= Input.GetKeyDown(KeyCode.Z);
-    //        if(interacted)
-    //        {
-    //            openAttempted = true;
-    //            context.Deactivate(context.a);
-
-    //            if (player.hasKey)
-    //            {
-    //                // Play chest animation
-    //                // Present treasure
-    //                // Dialog about treasure
-    //                dialog.Activate("You got the " + treasureName + "!");
-    //                Debug.Log("treasure message dismissed = " + dialog.dismissed);
-    //                player.hasKey = false;
-    //                Destroy(chest);
-    //            }
-    //            else
-    //            {
-    //                dialog.Activate("The chest is locked.");
-    //            }
-    //        }
-    //        dialog.dismissed |= Input.GetKeyDown(KeyCode.Z);
-    //        dialog.Deactivate();
-    //    }
-    //}
 
     private void OnTriggerExit(Collider other)
     {
         present = false;
-        openAttempted = false;
-        context.Deactivate(context.a);
-        dialog.dismissed = true;
-        dialog.Deactivate();
+        context.Deactivate();
+
+        if(opened)
+            Destroy(this);
     }
 }

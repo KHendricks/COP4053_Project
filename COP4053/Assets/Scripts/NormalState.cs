@@ -22,26 +22,30 @@ public class NormalState : IState<Player> {
             owner.animator.Play("Walk");
 
         // Jump
-        if (Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.JoystickButton0)) 
+        if (InputManager.JustPressed(InputAction.Jump))
         {
             if (owner.IsGrounded())
                 owner.GetComponent<Rigidbody>().AddForce(Vector3.up * owner.jumpHeight, ForceMode.Impulse);
 
         }
         // Attack
-        if (Input.GetKeyDown(KeyCode.X))
+        if (InputManager.JustPressed(InputAction.Attack))
             owner.stateManager.Switch("attack");
 
         // Make dog stay/come
-        if(Input.GetKeyDown(KeyCode.C))
+        if(InputManager.JustPressed(InputAction.FollowToggle))
         {
             if (owner.dog.followPlayer)
                 owner.dog.followPlayer = false;
             else
             {
-                float distance = Vector3.Distance(owner.transform.position, owner.dog.transform.position);
-                if (distance <= owner.dog.distanceFromPlayer)
+                //float distance = Vector3.Distance(owner.transform.position, owner.dog.transform.position);
+                //if (distance <= owner.dog.distanceFromPlayer)
+                    //owner.dog.followPlayer = true;
+                if(owner.dog.closeEnough)
+                {
                     owner.dog.followPlayer = true;
+                }
             }
 
         }

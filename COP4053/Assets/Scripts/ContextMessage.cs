@@ -7,41 +7,89 @@ public class ContextMessage : MonoBehaviour
 {
     public Text actionOption;
     public GameObject messageContainer;
-    public GameObject a;
     public GameObject b;
     public GameObject x;
     public GameObject y;
     public GameObject z;
+    public GameObject xKey;
+    public GameObject zKey;
+    public GameObject shiftKey;
+    public GameObject cKey;
+
+    GameObject interact;
+    GameObject dismiss;
+    GameObject attack;
+    GameObject followToggle;
+
+    GameObject active;
+    public bool shown;
+
 
     void Start()
     {
-        //Text sets your text to say this message
-        //actionOption.text = "jump";
         messageContainer.SetActive(false);
-        a.SetActive(false);
         b.SetActive(false);
         x.SetActive(false);
         y.SetActive(false);
         z.SetActive(false);
+        xKey.SetActive(false);
+        zKey.SetActive(false);
+        shiftKey.SetActive(false);
+        cKey.SetActive(false);
     }
 
-    void Update()
+    public void Activate(string message, InputAction action)
     {
-
-    }
-
-    public void Activate(string message, GameObject button)
-    {
+        shown = true;
         messageContainer.SetActive(true);
         actionOption.text = message;
-        //button.SetActive(true);
+
+        if(InputManager.isGamepad)
+        {
+            interact = x;
+            attack = b;
+            followToggle = y;
+            dismiss = z;
+        }
+        else
+        {
+            interact = xKey;
+            attack = shiftKey;
+            followToggle = zKey;
+            dismiss = cKey;
+        }
+
+        switch (action)
+        {
+            case InputAction.Interact:
+                interact.SetActive(true);
+                active = interact;
+                break;
+            case InputAction.Attack:
+                attack.SetActive(true);
+                active = attack;
+                break;
+            case InputAction.FollowToggle:
+                followToggle.SetActive(true);
+                active = followToggle;
+                break;
+            case InputAction.Dismiss:
+                dismiss.SetActive(true);
+                active = dismiss;
+                break;
+            default:
+                return;
+
+        }
+
     }
 
-    public void Deactivate(GameObject button)
+    public void Deactivate()
     {
+        shown = false;
         messageContainer.SetActive(false);
         actionOption.text = "";
-        //button.SetActive(false);
+        active.SetActive(false);
     }
 
 }

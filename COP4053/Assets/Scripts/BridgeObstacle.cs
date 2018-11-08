@@ -20,44 +20,24 @@ public class BridgeObstacle : MonoBehaviour {
             crossing = true;
             dog.followPlayer = false;
             dog.stateManager.Switch("stay");
-            dialog.Activate("Boof boof! (That bridge looks sketchy...I'll wait for you here.)");
+            if (!dialog.active)
+                dialog.Activate("Boof boof! (That bridge looks sketchy...I'll wait for you here.)");
         }
     }
+
+    //void Update()
+    //{
+    //    if(dialog.active && crossing)
+    //    {
+    //        if(InputManager.JustPressed(InputAction.Interact))
+    //        {
+    //            dialog.Deactivate();
+    //        }
+    //    }
+    //}
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            crossing = false;
-            dog.followPlayer = true;
-            dog.stateManager.Switch("follow");
-        }
+        crossing = false;
     }
-
-    void Update()
-    {
-        if(crossing)
-        {
-            if(Input.GetKeyDown(KeyCode.Z))
-            {
-                dialog.dismissed = true;
-                dialog.Deactivate();
-            }
-        }
-    }
-
-    //void OnTriggerStay(Collider other)
-    //{
-    //    if(other.gameObject.tag == "Dog" && !dialog.dismissed)
-    //    {
-    //        dog.followPlayer = false;
-    //        dog.stateManager.Switch("stay");
-    //        dialog.Activate("Boof boof! (That bridge looks sketchy...I'll wait for you here.)");
-
-    //        dialog.dismissed |= Input.GetKeyDown(KeyCode.Z);
-
-    //    }
-    //    dialog.Deactivate();
-    //}
-
 }
