@@ -2632,6 +2632,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4645327506548018, guid: 93264bfa872e04688ad5a70e4da1d5e0,
     type: 2}
   m_PrefabInternal: {fileID: 399434833}
+--- !u!212 &402260971 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212254109680252522, guid: 118192b61e71142399b7e38eaab0b9d2,
+    type: 2}
+  m_PrefabInternal: {fileID: 951128872}
 --- !u!1001 &416347076
 Prefab:
   m_ObjectHideFlags: 0
@@ -10859,10 +10864,11 @@ MonoBehaviour:
   health: 3
   knifeForInventory: {fileID: 0}
   spotted: 0
-  player: {fileID: 1416046952}
+  player: {fileID: 1416046946}
   distanceFromPlayer: 0
   notAttackedRecently: 0
   mutex: 0
+  playerSpriteRenderer: {fileID: 402260971}
 --- !u!1001 &1662836929
 Prefab:
   m_ObjectHideFlags: 0
@@ -12374,6 +12380,7 @@ MonoBehaviour:
   zKey: {fileID: 1118284092}
   shiftKey: {fileID: 1861729966}
   cKey: {fileID: 1292905211}
+  shown: 0
 --- !u!1001 &1922426078
 Prefab:
   m_ObjectHideFlags: 0
