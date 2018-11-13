@@ -158,11 +158,6 @@ public class GuardEnemy : Movement
         material.SetColor("_Color", Color.white);
         yield return new WaitForSeconds(0.33f);
 
-        material.SetColor("_Color", Color.red);
-        yield return new WaitForSeconds(0.33f);
-        material.SetColor("_Color", Color.white);
-        yield return new WaitForSeconds(0.33f);
-
         mutexTwo = true;
     }
 }

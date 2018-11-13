@@ -65,14 +65,14 @@ public class PlayerInventory : MonoBehaviour
         switch(selectorIndex)
         {
             // Lasso
-            case 0:
+            case 2:
                 // Destroy the nonselected weapons
                 DestroySlingshot();
                 DestroyKnife();
 
                 // Need to check if slot is active first (this is to ensure the
                 // the player has the item)
-                if (!inventorySlots[0].activeSelf)
+                if (!inventorySlots[2].activeSelf)
                 {
                     break;
                 }
@@ -107,11 +107,11 @@ public class PlayerInventory : MonoBehaviour
                 break;
 
             // Slingshot
-            case 2:
+            case 0:
                 // Destroy the nonselected weapons
                 DestroyKnife();
 
-                if (!inventorySlots[2].activeSelf)
+                if (!inventorySlots[0].activeSelf)
                 {
                     break;
                 }
@@ -157,11 +157,11 @@ public class PlayerInventory : MonoBehaviour
         // Loads the inventory UI based on the playerprefs
         if (PlayerPrefs.GetInt("Lasso") == 1)
         {
-            inventorySlots[0].SetActive(true);
+            inventorySlots[2].SetActive(true);
         }
         else
         {
-            inventorySlots[0].SetActive(false);
+            inventorySlots[2].SetActive(false);
         }
 
         if (PlayerPrefs.GetInt("Knife") == 1)
@@ -174,12 +174,12 @@ public class PlayerInventory : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("Slingshot") == 1)
         {
-            inventorySlots[2].SetActive(true);
+            inventorySlots[0].SetActive(true);
             slingshotAmmoAmount.SetActive(true);
         }
         else
         {
-            inventorySlots[2].SetActive(false);
+            inventorySlots[0].SetActive(false);
             slingshotAmmoAmount.SetActive(false);
         }
     }
@@ -191,13 +191,20 @@ public class PlayerInventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.JoystickButton4))
         {
             int selectorIndex = (PlayerPrefs.GetInt("InventorySlotSelected") - 1);
-            if (selectorIndex <= -1)
+
+            // This if statement stops the selector from going to positions without 
+            // an active weapon
+            if (inventorySlots[selectorIndex].activeSelf)
             {
-                selectorIndex = 2;
+
+                if (selectorIndex <= -1)
+                {
+                    selectorIndex = 2;
+                }
+
+                selector.transform.position = new Vector3(inventorySlots[selectorIndex].transform.position.x, selector.transform.position.y, selector.transform.position.z);
+                PlayerPrefs.SetInt("InventorySlotSelected", selectorIndex);
             }
-         
-            selector.transform.position = new Vector3(inventorySlots[selectorIndex].transform.position.x, selector.transform.position.y, selector.transform.position.z);
-            PlayerPrefs.SetInt("InventorySlotSelected", selectorIndex);
         }
 
         // Cycle selector to the right
@@ -205,13 +212,19 @@ public class PlayerInventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton5))
         {
             int selectorIndex = (PlayerPrefs.GetInt("InventorySlotSelected") + 1);
-            if (selectorIndex >= 3)
-            {
-                selectorIndex = 0;
-            }
 
-            selector.transform.position = new Vector3(inventorySlots[selectorIndex].transform.position.x, selector.transform.position.y, selector.transform.position.z);
-            PlayerPrefs.SetInt("InventorySlotSelected", selectorIndex);
+            // This if statement stops the selector from going to positions without 
+            // an active weapon
+            if (inventorySlots[selectorIndex].activeSelf)
+            {
+                if (selectorIndex >= 3)
+                {
+                    selectorIndex = 0;
+                }
+
+                selector.transform.position = new Vector3(inventorySlots[selectorIndex].transform.position.x, selector.transform.position.y, selector.transform.position.z);
+                PlayerPrefs.SetInt("InventorySlotSelected", selectorIndex);
+            }
         }
     }
 }
