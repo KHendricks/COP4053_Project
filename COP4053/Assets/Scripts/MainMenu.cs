@@ -14,8 +14,21 @@ public class MainMenu : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-		
-	}
+        if (Input.GetKeyUp(KeyCode.JoystickButton0) && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainMenu"))
+        {
+            LoadLevelOne();
+        }
+
+        if (Input.GetKeyUp(KeyCode.JoystickButton0) && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("WinScreen"))
+        {
+            GameOver();
+        }
+
+        if (Input.GetKeyUp(KeyCode.JoystickButton0) && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("LoseScreen"))
+        {
+            GameOver();
+        }
+    }
 
     public void LoadLevelOne()
     {
