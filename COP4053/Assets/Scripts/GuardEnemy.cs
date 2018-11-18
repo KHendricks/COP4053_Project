@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
-public class GuardEnemy : Movement {
+public class GuardEnemy : Movement
+{
 
     public int dropIndex;
     public GameObject[] dropItem;
@@ -13,14 +14,20 @@ public class GuardEnemy : Movement {
     public int health;
     public GameObject knifeForInventory;
     public bool spotted;
-    public Player player;
+    public GameObject player;
     public float distanceFromPlayer;
     public bool notAttackedRecently;
-    public bool mutex;
+    public bool mutex, mutexTwo;
+
+    private Material guardEnemyMaterial;
+    public SpriteRenderer playerSpriteRenderer;
 
     // Use this for initialization
-    void Start () {
-        notAttackedRecently = mutex = true;
+    void Start()
+    {
+        guardEnemyMaterial = GetComponent<SpriteRenderer>().material;
+
+        notAttackedRecently = mutex = mutexTwo = true;
         spotted = false;
         distanceFromPlayer = 0.5f;
         animator = GetComponentInChildren<Animator>();
@@ -30,11 +37,12 @@ public class GuardEnemy : Movement {
 
         stateManager.Switch("guard");
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         stateManager.Update(this);
-	}
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -44,12 +52,26 @@ public class GuardEnemy : Movement {
             Destroy(other.gameObject);
             health -= PlayerPrefs.GetInt("PlayerBaseDamage");
             KillEnemy();
+
+            // Makes enemy flash red
+            if (mutexTwo)
+            {
+                mutexTwo = false;
+                StartCoroutine(Flash(guardEnemyMaterial));
+            }
         }
 
         if (other.gameObject.tag == "Knife")
         {
             health -= PlayerPrefs.GetInt("PlayerBaseDamage");
             KillEnemy();
+
+            // Makes enemy flash red
+            if (mutexTwo)
+            {
+                mutexTwo = false;
+                StartCoroutine(Flash(guardEnemyMaterial));
+            }
         }
     }
 
@@ -61,7 +83,7 @@ public class GuardEnemy : Movement {
             DropItem();
         }
     }
-    
+
     public void Chase()
     {
         // The step size is equal to speed times frame time.
@@ -122,7 +144,20 @@ public class GuardEnemy : Movement {
 
     IEnumerator AttackTimer()
     {
+        StartCoroutine(Flash(playerSpriteRenderer.material));
         yield return new WaitForSeconds(2f);
         notAttackedRecently = mutex = true;
+    }
+
+    // The variable being passed is the spriteRenderer material of the object
+    // that needs to "Flash"
+    IEnumerator Flash(Material material)
+    {
+        material.SetColor("_Color", Color.red);
+        yield return new WaitForSeconds(0.33f);
+        material.SetColor("_Color", Color.white);
+        yield return new WaitForSeconds(0.33f);
+
+        mutexTwo = true;
     }
 }

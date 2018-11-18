@@ -25,7 +25,7 @@ public class LevelExit : MonoBehaviour {
 
         if (dogExit && playerExit)
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("WinScreen");
         }
     }
 }

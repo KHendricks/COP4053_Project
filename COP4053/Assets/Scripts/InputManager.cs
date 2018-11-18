@@ -27,7 +27,7 @@ public static class InputManager {
                     isGamepad = false;
                     return true;
                 }
-                if (Input.GetKeyDown(KeyCode.JoystickButton0)) // **note: none of these joystick buttons are correct, just placeholders
+                if (Input.GetKeyDown(KeyCode.JoystickButton2)) // **note: none of these joystick buttons are correct, just placeholders
                 {
                     isGamepad = true;
                     return true;
@@ -53,7 +53,7 @@ public static class InputManager {
                     isGamepad = false;
                     return true;
                 }
-                if (Input.GetKeyDown(KeyCode.JoystickButton2))
+                if (Input.GetKeyDown(KeyCode.JoystickButton0))
                 {
                     isGamepad = true;
                     return true;
@@ -72,14 +72,14 @@ public static class InputManager {
                     return true;
                 }
                 return false;
-            // Pressing 'C' key or 'Z' button.
+            // Pressing 'C' key or 'Back' button.
             case InputAction.Dismiss:
                 if (Input.GetKeyDown(KeyCode.C))
                 {
                     isGamepad = false;
                     return true;
                 }
-                if (Input.GetKeyDown(KeyCode.JoystickButton4)) // **note: none of these joystick buttons are correct, just placeholders
+                if (Input.GetKeyDown(KeyCode.JoystickButton6)) // **note: none of these joystick buttons are correct, just placeholders
                 {
                     isGamepad = true;
                     return true;
@@ -100,7 +100,7 @@ public static class InputManager {
                 {
                     return true;
                 }
-                if (Input.GetKeyUp(KeyCode.JoystickButton0)) // **note: none of these joystick buttons are correct, just placeholders
+                if (Input.GetKeyUp(KeyCode.JoystickButton2)) // **note: none of these joystick buttons are correct, just placeholders
                 {
                     return true;
                 }
@@ -122,7 +122,7 @@ public static class InputManager {
                 {
                     return true;
                 }
-                if (Input.GetKeyUp(KeyCode.JoystickButton2))
+                if (Input.GetKeyUp(KeyCode.JoystickButton0))
                 {
                     return true;
                 }
@@ -138,13 +138,13 @@ public static class InputManager {
                     return true;
                 }
                 return false;
-            // Releasing 'C' key or 'Z' button.
+            // Releasing 'C' key or 'Back' button.
             case InputAction.Dismiss:
                 if (Input.GetKeyUp(KeyCode.C))
                 {
                     return true;
                 }
-                if (Input.GetKeyUp(KeyCode.JoystickButton4))
+                if (Input.GetKeyUp(KeyCode.JoystickButton6))
                 {
                     return true;
                 }
