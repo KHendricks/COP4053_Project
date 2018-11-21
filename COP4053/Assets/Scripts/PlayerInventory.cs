@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,12 +12,12 @@ public class PlayerInventory : MonoBehaviour
     public GameObject selector;
 
     // Weapon prefabs to load
-    public GameObject slingshotPrefab, knifePrefab;
+    public GameObject slingshotPrefab, knifePrefab, lassoPrefab;
 
     // Variables where the prefabs are loaded
-    public GameObject slingshot, knife;
+    private GameObject slingshot, knife, lasso;
 
-    public bool slingshotDisplayed, knifeDisplayed;
+    private bool slingshotDisplayed, knifeDisplayed, lassoDisplayed;
     public GameObject slingshotAmmoAmount;
 
 	// Use this for initialization
@@ -33,7 +34,7 @@ public class PlayerInventory : MonoBehaviour
         }
 
         // Defaults the display of the weapons to false
-        slingshotDisplayed = knifeDisplayed = false;
+        slingshotDisplayed = knifeDisplayed = lassoDisplayed = false;
 
         LoadInventory();
 	}
@@ -52,6 +53,12 @@ public class PlayerInventory : MonoBehaviour
         // item selected
         // TODO: This is a WIP
         DisplayCurrent();
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            GiveKnife();
+            GiveSlingshot();
+        }
     }
 
     void DisplayCurrent()
@@ -76,12 +83,30 @@ public class PlayerInventory : MonoBehaviour
                 {
                     break;
                 }
+
+                // Spawn the lasso at the player's position
+                if (!lassoDisplayed)
+                {
+                    lassoDisplayed = true;
+                    lasso = Instantiate(lassoPrefab, player.transform.position, Quaternion.identity);
+                }
+
+                // Keep the lasso attached to the player
+                float lassoOffset = .2f;
+                if (lassoDisplayed)
+                {
+                    float xDir = PlayerPrefs.GetFloat("PlayerDirectionX") / 6;
+                    float zDir = PlayerPrefs.GetFloat("PlayerDirectionZ") / 6;
+                    lasso.transform.position = new Vector3(player.transform.position.x + xDir, player.transform.position.y + lassoOffset, player.transform.position.z + zDir);
+                }
+
                 break;
 
             // Knife
             case 1:
                 // Destroy the nonselected weapons
                 DestroySlingshot();
+                DestroyLasso();
 
                 if (!inventorySlots[1].activeSelf)
                 {
@@ -110,6 +135,7 @@ public class PlayerInventory : MonoBehaviour
             case 0:
                 // Destroy the nonselected weapons
                 DestroyKnife();
+                DestroyLasso();
 
                 if (!inventorySlots[0].activeSelf)
                 {
@@ -152,6 +178,12 @@ public class PlayerInventory : MonoBehaviour
         knifeDisplayed = false;
     }
 
+    void DestroyLasso()
+    {
+        Destroy(lasso);
+        lassoDisplayed = false;
+    }
+
     void LoadInventory()
     {
         // Loads the inventory UI based on the playerprefs
@@ -190,41 +222,79 @@ public class PlayerInventory : MonoBehaviour
         // JoystickButton4 is the left bumper on an Xbox one controller
         if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.JoystickButton4))
         {
+            int prevIndex = PlayerPrefs.GetInt("InventorySlotSelected");
             int selectorIndex = (PlayerPrefs.GetInt("InventorySlotSelected") - 1);
 
             // This if statement stops the selector from going to positions without 
             // an active weapon
-            if (inventorySlots[selectorIndex].activeSelf)
+
+            if (selectorIndex <= -1)
             {
+                selectorIndex = 2;
 
-                if (selectorIndex <= -1)
+                if (inventorySlots[selectorIndex].activeSelf)
                 {
-                    selectorIndex = 2;
+                    selector.transform.position = new Vector3(inventorySlots[selectorIndex].transform.position.x, selector.transform.position.y, selector.transform.position.z);
+                    PlayerPrefs.SetInt("InventorySlotSelected", selectorIndex);
                 }
-
-                selector.transform.position = new Vector3(inventorySlots[selectorIndex].transform.position.x, selector.transform.position.y, selector.transform.position.z);
-                PlayerPrefs.SetInt("InventorySlotSelected", selectorIndex);
+                else
+                {
+                    PlayerPrefs.SetInt("InventorySlotSelected", prevIndex);
+                }
             }
+            else
+            {
+                if (inventorySlots[selectorIndex].activeSelf)
+                {
+                    selector.transform.position = new Vector3(inventorySlots[selectorIndex].transform.position.x, selector.transform.position.y, selector.transform.position.z);
+                    PlayerPrefs.SetInt("InventorySlotSelected", selectorIndex);
+                }
+            }
+
+
         }
 
         // Cycle selector to the right
         // JoystickButton5 is the right bumper on an Xbox one controller
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton5))
         {
+            int prevIndex = PlayerPrefs.GetInt("InventorySlotSelected");
             int selectorIndex = (PlayerPrefs.GetInt("InventorySlotSelected") + 1);
 
             // This if statement stops the selector from going to positions without 
             // an active weapon
-            if (inventorySlots[selectorIndex].activeSelf)
+            if (selectorIndex >= 3)
             {
-                if (selectorIndex >= 3)
-                {
-                    selectorIndex = 0;
-                }
+                selectorIndex = 0;
 
-                selector.transform.position = new Vector3(inventorySlots[selectorIndex].transform.position.x, selector.transform.position.y, selector.transform.position.z);
-                PlayerPrefs.SetInt("InventorySlotSelected", selectorIndex);
+                if (inventorySlots[selectorIndex].activeSelf)
+                {
+                    selector.transform.position = new Vector3(inventorySlots[selectorIndex].transform.position.x, selector.transform.position.y, selector.transform.position.z);
+                    PlayerPrefs.SetInt("InventorySlotSelected", selectorIndex);
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("InventorySlotSelected", prevIndex);
+                }
+            }
+            else
+            {
+                if (inventorySlots[selectorIndex].activeSelf)
+                {
+                    selector.transform.position = new Vector3(inventorySlots[selectorIndex].transform.position.x, selector.transform.position.y, selector.transform.position.z);
+                    PlayerPrefs.SetInt("InventorySlotSelected", selectorIndex);
+                }
             }
         }
+    }
+
+    void GiveKnife()
+    {
+        PlayerPrefs.SetInt("Knife", 1);
+    }
+
+    void GiveSlingshot()
+    {
+        PlayerPrefs.SetInt("Slingshot", 1);
     }
 }

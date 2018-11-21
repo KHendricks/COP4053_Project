@@ -8616,10 +8616,8 @@ MonoBehaviour:
     type: 2}
   knifePrefab: {fileID: 1742685323964492, guid: b4d2004744c85498ba2b81a4c1218928,
     type: 2}
-  slingshot: {fileID: 0}
-  knife: {fileID: 0}
-  slingshotDisplayed: 0
-  knifeDisplayed: 0
+  lassoPrefab: {fileID: 1883176455803798, guid: 1250d6f539d88442bb40263b52bcf460,
+    type: 2}
   slingshotAmmoAmount: {fileID: 1350422356}
 --- !u!1001 &1290968653
 Prefab:
@@ -10273,6 +10271,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4479340957203802, guid: fa743b68538fa4b95af247bf873f2f12,
     type: 2}
   m_PrefabInternal: {fileID: 1506553785}
+--- !u!1 &1507846966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1514852999291942, guid: c392d39441348497880ea9c3fd34a7c9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1565632239}
+--- !u!114 &1507846967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1507846966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4dd1f3d051404b45b93e2affe1bca63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1507846968
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1507846966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1540235769
 Prefab:
   m_ObjectHideFlags: 0
@@ -10414,6 +10440,67 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1564499873}
   m_CullTransparentMesh: 0
+--- !u!1001 &1565632239
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4997631807401798, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.9639354
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997631807401798, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.42205
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997631807401798, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -2.222034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997631807401798, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997631807401798, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.773285
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997631807401798, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997631807401798, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.6340587
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997631807401798, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514852999291942, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+      propertyPath: m_Name
+      value: Lasso
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997631807401798, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997631807401798, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997631807401798, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114195515948714674, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+    - {fileID: 65020775044132108, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+    - {fileID: 65194848070448514, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: c392d39441348497880ea9c3fd34a7c9, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1565752790
 Prefab:
   m_ObjectHideFlags: 0

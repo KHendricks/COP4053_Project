@@ -34,7 +34,7 @@ public class Knife : Movement
     public void FireKnife()
     {
         // On enter press instantiate a rock projectile
-        if (Input.GetKeyDown(KeyCode.Return) && enableFire)
+        if (InputManager.JustPressed(InputAction.Attack) && enableFire)
         {
             if (mutex)
             {
