@@ -52,7 +52,7 @@ public class Knife : Movement
 
                 GameObject knifeProjectile = Instantiate(knifeRockPrefab, gameObject.transform.position, Quaternion.identity);
                 knifeProjectile.GetComponent<Rigidbody>().velocity = dir.normalized * rockSpeed;
-                Destroy(knifeProjectile, 1f);
+                Destroy(knifeProjectile, .3f);
             }
         }
     }
