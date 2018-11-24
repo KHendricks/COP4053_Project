@@ -13,7 +13,7 @@ public class Tips : MonoBehaviour
 	void Start () 
     {
         tipList = new List<string>();
-        tipList.Add("Rescue the dog and find your slingshot.");
+        tipList.Add("Beware of blackhats! The villainous dognappers will do anything to protect their treasure.");
 	}
 	
 	// Update is called once per frame

@@ -21,6 +21,7 @@ public class GuardEnemy : Movement
     public bool wanderEnabled;
     private Material guardEnemyMaterial;
     public SpriteRenderer playerSpriteRenderer;
+    public bool isAttacking;
 
     public GameObject waypoint;
     // Use this for initialization
@@ -131,12 +132,14 @@ public class GuardEnemy : Movement
         // and locks it from happening again for 2 seconds
         if (notAttackedRecently)
         {
+            isAttacking = true;
+            animator.Play("Attack");
             Debug.Log(PlayerPrefs.GetInt("PlayerHealth"));
             PlayerPrefs.SetInt("PlayerHealth", PlayerPrefs.GetInt("PlayerHealth") - 1);
             Debug.Log(PlayerPrefs.GetInt("PlayerHealth"));
             notAttackedRecently = false;
         }
-
+        isAttacking = false;
         if (WaitForAttackTimer)
         {
             WaitForAttackTimer = false;

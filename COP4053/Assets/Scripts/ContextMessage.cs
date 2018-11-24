@@ -10,7 +10,7 @@ public class ContextMessage : MonoBehaviour
     public GameObject b;
     public GameObject x;
     public GameObject y;
-    public GameObject z;
+    public GameObject back;
     public GameObject xKey;
     public GameObject zKey;
     public GameObject shiftKey;
@@ -31,7 +31,7 @@ public class ContextMessage : MonoBehaviour
         b.SetActive(false);
         x.SetActive(false);
         y.SetActive(false);
-        z.SetActive(false);
+        back.SetActive(false);
         xKey.SetActive(false);
         zKey.SetActive(false);
         shiftKey.SetActive(false);
@@ -49,7 +49,7 @@ public class ContextMessage : MonoBehaviour
             interact = x;
             attack = b;
             followToggle = y;
-            dismiss = z;
+            dismiss = back;
         }
         else
         {

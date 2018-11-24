@@ -10,6 +10,7 @@ public class PlayerInventory : MonoBehaviour
     public GameObject player;
     public GameObject[] inventorySlots;
     public GameObject selector;
+    public ContextMessage context;
 
     // Weapon prefabs to load
     public GameObject slingshotPrefab, knifePrefab, lassoPrefab;
@@ -118,6 +119,7 @@ public class PlayerInventory : MonoBehaviour
                 {
                     knifeDisplayed = true;
                     knife = Instantiate(knifePrefab, player.transform.position, Quaternion.identity);
+                    context.Activate("attack", InputAction.Attack);
                 }
 
                 // Keep the slingshot attached to the player
@@ -147,6 +149,7 @@ public class PlayerInventory : MonoBehaviour
                 {
                     slingshotDisplayed = true;
                     slingshot = Instantiate(slingshotPrefab, player.transform.position, Quaternion.identity);
+                    context.Activate("shoot", InputAction.Attack);
                 }
 
                 // Keep the slingshot attached to the player

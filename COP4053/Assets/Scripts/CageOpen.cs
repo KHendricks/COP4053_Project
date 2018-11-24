@@ -43,11 +43,6 @@ public class CageOpen : MonoBehaviour {
                 Destroy(cage);
             }
         }
-        //if (dialog.active && InputManager.JustReleased(InputAction.Interact))
-        //{
-        //    if (InputManager.JustPressed(InputAction.Interact))
-        //        dialog.Deactivate();
-        //}
     }
 
     private void OnTriggerExit(Collider other)

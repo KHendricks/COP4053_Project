@@ -49,8 +49,7 @@ public class Dog : Movement
         // Move our position a step closer to the target, if player is far enough away
         if (distance > distanceFromPlayer)
         {
-            // Lerp instead of MoveTowards to smooth out the transition.
-            //var dir = Vector3.MoveTowards(transform.position, player.transform.position, step);
+            // Lerp to smooth out the transition.
             var dir = Vector3.Lerp(transform.position, player.transform.position, step);
             transform.position = dir;
         }

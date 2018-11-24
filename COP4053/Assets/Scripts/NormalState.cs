@@ -39,15 +39,11 @@ public class NormalState : IState<Player> {
                 owner.dog.followPlayer = false;
             else
             {
-                //float distance = Vector3.Distance(owner.transform.position, owner.dog.transform.position);
-                //if (distance <= owner.dog.distanceFromPlayer)
-                    //owner.dog.followPlayer = true;
                 if(owner.dog.closeEnough)
                 {
                     owner.dog.followPlayer = true;
                 }
             }
-
         }
     }
 
