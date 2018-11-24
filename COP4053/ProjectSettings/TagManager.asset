@@ -8,6 +8,8 @@ TagManager:
   - SlingshotRock
   - Knife
   - Dog
+  - WanderEnemy
+  - Waypoint
   layers:
   - Default
   - TransparentFX
