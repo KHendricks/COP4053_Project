@@ -173,7 +173,10 @@ public class GuardEnemy : Movement
 
     void Wander()
     {
-        var dir = Vector3.MoveTowards(transform.position, waypoint.transform.position, 1f * Time.deltaTime);
-        transform.position = dir;
+        if (spotted == false)
+        {
+            var dir = Vector3.MoveTowards(transform.position, waypoint.transform.position, 1f * Time.deltaTime);
+            transform.position = dir;
+        }
     }
 }

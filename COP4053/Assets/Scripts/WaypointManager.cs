@@ -35,10 +35,7 @@ public class WaypointManager : MonoBehaviour
 
     void MoveWaypoint()
     {
-        if (enemy.spotted == false)
-        {
-            gameObject.transform.position = RandomPointInBounds(wanderingArea.GetComponent<BoxCollider>().bounds);
-        }
+        gameObject.transform.position = RandomPointInBounds(wanderingArea.GetComponent<BoxCollider>().bounds);
     }
 
     public static Vector3 RandomPointInBounds(Bounds bounds)
