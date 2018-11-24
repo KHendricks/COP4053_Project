@@ -15,19 +15,21 @@ public class GuardEnemy : Movement
     public GameObject knifeForInventory;
     public bool spotted;
     public GameObject player;
-    public float distanceFromPlayer;
-    public bool notAttackedRecently;
-    public bool mutex, mutexTwo;
-
+    private float distanceFromPlayer;
+    private bool notAttackedRecently;
+    private bool WaitForAttackTimer, FlashTimer;
+    public bool wanderEnabled;
     private Material guardEnemyMaterial;
     public SpriteRenderer playerSpriteRenderer;
 
+    public GameObject waypoint;
     // Use this for initialization
     void Start()
     {
         guardEnemyMaterial = GetComponent<SpriteRenderer>().material;
 
-        notAttackedRecently = mutex = mutexTwo = true;
+        notAttackedRecently = WaitForAttackTimer = FlashTimer = true;
+
         spotted = false;
         distanceFromPlayer = 0.5f;
         animator = GetComponentInChildren<Animator>();
@@ -42,6 +44,14 @@ public class GuardEnemy : Movement
     void Update()
     {
         stateManager.Update(this);
+
+        // This will enable the guard to wander around an area.
+        // Make sure there is a collider area attached to the guard
+        // if this is enabled
+        if (wanderEnabled)
+        {
+            Wander();
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -54,9 +64,9 @@ public class GuardEnemy : Movement
             KillEnemy();
 
             // Makes enemy flash red
-            if (mutexTwo)
+            if (FlashTimer)
             {
-                mutexTwo = false;
+                FlashTimer = false;
                 StartCoroutine(Flash(guardEnemyMaterial));
             }
         }
@@ -67,9 +77,9 @@ public class GuardEnemy : Movement
             KillEnemy();
 
             // Makes enemy flash red
-            if (mutexTwo)
+            if (FlashTimer)
             {
-                mutexTwo = false;
+                FlashTimer = false;
                 StartCoroutine(Flash(guardEnemyMaterial));
             }
         }
@@ -127,9 +137,9 @@ public class GuardEnemy : Movement
             notAttackedRecently = false;
         }
 
-        if (mutex)
+        if (WaitForAttackTimer)
         {
-            mutex = false;
+            WaitForAttackTimer = false;
             StartCoroutine("AttackTimer");
         }
     }
@@ -146,7 +156,7 @@ public class GuardEnemy : Movement
     {
         StartCoroutine(Flash(playerSpriteRenderer.material));
         yield return new WaitForSeconds(2f);
-        notAttackedRecently = mutex = true;
+        notAttackedRecently = WaitForAttackTimer = true;
     }
 
     // The variable being passed is the spriteRenderer material of the object
@@ -158,6 +168,15 @@ public class GuardEnemy : Movement
         material.SetColor("_Color", Color.white);
         yield return new WaitForSeconds(0.33f);
 
-        mutexTwo = true;
+        FlashTimer = true;
+    }
+
+    void Wander()
+    {
+        if (spotted == false)
+        {
+            var dir = Vector3.MoveTowards(transform.position, waypoint.transform.position, 1f * Time.deltaTime);
+            transform.position = dir;
+        }
     }
 }
