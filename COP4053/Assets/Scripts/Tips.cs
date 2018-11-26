@@ -23,17 +23,22 @@ public class Tips : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        dialog.Deactivate();
+        if (other.gameObject.tag == "Player")
+        {
+            dialog.Deactivate();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if (!dialog.active)
+        if (other.gameObject.tag == "Player")
         {
-            if (tipIndex >= 0)
+            if (!dialog.active)
             {
-                dialog.Activate(tipList[tipIndex]);
+                if (tipIndex >= 0)
+                {
+                    dialog.Activate(tipList[tipIndex]);
+                }
             }
         }
     }
