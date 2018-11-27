@@ -23,6 +23,7 @@ public class ContextMessage : MonoBehaviour
 
     GameObject active;
     public bool shown;
+    public bool incoming;
 
 
     void Start()
@@ -40,6 +41,12 @@ public class ContextMessage : MonoBehaviour
 
     public void Activate(string message, InputAction action)
     {
+        incoming = true;
+        if (shown)
+        {
+            Debug.Log("a context is already shown for" + message);
+            Deactivate();
+        }
         shown = true;
         messageContainer.SetActive(true);
         actionOption.text = message;
@@ -81,7 +88,7 @@ public class ContextMessage : MonoBehaviour
                 return;
 
         }
-
+        incoming = false;
     }
 
     public void Deactivate()

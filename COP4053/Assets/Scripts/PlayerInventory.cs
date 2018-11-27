@@ -149,7 +149,6 @@ public class PlayerInventory : MonoBehaviour
                 {
                     slingshotDisplayed = true;
                     slingshot = Instantiate(slingshotPrefab, player.transform.position, Quaternion.identity);
-                    context.Activate("shoot", InputAction.Attack);
                 }
 
                 // Keep the slingshot attached to the player
@@ -159,8 +158,15 @@ public class PlayerInventory : MonoBehaviour
                     float xDir = PlayerPrefs.GetFloat("PlayerDirectionX") / 6;
                     float zDir = PlayerPrefs.GetFloat("PlayerDirectionZ") / 6;
                     slingshot.transform.position = new Vector3(player.transform.position.x + xDir, player.transform.position.y + slingshotOffet, player.transform.position.z + zDir);
-                } 
-
+                }
+                if(!context.shown)
+                {
+                    context.Activate("shoot", InputAction.Attack);
+                }
+                else if(context.shown && context.incoming)
+                {
+                    context.Deactivate();
+                }
                 break;
         }
     }

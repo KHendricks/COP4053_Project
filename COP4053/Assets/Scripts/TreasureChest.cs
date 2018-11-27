@@ -40,10 +40,8 @@ public class TreasureChest : MonoBehaviour {
                 {
                     opened = true;
                     PlayerPrefs.SetInt(treasureName, 1);
-                    Debug.Log("should be getting slingshot");
                     if (!dialog.active)
                         dialog.Activate("You got the " + treasureName + "!");
-                    Debug.Log("did it show message?");
                     player.hasKey = false;
                     Destroy(chest);
                 }
@@ -54,12 +52,6 @@ public class TreasureChest : MonoBehaviour {
                 }
             }
         }
-        //if (dialog.active && InputManager.JustReleased(InputAction.Interact))
-        //{
-        //    Debug.Log("just released interact with treasure");
-        //    if (InputManager.JustPressed(InputAction.Interact))
-        //        dialog.Deactivate();
-        //}
 
     }
 
