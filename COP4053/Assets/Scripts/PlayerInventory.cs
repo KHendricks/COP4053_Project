@@ -59,6 +59,7 @@ public class PlayerInventory : MonoBehaviour
         {
             GiveKnife();
             GiveSlingshot();
+            GiveLasso();
         }
     }
 
@@ -305,5 +306,10 @@ public class PlayerInventory : MonoBehaviour
     void GiveSlingshot()
     {
         PlayerPrefs.SetInt("Slingshot", 1);
+    }
+
+    void GiveLasso()
+    {
+        PlayerPrefs.SetInt("Lasso", 1);
     }
 }

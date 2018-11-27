@@ -23,8 +23,9 @@ GameObject:
   - component: {fileID: 65563802896846242}
   - component: {fileID: 198379775803609394}
   - component: {fileID: 199832408703263310}
+  - component: {fileID: 114642349753373924}
   m_Layer: 0
-  m_Name: KnifeProjectile
+  m_Name: LassoProjectile
   m_TagString: SlingshotRock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,6 +144,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.702077, y: 1, z: 11.180142}
   m_Center: {x: -0.014202446, y: 0, z: -0.46468318}
+--- !u!114 &114642349753373924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1453623099400968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6b51b6e51be43a680780730fd37b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198379775803609394
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -6,16 +6,18 @@ public class Lasso : MonoBehaviour {
 
     // Have the rock prefab loaded into this variable
     // through the editor
-    public GameObject lassoPrefab;
+    public GameObject lassoPrefab, player;
     public float rockSpeed = 3f;
 
     private bool enableFire, mutex;
     private Vector3 dir;
+    private bool oneProjectile;
 
     // Use this for initialization
     void Start()
     {
         enableFire = mutex = true;
+        player = GameObject.Find("PlayerContainer");
     }
 
     // Update is called once per frame
@@ -44,7 +46,6 @@ public class Lasso : MonoBehaviour {
 
     void UseLasso()
     {
-                // On enter press instantiate a rock projectile
         if (InputManager.JustPressed(InputAction.Attack) && enableFire)
         {
             if (mutex)
@@ -58,9 +59,18 @@ public class Lasso : MonoBehaviour {
             // from occuring
             if (dir.normalized != Vector3.zero)
             {
+                oneProjectile = false;
+
                 // Shows the knife when attacking
                 gameObject.transform.GetChild(0).gameObject.SetActive(true);
 
+                // "Moves" the lasso forward
+                if (!oneProjectile)
+                {
+                    GameObject lassoProjectile = Instantiate(lassoPrefab, gameObject.transform.position, Quaternion.identity);
+                    lassoProjectile.GetComponent<Rigidbody>().velocity = dir.normalized * rockSpeed;
+                    StartCoroutine(MovePlayer(lassoProjectile));
+                }
             }
         }
     }
@@ -70,5 +80,24 @@ public class Lasso : MonoBehaviour {
         enableFire = false;
         yield return new WaitForSeconds(.7f);
         enableFire = mutex = true;
+    }
+
+    IEnumerator MovePlayer(GameObject lassoProjectile)
+    {
+
+        yield return new WaitForSeconds(.8f);
+
+        try
+        {
+            player.transform.position = Vector3.MoveTowards(player.transform.position, lassoProjectile.transform.position, 100f * Time.deltaTime);
+            Destroy(lassoProjectile);
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log("Lasso projectile destroyed from hitting collider. You will" +
+                      " not teleport to destination location");
+        }
+
+        oneProjectile = true;
     }
 }
