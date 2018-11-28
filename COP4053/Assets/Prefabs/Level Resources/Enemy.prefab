@@ -22,11 +22,27 @@ GameObject:
   - component: {fileID: 212781901753459324}
   - component: {fileID: 114650958344055710}
   - component: {fileID: 54867075486917596}
-  - component: {fileID: 114152461338304850}
   - component: {fileID: 136928745246316574}
   - component: {fileID: 95106676709477778}
+  - component: {fileID: 114493111187458910}
   m_Layer: 0
   m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1884828547535572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4816917128948530}
+  - component: {fileID: 119736772959807796}
+  m_Layer: 0
+  m_Name: BlobShadowProjector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,12 +55,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1564160311269640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.61, y: 0.13, z: 3.77}
+  m_LocalPosition: {x: -5.047, y: 0.48778355, z: -2.5099392}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4816917128948530}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4816917128948530
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884828547535572}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1.26, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4074595151439776}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!54 &54867075486917596
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -58,7 +88,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 10
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &95106676709477778
 Animator:
@@ -78,7 +108,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114152461338304850
+--- !u!114 &114493111187458910
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,10 +116,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1564160311269640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a39e95c360b2e480b8bfabdaf6c58b6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 13e9867c6ebd0487bbffeb85807e38fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  currentDirection: {x: 0, y: 0}
+  isStationary: 0
+  speed: 1
+  dropIndex: 0
+  dropItem:
+  - {fileID: 1840853037532290, guid: 21d850dea2f344d439cea2358085c61c, type: 2}
+  animator: {fileID: 0}
+  health: 3
+  knifeForInventory: {fileID: 0}
+  spotted: 0
+  player: {fileID: 0}
+  wanderEnabled: 0
+  playerSpriteRenderer: {fileID: 0}
+  isAttacking: 0
+  waypoint: {fileID: 0}
 --- !u!114 &114650958344055710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,6 +147,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyCameraTransform: {fileID: 0}
   alignNotLook: 1
+--- !u!119 &119736772959807796
+Projector:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884828547535572}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_NearClipPlane: 0.1
+  m_FarClipPlane: 5.29
+  m_FieldOfView: 25.99
+  m_AspectRatio: 0.89
+  m_Orthographic: 0
+  m_OrthographicSize: 2
+  m_Material: {fileID: 2100000, guid: e30ff3588e719f34bbf0c66f22d97487, type: 2}
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!136 &136928745246316574
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -112,10 +174,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3726019
-  m_Height: 1.1200813
+  m_Radius: 0.18690756
+  m_Height: 1.0861326
   m_Direction: 1
-  m_Center: {x: -0.20722792, y: 0.5240709, z: -0.086836964}
+  m_Center: {x: -0.020841569, y: 0.5070966, z: 0.016917706}
 --- !u!212 &212781901753459324
 SpriteRenderer:
   m_ObjectHideFlags: 1
