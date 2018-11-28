@@ -15,8 +15,12 @@ public class Player : Movement {
     public Dog dog;
     public bool hasKey;
 
+    private bool flashTimer;
+    public SpriteRenderer playerSpriteRenderer;
+
 	// Use this for initialization
 	void Start () {
+        flashTimer = true;
         showKnife = false;
         hasKey = false;
         animator = GetComponentInChildren<Animator>();
@@ -79,5 +83,29 @@ public class Player : Movement {
         return isGrounded;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "BossRock")
+        {
+            Destroy(other.gameObject);
+            PlayerPrefs.SetInt("PlayerHealth", PlayerPrefs.GetInt("PlayerHealth") - 1);
+            if (flashTimer)
+            {
+                flashTimer = false;
+                StartCoroutine(Flash(playerSpriteRenderer.material));
+            }
+        }
+    }
 
+    // The variable being passed is the spriteRenderer material of the object
+    // that needs to "Flash"
+    IEnumerator Flash(Material material)
+    {
+        material.SetColor("_Color", Color.red);
+        yield return new WaitForSeconds(0.33f);
+        material.SetColor("_Color", Color.white);
+        yield return new WaitForSeconds(0.33f);
+
+        flashTimer = true;
+    }
 }
