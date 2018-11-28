@@ -17,9 +17,14 @@ public class NormalState : IState<Player> {
             owner.stateManager.Switch("freefall");
         }
         if (owner.isStationary)
+        {
             owner.animator.Play("Idle");
+            GameObject.FindObjectOfType<AudioManager>().Play("Footsteps");
+        }
         else
+        {
             owner.animator.Play("Walk");
+        }
 
         // Jump
         if (InputManager.JustPressed(InputAction.Jump))
@@ -30,7 +35,9 @@ public class NormalState : IState<Player> {
         }
         // Attack
         if (InputManager.JustPressed(InputAction.Attack))
+        {
             owner.stateManager.Switch("attack");
+        }
 
         // Make dog stay/come
         if(InputManager.JustPressed(InputAction.FollowToggle))

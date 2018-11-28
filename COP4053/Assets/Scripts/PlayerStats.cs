@@ -82,5 +82,7 @@ public class PlayerStats : MonoBehaviour
     void Death()
     {
         SceneManager.LoadScene("LoseScreen");
+        FindObjectOfType<AudioManager>().Stop("Theme");
+        FindObjectOfType<AudioManager>().Play("Lose");
     }
 }

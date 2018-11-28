@@ -8,6 +8,7 @@ public class AttackState : IState<Player>
     public void OnEnter(Player owner)
     {
         owner.animator.Play("Attack");
+        GameObject.FindObjectOfType<AudioManager>().Play("Attack");
     }
 
     // Update is called once per frame
