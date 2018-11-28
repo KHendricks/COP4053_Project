@@ -35,7 +35,7 @@ public class Boss : MonoBehaviour
             {
                 ableToAttack = false;
 
-                attackToUse = Random.Range(1, 3);
+                attackToUse = Random.Range(1, 4);
                 // Types of attacks the boss can do
                 if (attackToUse == 1)
                 {
@@ -45,9 +45,15 @@ public class Boss : MonoBehaviour
                 {
                     MultiShot();
                 }
+                else if (attackToUse == 3)
+                {
+                    Barrage();
+                }
+                // Rarely will 4 show up in the range, if it does just do a 
+                // single shot
                 else
                 {
-                    // Don't attack
+                    SingleShot();
                 }
 
                 // This determines the timer on how frequently the boss can attack
@@ -75,7 +81,7 @@ public class Boss : MonoBehaviour
 
     void MultiShot()
     {
-        float rockSpeed = 2.5f;
+        float rockSpeed = 4f;
         float xOffset = 1f;
         int numRocks = 3;
 
@@ -93,6 +99,30 @@ public class Boss : MonoBehaviour
 
             Destroy(rockProjectile, attackDelay + 2f);
         }
+    }
+
+    // Calls the barrage helper to spawn a shot with a delay
+    void Barrage()
+    {
+        InvokeRepeating("BarrageHelper", 0f, .3f);
+        StartCoroutine(CancelBarrage());
+    }
+
+    void BarrageHelper()
+    {
+        Vector3 startingRockPos = new Vector3(gameObject.transform.position.x, 1.5f, gameObject.transform.position.z);
+        float rockSpeed = 4f;
+
+        // Spawns the rock from the boss
+        GameObject rockProjectile = Instantiate(bossRock, startingRockPos, Quaternion.identity);
+        Vector3 playerPosWhenShot = player.transform.position;
+
+        // Constantly shoot objects towards player
+        Vector3 pathVector = Vector3.Normalize(player.transform.position - startingRockPos);
+        rockProjectile.GetComponent<Rigidbody>().velocity = pathVector * rockSpeed;
+
+
+        Destroy(rockProjectile, attackDelay + 2f);
     }
 
     void OnTriggerEnter(Collider other)
@@ -152,13 +182,9 @@ public class Boss : MonoBehaviour
         ableToAttack = true;
     }
 
-    IEnumerator StartRockTimer()
+    IEnumerator CancelBarrage()
     {
-        yield return new WaitForSeconds(2f);
-        oneRockTimer = true;
-
-        // This will break the while loop. The start of the function
-        // will set this to true again
-        rockTimer = false;
+        yield return new WaitForSeconds(1f);
+        CancelInvoke();
     }
 }

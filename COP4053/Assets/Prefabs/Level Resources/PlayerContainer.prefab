@@ -761,7 +761,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1776064595284610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2400002, y: -0.5422165, z: -7.969939}
+  m_LocalPosition: {x: -19.746555, y: 0.8660653, z: 14.159872}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4756324608718190}
@@ -1233,6 +1233,7 @@ MonoBehaviour:
   showKnife: 0
   dog: {fileID: 0}
   hasKey: 0
+  playerSpriteRenderer: {fileID: 212241419422177382}
 --- !u!114 &114318859207623556
 MonoBehaviour:
   m_ObjectHideFlags: 1

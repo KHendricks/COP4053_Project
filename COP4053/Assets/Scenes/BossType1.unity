@@ -201,12 +201,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114077864583795206, guid: 001e2507a6c7f40e090fafb94f311d2f,
         type: 2}
-      propertyPath: bossRock
-      value: 
-      objectReference: {fileID: 1212781949971036, guid: 10e88fe491da947e8b1d18ef4433823c,
-        type: 2}
-    - target: {fileID: 114077864583795206, guid: 001e2507a6c7f40e090fafb94f311d2f,
-        type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 1037018913}
@@ -296,11 +290,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 224835803160499744, guid: c590921da232a40b580ea78775d59266,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4415490951774990, guid: c590921da232a40b580ea78775d59266, type: 2}
       propertyPath: m_LocalPosition.x
       value: -19.746555
@@ -333,19 +322,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114286821399112768, guid: c590921da232a40b580ea78775d59266,
+    - target: {fileID: 224835803160499744, guid: c590921da232a40b580ea78775d59266,
         type: 2}
-      propertyPath: playerSpriteRenderer
-      value: 
-      objectReference: {fileID: 1592744712}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c590921da232a40b580ea78775d59266, type: 2}
   m_IsPrefabAsset: 0
---- !u!212 &1592744712 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 212241419422177382, guid: c590921da232a40b580ea78775d59266,
-    type: 2}
-  m_PrefabInternal: {fileID: 1479684753}
 --- !u!1 &1916002188
 GameObject:
   m_ObjectHideFlags: 0

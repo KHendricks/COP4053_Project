@@ -193,6 +193,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   bossArea: {fileID: 114681709697943122}
+  player: {fileID: 0}
+  bossRock: {fileID: 1212781949971036, guid: 10e88fe491da947e8b1d18ef4433823c, type: 2}
 --- !u!114 &114681709697943122
 MonoBehaviour:
   m_ObjectHideFlags: 1
