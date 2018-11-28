@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465788, g: 0.4964137, b: 0.57481897, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641424, b: 0.5748196, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1049,7 +1049,7 @@ Transform:
   - {fileID: 439777327}
   - {fileID: 508569532}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &152276488
 Prefab:
@@ -2055,7 +2055,7 @@ Transform:
   - {fileID: 2017018973}
   - {fileID: 768943858}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &294008513
 Prefab:
@@ -2598,6 +2598,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4479340957203802, guid: fa743b68538fa4b95af247bf873f2f12,
     type: 2}
   m_PrefabInternal: {fileID: 357212361}
+--- !u!1001 &373895287
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4342555293525648, guid: c25de1c1ccd93ef4e9c329e77a08e511, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342555293525648, guid: c25de1c1ccd93ef4e9c329e77a08e511, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342555293525648, guid: c25de1c1ccd93ef4e9c329e77a08e511, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342555293525648, guid: c25de1c1ccd93ef4e9c329e77a08e511, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342555293525648, guid: c25de1c1ccd93ef4e9c329e77a08e511, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342555293525648, guid: c25de1c1ccd93ef4e9c329e77a08e511, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342555293525648, guid: c25de1c1ccd93ef4e9c329e77a08e511, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342555293525648, guid: c25de1c1ccd93ef4e9c329e77a08e511, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114754159490990166, guid: c25de1c1ccd93ef4e9c329e77a08e511,
+        type: 2}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 25ea763e2958df440bcb344ab859b115, type: 3}
+    - target: {fileID: 114754159490990166, guid: c25de1c1ccd93ef4e9c329e77a08e511,
+        type: 2}
+      propertyPath: sounds.Array.data[0].loop
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c25de1c1ccd93ef4e9c329e77a08e511, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &375058153
 Prefab:
   m_ObjectHideFlags: 0
@@ -3451,7 +3503,7 @@ GameObject:
   m_Layer: 0
   m_Name: Level3Spawn
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4823,7 +4875,7 @@ Transform:
   - {fileID: 1484237597}
   - {fileID: 1191518649}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &675602143
 Prefab:
@@ -5325,7 +5377,7 @@ GameObject:
   m_Layer: 0
   m_Name: Level4Spawn
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8467,7 +8519,7 @@ GameObject:
   m_Layer: 0
   m_Name: Level2Spawn
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -12982,7 +13034,7 @@ Transform:
   - {fileID: 1997867846}
   - {fileID: 136890720}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1899827953
 Prefab:
