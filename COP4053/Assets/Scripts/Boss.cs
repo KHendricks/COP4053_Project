@@ -15,12 +15,12 @@ public class Boss : MonoBehaviour
     private bool FlashTimer, ableToAttack;
     private Material bossMaterial;
     private float attackDelay = 3f;
-    private bool rockTimer, oneRockTimer;
+    private bool rockTimer, oneRockTimer, charging, determineCharge, chargeTimer;
 
 	// Use this for initialization
 	void Start () 
     {
-        oneRockTimer = ableToAttack = FlashTimer = true;
+        chargeTimer = determineCharge = oneRockTimer = ableToAttack = FlashTimer = true;
         bossMaterial = GetComponent<SpriteRenderer>().material;
 	}
 	
@@ -58,6 +58,22 @@ public class Boss : MonoBehaviour
 
                 // This determines the timer on how frequently the boss can attack
                 StartCoroutine(ResetAttackDelay());
+            }
+
+            if (determineCharge)
+            {
+                determineCharge = false;
+                StartCoroutine(DetermineCharge());
+            }
+
+            if (charging)
+            {
+                if (chargeTimer)
+                {
+                    chargeTimer = false;
+                    StartCoroutine(EndCharge());
+                }
+                Charge();
             }
         }
 	}
@@ -104,7 +120,7 @@ public class Boss : MonoBehaviour
     // Calls the barrage helper to spawn a shot with a delay
     void Barrage()
     {
-        InvokeRepeating("BarrageHelper", 0f, .3f);
+        InvokeRepeating("BarrageHelper", 0f, .4f);
         StartCoroutine(CancelBarrage());
     }
 
@@ -121,8 +137,15 @@ public class Boss : MonoBehaviour
         Vector3 pathVector = Vector3.Normalize(player.transform.position - startingRockPos);
         rockProjectile.GetComponent<Rigidbody>().velocity = pathVector * rockSpeed;
 
-
         Destroy(rockProjectile, attackDelay + 2f);
+    }
+
+    void Charge()
+    {
+        float chargeSpeed = 2f;
+
+        Vector3 pathVector = player.transform.position - gameObject.transform.position;
+        gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, player.transform.position, chargeSpeed * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider other)
@@ -186,5 +209,34 @@ public class Boss : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         CancelInvoke();
+    }
+
+    IEnumerator DetermineCharge()
+    {
+        yield return new WaitForSeconds(4f);
+
+        // Code to randomize if charging
+        determineCharge = true;
+
+        int chanceToCharge = Random.Range(0, 2);
+
+        if (chanceToCharge == 0)
+        {
+            charging = true;
+        }
+        else
+        {
+            Debug.Log("Failed to charge");
+            charging = false;
+        }
+    }
+
+    IEnumerator EndCharge()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        // Code to randomize if charging
+        chargeTimer = true;
+        charging = false;
     }
 }

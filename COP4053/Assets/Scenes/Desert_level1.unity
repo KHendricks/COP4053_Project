@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641424, b: 0.5748196, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465788, g: 0.4964137, b: 0.57481897, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11357,6 +11357,17 @@ Prefab:
       propertyPath: playerSpriteRenderer
       value: 
       objectReference: {fileID: 402260971}
+    - target: {fileID: 114493111187458910, guid: e027808a44a4b4ab5a8c39dc1b2b7138,
+        type: 2}
+      propertyPath: dropItem.Array.data[0]
+      value: 
+      objectReference: {fileID: 1692911774618720, guid: aa1b8d51632494a5988f9ab19560c3a6,
+        type: 2}
+    - target: {fileID: 114493111187458910, guid: e027808a44a4b4ab5a8c39dc1b2b7138,
+        type: 2}
+      propertyPath: dropIndex
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e027808a44a4b4ab5a8c39dc1b2b7138, type: 2}
   m_IsPrefabAsset: 0

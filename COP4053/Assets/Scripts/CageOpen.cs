@@ -35,7 +35,7 @@ public class CageOpen : MonoBehaviour {
                 dog.followPlayer = true;
                 context.Deactivate();
 
-                PlayerPrefs.SetInt("PlayerHealth", 3);
+                //PlayerPrefs.SetInt("PlayerHealth", 3);
 
                 if(!dialog.active)
                     dialog.Activate("There was something else in the cage... you found a key!");

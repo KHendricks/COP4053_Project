@@ -61,6 +61,10 @@ public class PlayerInventory : MonoBehaviour
             GiveSlingshot();
             GiveLasso();
         }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            PlayerPrefs.SetInt("PlayerHealth", 3);
+        }
     }
 
     void DisplayCurrent()
