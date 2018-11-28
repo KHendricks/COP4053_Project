@@ -8,8 +8,9 @@ public class MainMenu : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-	
-	}
+        // Play Theme music
+        FindObjectOfType<AudioManager>().Play("Theme");
+    }
 	
 	// Update is called once per frame
 	void Update () 
@@ -38,5 +39,7 @@ public class MainMenu : MonoBehaviour
     public void GameOver()
     {
         SceneManager.LoadScene("MainMenu");
+        FindObjectOfType<AudioManager>().Stop("Lose");
+        FindObjectOfType<AudioManager>().Play("Theme");
     }
 }

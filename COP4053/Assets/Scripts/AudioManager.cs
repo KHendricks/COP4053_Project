@@ -33,9 +33,6 @@ public class AudioManager : MonoBehaviour {
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
-
-        // Play the main theme
-        FindObjectOfType<AudioManager>().Play("Theme");
     }
 
     public void Play (string name)
@@ -47,5 +44,17 @@ public class AudioManager : MonoBehaviour {
             return;
         }
         s.source.Play();
-    } 
+    }
+
+    // Use this to stop clips before they finish or to stop looping music
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found");
+            return;
+        }
+        s.source.Stop();
+    }
 }

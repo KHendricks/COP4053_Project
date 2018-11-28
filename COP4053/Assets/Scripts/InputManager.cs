@@ -27,7 +27,7 @@ public static class InputManager {
                     isGamepad = false;
                     return true;
                 }
-                if (Input.GetKeyDown(KeyCode.JoystickButton2)) // **note: none of these joystick buttons are correct, just placeholders
+                if (Input.GetKeyDown(KeyCode.JoystickButton2)) 
                 {
                     isGamepad = true;
                     return true;
@@ -79,7 +79,7 @@ public static class InputManager {
                     isGamepad = false;
                     return true;
                 }
-                if (Input.GetKeyDown(KeyCode.JoystickButton6)) // **note: none of these joystick buttons are correct, just placeholders
+                if (Input.GetKeyDown(KeyCode.JoystickButton6))
                 {
                     isGamepad = true;
                     return true;
@@ -100,7 +100,7 @@ public static class InputManager {
                 {
                     return true;
                 }
-                if (Input.GetKeyUp(KeyCode.JoystickButton2)) // **note: none of these joystick buttons are correct, just placeholders
+                if (Input.GetKeyUp(KeyCode.JoystickButton2))
                 {
                     return true;
                 }
