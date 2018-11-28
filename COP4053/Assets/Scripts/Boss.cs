@@ -30,34 +30,69 @@ public class Boss : MonoBehaviour
         // If the player is inside the boss' area enable the encounter
         if (bossArea.GetStatus())
         {
+            int attackToUse = 2;
             if (ableToAttack)
             {
                 ableToAttack = false;
-                AttackPlayer();
+
+                attackToUse = Random.Range(1, 3);
+                // Types of attacks the boss can do
+                if (attackToUse == 1)
+                {
+                    SingleShot();
+                }
+                else if (attackToUse == 2)
+                {
+                    MultiShot();
+                }
+                else
+                {
+                    // Don't attack
+                }
+
+                // This determines the timer on how frequently the boss can attack
                 StartCoroutine(ResetAttackDelay());
             }
         }
-        else
-        {
-            CancelInvoke();
-        }
 	}
 
-    void AttackPlayer()
+    void SingleShot()
     {
         Vector3 startingRockPos = new Vector3(gameObject.transform.position.x, 1.5f, gameObject.transform.position.z);
-        float rockSpeed = 5f;
-        rockTimer = true;
+        float rockSpeed = 4f;
 
         // Spawns the rock from the boss
         GameObject rockProjectile = Instantiate(bossRock, startingRockPos, Quaternion.identity);
         Vector3 playerPosWhenShot = player.transform.position;
 
         // Constantly shoot objects towards player
-        rockProjectile.transform.position = Vector3.Lerp(rockProjectile.transform.position, playerPosWhenShot, rockSpeed * Time.deltaTime);
+        Vector3 pathVector = Vector3.Normalize(player.transform.position - startingRockPos);
+        rockProjectile.GetComponent<Rigidbody>().velocity = pathVector * rockSpeed;
 
 
         Destroy(rockProjectile, attackDelay + 2f);
+    }
+
+    void MultiShot()
+    {
+        float rockSpeed = 2.5f;
+        float xOffset = 1f;
+        int numRocks = 3;
+
+        for (int i = 0; i < numRocks; i++)
+        {
+            // Spawns the rock from the boss
+            Vector3 startingRockPos = new Vector3(gameObject.transform.position.x, 1.5f, gameObject.transform.position.z);
+            GameObject rockProjectile = Instantiate(bossRock, startingRockPos, Quaternion.identity);
+            Vector3 playerPosWhenShot = player.transform.position;
+
+            // Constantly shoot objects towards player
+            Vector3 tempPlayPos = new Vector3(player.transform.position.x + (xOffset * i), player.transform.position.y, player.transform.position.z + (xOffset * i));
+            Vector3 pathVector = Vector3.Normalize(tempPlayPos - startingRockPos);
+            rockProjectile.GetComponent<Rigidbody>().velocity = pathVector * rockSpeed;
+
+            Destroy(rockProjectile, attackDelay + 2f);
+        }
     }
 
     void OnTriggerEnter(Collider other)
