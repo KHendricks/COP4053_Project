@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0232d0ee70b894b04afe6848c2709ab9
+guid: e0d3ae5e2525f4c8ab1d62d5fbcf5f95
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,8 +8,7 @@ ModelImporter:
     2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Grid.003
-    4300002: Grid.002
+    4300000: Grid
   externalObjects: {}
   materials:
     importMaterials: 1
