@@ -70,6 +70,8 @@ public class AudioManager : MonoBehaviour {
         {
             case "Attack":
                 return true;
+            case "Jump":
+                return true;
             default:
                 return false;
         }
@@ -84,14 +86,32 @@ public class AudioManager : MonoBehaviour {
                 switch (UnityEngine.Random.Range(0, 2))
                 {
                     case 0:
-                        return "Attack1";
+                        return "Attack0";
                     case 1:
-                        return "Attack2";
+                        return "Attack1";
                     default:
                         Debug.LogWarning("Range Error in PickRandomSound(Attack)");
                         break;
                 }
                 break;
+
+            case "Jump":
+                switch (UnityEngine.Random.Range(0, 4))
+                {
+                    case 0:
+                        return "Jump0";
+                    case 1:
+                        return "Jump1";
+                    case 2:
+                        return "Jump2";
+                    case 3:
+                        return "Jump3";
+                    default:
+                        Debug.LogWarning("Range Error in PickRandomSound(Attack)");
+                        break;
+                }
+                break;
+
             default:
                 return null;
         }

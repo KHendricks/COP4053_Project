@@ -15,6 +15,7 @@ public class NormalState : IState<Player> {
         owner.Movement();
         if (!owner.IsGrounded()) {
             owner.stateManager.Switch("freefall");
+            GameObject.FindObjectOfType<AudioManager>().Stop("Footsteps");
         }
         if (owner.isStationary)
         {
@@ -30,8 +31,10 @@ public class NormalState : IState<Player> {
         if (InputManager.JustPressed(InputAction.Jump))
         {
             if (owner.IsGrounded())
+            {
                 owner.GetComponent<Rigidbody>().AddForce(Vector3.up * owner.jumpHeight, ForceMode.Impulse);
-
+                GameObject.FindObjectOfType<AudioManager>().Play("Jump");
+            }
         }
         // Attack
         if (InputManager.JustPressed(InputAction.Attack))

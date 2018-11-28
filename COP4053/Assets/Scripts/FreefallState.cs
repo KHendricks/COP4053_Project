@@ -14,8 +14,11 @@ public class FreefallState : IState<Player>
     public void Update(Player owner)
     {
         owner.Movement();
-        if(owner.IsGrounded())
+        if (owner.IsGrounded())
+        {
             owner.stateManager.Switch("normal");
+            GameObject.FindObjectOfType<AudioManager>().Play("Footsteps");
+        }
     }
 
     public void OnExit(Player owner)
