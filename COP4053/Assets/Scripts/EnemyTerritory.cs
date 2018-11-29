@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyTerritory : MonoBehaviour {
 
-    public GuardEnemy enemy;
+    public Enemy enemy;
 
 	// Use this for initialization
 	void Start () {

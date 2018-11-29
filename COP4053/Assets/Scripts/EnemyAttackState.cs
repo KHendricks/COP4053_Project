@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuardAttackState : IState<GuardEnemy> {
+public class EnemyAttackState : IState<Enemy> {
 
-    public void OnEnter(GuardEnemy owner)
+    public void OnEnter(Enemy owner)
     {
 
     }
 
-    public void Update(GuardEnemy owner)
+    public void Update(Enemy owner)
     {
         owner.Chase();
 
@@ -25,7 +25,7 @@ public class GuardAttackState : IState<GuardEnemy> {
         owner.TryAttack();
     }
 
-    public void OnExit(GuardEnemy owner)
+    public void OnExit(Enemy owner)
     {
 
     }

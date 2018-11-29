@@ -14,7 +14,7 @@ public class GuardEnemy : Movement
     public int health;
     public GameObject knifeForInventory;
     public bool spotted;
-    public GameObject player;
+    public Player player;
     private float distanceFromPlayer;
     private bool notAttackedRecently;
     private bool WaitForAttackTimer, FlashTimer;
@@ -34,11 +34,11 @@ public class GuardEnemy : Movement
         spotted = false;
         distanceFromPlayer = 0.5f;
         animator = GetComponentInChildren<Animator>();
-        stateManager = new StateManager<GuardEnemy>();
-        stateManager.Add("guard", new GuardState());
-        stateManager.Add("attack", new GuardAttackState());
+        //stateManager = new StateManager<Enemy>();
+        //stateManager.Add("guard", new GuardState());
+        //stateManager.Add("attack", new GuardAttackState());
 
-        stateManager.Switch("guard");
+        //stateManager.Switch("guard");
     }
 
     // Update is called once per frame
@@ -181,5 +181,9 @@ public class GuardEnemy : Movement
             var dir = Vector3.MoveTowards(transform.position, waypoint.transform.position, 1f * Time.deltaTime);
             transform.position = dir;
         }
+
+        NormalizeDirection(waypoint.transform.position, transform.position);
+        animator.SetFloat("FaceZ", currentDirection.y);
+        animator.SetFloat("FaceX", currentDirection.x);
     }
 }
