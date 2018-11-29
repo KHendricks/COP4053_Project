@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4997631807401798}
   - component: {fileID: 54025899648097440}
-  - component: {fileID: 65020775044132108}
-  - component: {fileID: 114195515948714674}
+  - component: {fileID: 65987434723517044}
+  - component: {fileID: 114645299689758644}
   m_Layer: 0
   m_Name: LassoPickup
   m_TagString: Untagged
@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 4313534639364316}
   - component: {fileID: 33201541505766534}
   - component: {fileID: 23264407293738502}
-  - component: {fileID: 65194848070448514}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -67,8 +66,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1514852999291942}
   m_LocalRotation: {x: -0, y: -0.773285, z: -0, w: 0.6340587}
-  m_LocalPosition: {x: 4.9639354, y: 0.42205, z: -2.222034}
-  m_LocalScale: {x: 0.008867027, y: 0.008867027, z: 0.008867027}
+  m_LocalPosition: {x: -1.2769995, y: -0.4201665, z: -7.119939}
+  m_LocalScale: {x: 0.20000018, y: 0.2, z: 0.20000018}
   m_Children:
   - {fileID: 4313534639364316}
   m_Father: {fileID: 0}
@@ -131,7 +130,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65020775044132108
+--- !u!65 &65987434723517044
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,21 +140,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20.875353, y: 48.33561, z: 18.418568}
-  m_Center: {x: 2.3775678, y: 20.439632, z: -0.052603737}
---- !u!65 &65194848070448514
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1951096379452072}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114195515948714674
+--- !u!114 &114645299689758644
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,6 +150,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1514852999291942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cad43f94c4b64b4e9a9c0466ee33e1f, type: 3}
+  m_Script: {fileID: 11500000, guid: a4dd1f3d051404b45b93e2affe1bca63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialog: {fileID: 0}

@@ -17,6 +17,7 @@ public class WanderAggroTerritory : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		gameObject.transform.position = new Vector3(enemyToFollow.transform.position.x, enemyToFollow.transform.position.y, enemyToFollow.transform.position.z);
+        if(enemyToFollow != null)
+		    gameObject.transform.position = new Vector3(enemyToFollow.transform.position.x, enemyToFollow.transform.position.y, enemyToFollow.transform.position.z);
 	}
 }

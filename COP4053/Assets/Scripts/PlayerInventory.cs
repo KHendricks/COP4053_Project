@@ -164,14 +164,14 @@ public class PlayerInventory : MonoBehaviour
                     float zDir = PlayerPrefs.GetFloat("PlayerDirectionZ") / 6;
                     slingshot.transform.position = new Vector3(player.transform.position.x + xDir, player.transform.position.y + slingshotOffet, player.transform.position.z + zDir);
                 }
-                if(!context.shown)
-                {
-                    context.Activate("shoot", InputAction.Attack);
-                }
-                else if(context.shown && context.incoming)
-                {
-                    context.Deactivate();
-                }
+                //if(!context.shown)
+                //{
+                //    context.Activate("shoot", InputAction.Attack);
+                //}
+                //else if(context.shown && context.incoming)
+                //{
+                //    context.Deactivate();
+                //}
                 break;
         }
     }
