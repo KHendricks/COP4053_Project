@@ -17,6 +17,7 @@ public class FreefallState : IState<Player>
         if (owner.IsGrounded())
         {
             owner.stateManager.Switch("normal");
+            // Play footsteps audio once the player has landed from a jump
             GameObject.FindObjectOfType<AudioManager>().Play("Footsteps");
         }
     }

@@ -69,6 +69,7 @@ public class Enemy : Movement
         if (other.gameObject.tag == "SlingshotRock")
         {
             Destroy(other.gameObject);
+            FindObjectOfType<AudioManager>().Play("EnemyHurt");
             health -= PlayerPrefs.GetInt("PlayerBaseDamage");
             KillEnemy();
 
@@ -82,6 +83,7 @@ public class Enemy : Movement
 
         if (other.gameObject.tag == "Knife")
         {
+            FindObjectOfType<AudioManager>().Play("EnemyHurt");
             health -= PlayerPrefs.GetInt("PlayerBaseDamage");
             KillEnemy();
 
@@ -146,6 +148,7 @@ public class Enemy : Movement
             PlayerPrefs.SetInt("PlayerHealth", PlayerPrefs.GetInt("PlayerHealth") - 1);
             Debug.Log(PlayerPrefs.GetInt("PlayerHealth"));
             notAttackedRecently = false;
+            FindObjectOfType<AudioManager>().Play("PlayerHurt");
         }
         isAttacking = false;
         if (WaitForAttackTimer)

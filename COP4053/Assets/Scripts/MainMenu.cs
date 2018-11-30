@@ -34,6 +34,9 @@ public class MainMenu : MonoBehaviour
     public void LoadLevelOne()
     {
         SceneManager.LoadScene("Desert_level1");
+
+        // Was muted in PlayerStats.cs Death()
+        FindObjectOfType<AudioManager>().Unmute("Footsteps");
     }
 
     public void GameOver()

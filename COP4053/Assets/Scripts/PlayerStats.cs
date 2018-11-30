@@ -54,7 +54,6 @@ public class PlayerStats : MonoBehaviour
         }
         else if (PlayerPrefs.GetInt("PlayerHealth") == 2)
         {
-  
             healthDisplay[0].SetActive(false);
             healthDisplay[1].SetActive(true);
             healthDisplay[2].SetActive(false);
@@ -81,6 +80,10 @@ public class PlayerStats : MonoBehaviour
     // Player is out of health so game is over
     void Death()
     {
+        // Footsteps audio play on death and Stop() doesn't stop it
+        // Unmuted in MainMenu.cs LoadLevelOne() 
+        FindObjectOfType<AudioManager>().Mute("Footsteps");
+
         SceneManager.LoadScene("LoseScreen");
         FindObjectOfType<AudioManager>().Stop("Theme");
         FindObjectOfType<AudioManager>().Play("Lose");

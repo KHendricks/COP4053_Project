@@ -63,8 +63,32 @@ public class AudioManager : MonoBehaviour {
         s.source.Stop();
     }
 
+    // Set a sound clip's volume to zero
+    public void Mute(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found on Mute");
+            return;
+        }
+        s.source.volume = 0.0f;
+    }
+
+    // Reset a sound clip's volume
+    public void Unmute(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found on Mute");
+            return;
+        }
+        s.source.volume = s.volume;
+    }
+
     // There are some names like Attack that have multiple sounds assocatied with it
-    public bool CheckForMultiple(string name)
+    private bool CheckForMultiple(string name)
     {
         switch (name)
         {
@@ -78,7 +102,7 @@ public class AudioManager : MonoBehaviour {
     }
 
     // Receives a psuedo name and returns a specfic sound name
-    public string PickRandomSound(string name)
+    private string PickRandomSound(string name)
     {
         switch (name)
         {
