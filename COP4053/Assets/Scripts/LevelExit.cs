@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class LevelExit : MonoBehaviour {
 
     bool playerExit, dogExit;
+    public GameObject spawnPoint;
+    private GameObject playerObject, dogObject;
 
     private void Start()
     {
@@ -16,16 +18,21 @@ public class LevelExit : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            playerObject = other.gameObject;
             playerExit = true;
         }
         else if (other.gameObject.tag == "Dog")
         {
+            dogObject = other.gameObject;
             dogExit = true;
         }
 
-        if (dogExit && playerExit)
+        int DoesPlayerHaveSlingshot = PlayerPrefs.GetInt("Slingshot");
+        if (dogExit && playerExit && DoesPlayerHaveSlingshot == 1)
         {
-            SceneManager.LoadScene("WinScreen");
+            playerObject.transform.position = spawnPoint.transform.position;
+            dogObject.transform.position = spawnPoint.transform.position;
+
         }
     }
 }
