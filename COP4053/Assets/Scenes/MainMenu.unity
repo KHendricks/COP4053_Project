@@ -1070,13 +1070,13 @@ Prefab:
     - target: {fileID: 114754159490990166, guid: c25de1c1ccd93ef4e9c329e77a08e511,
         type: 2}
       propertyPath: sounds.Array.data[10].name
-      value: NearDeath
+      value: EnemyHurt
       objectReference: {fileID: 0}
     - target: {fileID: 114754159490990166, guid: c25de1c1ccd93ef4e9c329e77a08e511,
         type: 2}
       propertyPath: sounds.Array.data[10].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 89e6bc608da7b47d4914f3d9c2484e48, type: 3}
+      objectReference: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
     - target: {fileID: 114754159490990166, guid: c25de1c1ccd93ef4e9c329e77a08e511,
         type: 2}
       propertyPath: sounds.Array.data[10].volume
@@ -1090,7 +1090,7 @@ Prefab:
     - target: {fileID: 114754159490990166, guid: c25de1c1ccd93ef4e9c329e77a08e511,
         type: 2}
       propertyPath: sounds.Array.data[9].name
-      value: Hurt
+      value: PlayerHurt
       objectReference: {fileID: 0}
     - target: {fileID: 114754159490990166, guid: c25de1c1ccd93ef4e9c329e77a08e511,
         type: 2}

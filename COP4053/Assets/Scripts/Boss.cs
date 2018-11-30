@@ -155,6 +155,7 @@ public class Boss : MonoBehaviour
         {
             Destroy(other.gameObject);
             health -= PlayerPrefs.GetInt("PlayerBaseDamage");
+            FindObjectOfType<AudioManager>().Play("EnemyHurt");
             KillEnemy();
 
             // Makes enemy flash red
@@ -168,6 +169,7 @@ public class Boss : MonoBehaviour
         if (other.gameObject.tag == "Knife")
         {
             health -= PlayerPrefs.GetInt("PlayerBaseDamage");
+            FindObjectOfType<AudioManager>().Play("EnemyHurt");
             KillEnemy();
 
             // Makes enemy flash red
