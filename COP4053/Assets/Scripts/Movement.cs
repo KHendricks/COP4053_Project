@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour {
 
     public Vector2 currentDirection;
     public bool isStationary;
-    public float speed = 3f;
+    public float speed;
     protected Rigidbody rb;
     protected Vector3 prevPos;
 

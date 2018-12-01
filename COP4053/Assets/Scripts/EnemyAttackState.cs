@@ -13,11 +13,11 @@ public class EnemyAttackState : IState<Enemy> {
     {
         owner.Chase();
 
-        if (owner.isStationary && !owner.isAttacking)
+        if (owner.isStationary)
         {
             owner.animator.Play("Idle");
         }
-        else if(!owner.isStationary && !owner.isAttacking)
+        else if(!owner.isStationary)
         {
             owner.animator.Play("Walk");
         }

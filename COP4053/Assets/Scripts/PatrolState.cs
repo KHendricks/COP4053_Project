@@ -11,7 +11,7 @@ public class PatrolState : IState<Enemy> {
 
     public void Update(Enemy owner)
     {
-        owner.Wander();
+        owner.Patrol();
         owner.animator.Play("Walk");
         if (owner.spotted)
             owner.stateManager.Switch("attack");

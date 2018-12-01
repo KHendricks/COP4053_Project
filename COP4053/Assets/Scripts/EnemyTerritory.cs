@@ -24,7 +24,16 @@ public class EnemyTerritory : MonoBehaviour {
 
     public void OnTriggerExit(Collider other)
     {
-        enemy.spotted = false;
-        enemy.stateManager.Switch("guard");
+        if(other.gameObject.tag == "Player")
+        {
+            enemy.spotted = false;
+            if (enemy.wanderEnabled)
+            {
+                enemy.stateManager.Switch("patrol");
+            }
+            else
+                enemy.stateManager.Switch("guard");
+        }
+
     }
 }

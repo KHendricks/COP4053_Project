@@ -26,13 +26,13 @@ public class Enemy : Movement
     public bool wanderEnabled;
     public GameObject waypoint1;
     public GameObject waypoint2;
+    GameObject currWaypoint;
 
-    public int toggle;
 
     // Use this for initialization
     void Start()
     {
-        toggle = 0;
+        currWaypoint = waypoint1;
         guardEnemyMaterial = GetComponent<SpriteRenderer>().material;
 
         notAttackedRecently = WaitForAttackTimer = FlashTimer = true;
@@ -45,7 +45,7 @@ public class Enemy : Movement
         stateManager.Add("attack", new EnemyAttackState());
         stateManager.Add("patrol", new PatrolState());
 
-        if(wanderEnabled)
+        if (wanderEnabled)
         {
             stateManager.Switch("patrol");
         }
@@ -189,15 +189,35 @@ public class Enemy : Movement
         FlashTimer = true;
     }
 
-    public void Wander()
-    {
-        Debug.Log("toggle = " + toggle);
-        var waypoint = (toggle % 2 == 0) ? waypoint1 : waypoint2;
+    //public void Wander()
+    //{
+    //    Debug.Log("toggle = " + toggle);
+    //    var waypoint = (toggle % 2 == 0) ? waypoint1 : waypoint2;
 
-        var dir = Vector3.MoveTowards(transform.position, waypoint.transform.position, 1f * Time.deltaTime);
+    //    var dir = Vector3.MoveTowards(transform.position, waypoint.transform.position, 1f * Time.deltaTime);
+    //    transform.position = dir;
+
+    //    NormalizeDirection(waypoint.transform.position, transform.position);
+    //    animator.SetFloat("FaceZ", currentDirection.y);
+    //    animator.SetFloat("FaceX", currentDirection.x);
+    //}
+
+    public void Patrol()
+    {
+        // The step size is equal to speed times frame time.
+        float step = speed * Time.deltaTime;
+        float distance = Vector3.Distance(transform.position, currWaypoint.transform.position);
+
+        // When waypoint is reached, switch to other waypoint.
+        if (distance < 0.2f)
+        {
+            currWaypoint = currWaypoint == waypoint1 ? waypoint2 : waypoint1;
+        }
+
+        var dir = Vector3.MoveTowards(transform.position, currWaypoint.transform.position, step);
         transform.position = dir;
 
-        NormalizeDirection(waypoint.transform.position, transform.position);
+        NormalizeDirection(currWaypoint.transform.position, transform.position);
         animator.SetFloat("FaceZ", currentDirection.y);
         animator.SetFloat("FaceX", currentDirection.x);
     }

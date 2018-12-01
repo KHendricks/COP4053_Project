@@ -23,7 +23,7 @@ public class WaypointManager : MonoBehaviour
     {
         if (other.gameObject.tag == "WanderEnemy")
         {
-            enemy.toggle += 1;
+            //enemy.toggle += 1;
             //MoveWaypoint();
         }
     }
