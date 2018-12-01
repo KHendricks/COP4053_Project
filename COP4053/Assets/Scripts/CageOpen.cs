@@ -10,6 +10,7 @@ public class CageOpen : MonoBehaviour {
     public ContextMessage context;
     public DialogMessage dialog;
     bool present;
+    public bool giveKey;
 
     void Start()
     {
@@ -33,14 +34,18 @@ public class CageOpen : MonoBehaviour {
             {
                 dog.rescued = true;
                 dog.followPlayer = true;
+                player.dogs.Add(dog);
                 context.Deactivate();
 
                 //PlayerPrefs.SetInt("PlayerHealth", 3);
+                if(giveKey)
+                {
+                    if (!dialog.active)
+                        dialog.Activate("There was something else in the cage... you found a key!");
+                    player.hasKey = true;
+                    Destroy(cage);
+                }
 
-                if(!dialog.active)
-                    dialog.Activate("There was something else in the cage... you found a key!");
-                player.hasKey = true;
-                Destroy(cage);
             }
         }
     }

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class WaypointManager : MonoBehaviour 
 {
-    public GameObject wanderingArea;
-    public GuardEnemy enemy;
+    public GameObject wanderingArea1;
+    public GameObject wanderingArea2;
+    public Enemy enemy;
+    int toggle;
 
 	// Use this for initialization
 	void Start () {
-		
+        toggle = 0;
 	}
 	
 	// Update is called once per frame
@@ -21,21 +23,27 @@ public class WaypointManager : MonoBehaviour
     {
         if (other.gameObject.tag == "WanderEnemy")
         {
-            MoveWaypoint();
+            enemy.toggle += 1;
+            //MoveWaypoint();
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "WanderEnemy")
-        {
-            MoveWaypoint();
-        }
-    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.gameObject.tag == "WanderEnemy")
+    //    {
+    //        MoveWaypoint();
+    //    }
+    //}
 
     void MoveWaypoint()
     {
-        gameObject.transform.position = RandomPointInBounds(wanderingArea.GetComponent<BoxCollider>().bounds);
+        // Patrolling back and forth between 2 points
+        toggle += 1;
+        if(toggle%2 == 0)
+            gameObject.transform.position = RandomPointInBounds(wanderingArea1.GetComponent<BoxCollider>().bounds);
+        else
+            gameObject.transform.position = RandomPointInBounds(wanderingArea2.GetComponent<BoxCollider>().bounds);
     }
 
     public static Vector3 RandomPointInBounds(Bounds bounds)

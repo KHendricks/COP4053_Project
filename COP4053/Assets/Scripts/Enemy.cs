@@ -24,11 +24,15 @@ public class Enemy : Movement
     public SpriteRenderer playerSpriteRenderer;
 
     public bool wanderEnabled;
-    public GameObject waypoint;
+    public GameObject waypoint1;
+    public GameObject waypoint2;
+
+    public int toggle;
 
     // Use this for initialization
     void Start()
     {
+        toggle = 0;
         guardEnemyMaterial = GetComponent<SpriteRenderer>().material;
 
         notAttackedRecently = WaitForAttackTimer = FlashTimer = true;
@@ -143,7 +147,7 @@ public class Enemy : Movement
         if (notAttackedRecently)
         {
             isAttacking = true;
-            animator.Play("Attack");
+            //animator.Play("Attack");
             Debug.Log(PlayerPrefs.GetInt("PlayerHealth"));
             PlayerPrefs.SetInt("PlayerHealth", PlayerPrefs.GetInt("PlayerHealth") - 1);
             Debug.Log(PlayerPrefs.GetInt("PlayerHealth"));
@@ -187,6 +191,9 @@ public class Enemy : Movement
 
     public void Wander()
     {
+        Debug.Log("toggle = " + toggle);
+        var waypoint = (toggle % 2 == 0) ? waypoint1 : waypoint2;
+
         var dir = Vector3.MoveTowards(transform.position, waypoint.transform.position, 1f * Time.deltaTime);
         transform.position = dir;
 

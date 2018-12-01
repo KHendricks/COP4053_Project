@@ -15,12 +15,12 @@ public class NormalState : IState<Player> {
         owner.Movement();
         if (!owner.IsGrounded()) {
             owner.stateManager.Switch("freefall");
-            GameObject.FindObjectOfType<AudioManager>().Stop("Footsteps");
+            Object.FindObjectOfType<AudioManager>().Stop("Footsteps");
         }
         if (owner.isStationary)
         {
             owner.animator.Play("Idle");
-            GameObject.FindObjectOfType<AudioManager>().Play("Footsteps");
+            Object.FindObjectOfType<AudioManager>().Play("Footsteps");
         }
         else
         {
@@ -33,7 +33,7 @@ public class NormalState : IState<Player> {
             if (owner.IsGrounded())
             {
                 owner.GetComponent<Rigidbody>().AddForce(Vector3.up * owner.jumpHeight, ForceMode.Impulse);
-                GameObject.FindObjectOfType<AudioManager>().Play("Jump");
+                Object.FindObjectOfType<AudioManager>().Play("Jump");
             }
         }
         // Attack
@@ -45,15 +45,19 @@ public class NormalState : IState<Player> {
         // Make dog stay/come
         if(InputManager.JustPressed(InputAction.FollowToggle))
         {
-            if (owner.dog.followPlayer)
-                owner.dog.followPlayer = false;
-            else
+            owner.dogs.ForEach(delegate (Dog dog)
             {
-                if(owner.dog.closeEnough)
+                if (dog.followPlayer)
+                    dog.followPlayer = false;
+                else
                 {
-                    owner.dog.followPlayer = true;
+                    if (dog.closeEnough)
+                    {
+                        dog.followPlayer = true;
+                    }
                 }
-            }
+            });
+
         }
     }
 

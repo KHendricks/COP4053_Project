@@ -12,7 +12,7 @@ public class Player : Movement {
     public StateManager<Player> stateManager;
     public GameObject knife;
     public bool showKnife;
-    public Dog dog;
+    public List<Dog> dogs;
     public bool hasKey;
 
     private bool flashTimer;
@@ -20,6 +20,7 @@ public class Player : Movement {
 
 	// Use this for initialization
 	void Start () {
+        dogs = new List<Dog>();
         flashTimer = true;
         showKnife = false;
         hasKey = false;
