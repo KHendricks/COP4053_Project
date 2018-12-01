@@ -47,15 +47,8 @@ public class NormalState : IState<Player> {
         {
             owner.dogs.ForEach(delegate (Dog dog)
             {
-                if (dog.followPlayer)
-                    dog.followPlayer = false;
-                else
-                {
-                    if (dog.closeEnough)
-                    {
-                        dog.followPlayer = true;
-                    }
-                }
+                if(dog.closeEnough)
+                    dog.followPlayer = !dog.followPlayer;
             });
 
         }

@@ -43,14 +43,14 @@ public class Dog : Movement
     public void Follow()
     {
         // The step size is equal to speed times frame time.
-        float step = speed * Time.deltaTime;
+        float step = speed * Time.fixedDeltaTime;
         float distance = Vector3.Distance(transform.position, player.transform.position);
 
         // Move our position a step closer to the target, if player is far enough away
         if (distance > distanceFromPlayer)
         {
             // Lerp to smooth out the transition.
-            var dir = Vector3.Lerp(transform.position, player.transform.position, step);
+            var dir = Vector3.MoveTowards(transform.position, player.transform.position, step);
             transform.position = dir;
         }
 

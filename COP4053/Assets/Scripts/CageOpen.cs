@@ -43,9 +43,9 @@ public class CageOpen : MonoBehaviour {
                     if (!dialog.active)
                         dialog.Activate("There was something else in the cage... you found a key!");
                     player.hasKey = true;
-                    Destroy(cage);
                 }
 
+                Destroy(cage);
             }
         }
     }
