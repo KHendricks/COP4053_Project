@@ -7,7 +7,7 @@ public class FollowState : IState<Dog> {
 	// Use this for initialization
     public void OnEnter(Dog owner) 
     {
-
+        GameObject.FindObjectOfType<AudioManager>().Play("Woof");
     }
 	
 	// Update is called once per frame
