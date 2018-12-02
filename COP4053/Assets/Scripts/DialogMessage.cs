@@ -50,7 +50,7 @@ public class DialogMessage : MonoBehaviour {
 
     IEnumerator MessageTimer()
     {
-        yield return new WaitForSecondsRealtime(4);
+        yield return new WaitForSecondsRealtime(5);
         Deactivate();
     }
 
