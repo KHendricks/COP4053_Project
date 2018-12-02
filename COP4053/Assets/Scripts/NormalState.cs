@@ -45,12 +45,13 @@ public class NormalState : IState<Player> {
         // Make dog stay/come
         if(InputManager.JustPressed(InputAction.FollowToggle))
         {
-            owner.dogs.ForEach(delegate (Dog dog)
+            foreach(Dog dog in owner.dogs)
             {
                 if(dog.closeEnough)
+                {
                     dog.followPlayer = !dog.followPlayer;
-            });
-
+                }
+            }
         }
     }
 

@@ -14,12 +14,18 @@ public class Player : Movement {
     public bool showKnife;
     public List<Dog> dogs;
     public bool hasKey;
+    public bool commandAll;
+    public bool dogsFollow;
+    public bool jump;
+    public GameObject lastSpawnPoint;
 
     private bool flashTimer;
     public SpriteRenderer playerSpriteRenderer;
 
 	// Use this for initialization
 	void Start () {
+        if(lastSpawnPoint != null)
+            lastSpawnPoint.transform.position = transform.position;
         dogs = new List<Dog>();
         flashTimer = true;
         showKnife = false;

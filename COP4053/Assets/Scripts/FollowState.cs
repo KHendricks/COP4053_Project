@@ -7,9 +7,7 @@ public class FollowState : IState<Dog> {
 	// Use this for initialization
     public void OnEnter(Dog owner) 
     {
-        // present player with item or health
-        var dir = Vector3.Lerp(owner.transform.position, owner.player.transform.position, owner.speed * Time.deltaTime);
-        owner.transform.position = dir;
+
     }
 	
 	// Update is called once per frame

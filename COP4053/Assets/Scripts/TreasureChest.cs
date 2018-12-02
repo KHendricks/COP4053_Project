@@ -41,7 +41,7 @@ public class TreasureChest : MonoBehaviour {
                     opened = true;
                     PlayerPrefs.SetInt(treasureName, 1);
                     if (!dialog.active)
-                        dialog.Activate("You got the " + treasureName + "!");
+                        dialog.Activate("You got the " + treasureName + "! Press Shift key or B button to use.");
                     player.hasKey = false;
                     Destroy(chest);
                 }

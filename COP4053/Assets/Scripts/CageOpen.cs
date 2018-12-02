@@ -37,7 +37,7 @@ public class CageOpen : MonoBehaviour {
                 player.dogs.Add(dog);
                 context.Deactivate();
 
-                //PlayerPrefs.SetInt("PlayerHealth", 3);
+                PlayerPrefs.SetInt("PlayerHealth", 3);
                 if(giveKey)
                 {
                     if (!dialog.active)

@@ -8,6 +8,7 @@ public class LevelExit : MonoBehaviour {
     bool playerExit, dogExit;
     public GameObject spawnPoint;
     private GameObject playerObject, dogObject;
+    Player player;
 
     private void Start()
     {
@@ -33,6 +34,9 @@ public class LevelExit : MonoBehaviour {
             playerObject.transform.position = spawnPoint.transform.position;
             dogObject.transform.position = spawnPoint.transform.position;
 
+            player = playerObject.GetComponent<Player>();
+            if (player != null)
+                player.lastSpawnPoint = spawnPoint;
         }
     }
 }

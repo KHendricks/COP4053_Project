@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour 
 {
+    public Player player;
     public Text playerHealth, playerScore, playerAmmo;
     public int startingHealth, startingDamage;
     public GameObject[] healthDisplay;
@@ -80,12 +81,12 @@ public class PlayerStats : MonoBehaviour
     // Player is out of health so game is over
     void Death()
     {
+        player.transform.position = player.lastSpawnPoint.transform.position;
         // Footsteps audio play on death and Stop() doesn't stop it
         // Unmuted in MainMenu.cs LoadLevelOne() 
-        FindObjectOfType<AudioManager>().Mute("Footsteps");
-
-        SceneManager.LoadScene("LoseScreen");
-        FindObjectOfType<AudioManager>().Stop("Theme");
-        FindObjectOfType<AudioManager>().Play("Lose");
+        //FindObjectOfType<AudioManager>().Mute("Footsteps");
+        //SceneManager.LoadScene("LoseScreen");
+        //FindObjectOfType<AudioManager>().Stop("Theme");
+        //FindObjectOfType<AudioManager>().Play("Lose");
     }
 }

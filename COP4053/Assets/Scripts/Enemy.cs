@@ -57,14 +57,6 @@ public class Enemy : Movement
     void Update()
     {
         stateManager.Update(this);
-
-        // This will enable the guard to wander around an area.
-        // Make sure there is a collider area attached to the guard
-        // if this is enabled
-        //if (wanderEnabled)
-        //{
-        //    Wander();
-        //}
     }
 
     void OnTriggerEnter(Collider other)
@@ -72,6 +64,7 @@ public class Enemy : Movement
         // When attacked by slingshot projectile
         if (other.gameObject.tag == "SlingshotRock")
         {
+            stateManager.Switch("attack");
             Destroy(other.gameObject);
             FindObjectOfType<AudioManager>().Play("EnemyHurt");
             health -= PlayerPrefs.GetInt("PlayerBaseDamage");
@@ -87,6 +80,7 @@ public class Enemy : Movement
 
         if (other.gameObject.tag == "Knife")
         {
+            stateManager.Switch("attack");
             FindObjectOfType<AudioManager>().Play("EnemyHurt");
             health -= PlayerPrefs.GetInt("PlayerBaseDamage");
             KillEnemy();
@@ -104,6 +98,7 @@ public class Enemy : Movement
     {
         if (health <= 0)
         {
+            playerSpriteRenderer.material.SetColor("_Color", Color.white);
             Destroy(gameObject);
             DropItem();
         }

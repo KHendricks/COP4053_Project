@@ -35,6 +35,8 @@ public class DialogMessage : MonoBehaviour {
         dismiss.SetActive(true);
         Debug.Log("Trying to activate " + message + " dialog");
         this.message.text = message;
+        StartCoroutine(MessageTimer());
+
     }
 
     public void Deactivate()
@@ -44,6 +46,12 @@ public class DialogMessage : MonoBehaviour {
         Debug.Log("Deactivating " + message + " dialog");
         message.text = "";
         active = false;
+    }
+
+    IEnumerator MessageTimer()
+    {
+        yield return new WaitForSecondsRealtime(4);
+        Deactivate();
     }
 
 }
