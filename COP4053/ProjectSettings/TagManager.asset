@@ -12,6 +12,8 @@ TagManager:
   - Waypoint
   - Lasso
   - BossRock
+  - Rocks
+  - Boundaries
   layers:
   - Default
   - TransparentFX

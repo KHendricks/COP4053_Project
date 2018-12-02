@@ -316,4 +316,6 @@ public class PlayerInventory : MonoBehaviour
     {
         PlayerPrefs.SetInt("Lasso", 1);
     }
+
+
 }

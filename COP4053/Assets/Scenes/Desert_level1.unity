@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641424, b: 0.5748196, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465788, g: 0.4964137, b: 0.57481897, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5968,7 +5968,7 @@ GameObject:
   - component: {fileID: 360263617}
   m_Layer: 9
   m_Name: Wall (9)
-  m_TagString: Untagged
+  m_TagString: Boundaries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7168,7 +7168,7 @@ GameObject:
   - component: {fileID: 398533816}
   m_Layer: 9
   m_Name: Wall (3)
-  m_TagString: Untagged
+  m_TagString: Boundaries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9020,7 +9020,7 @@ GameObject:
   - component: {fileID: 507995658}
   m_Layer: 9
   m_Name: Medium_Rock (3)
-  m_TagString: Untagged
+  m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10109,7 +10109,7 @@ GameObject:
   - component: {fileID: 566752867}
   m_Layer: 9
   m_Name: Wall (7)
-  m_TagString: Untagged
+  m_TagString: Boundaries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13376,7 +13376,7 @@ GameObject:
   - component: {fileID: 672439038}
   m_Layer: 9
   m_Name: Medium_Rock (2)
-  m_TagString: Untagged
+  m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15905,7 +15905,7 @@ GameObject:
   - component: {fileID: 858827432}
   m_Layer: 9
   m_Name: Large_Rock (4)
-  m_TagString: Untagged
+  m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21799,7 +21799,7 @@ GameObject:
   - component: {fileID: 1220268990}
   m_Layer: 9
   m_Name: Medium_Rock (1)
-  m_TagString: Untagged
+  m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23069,7 +23069,7 @@ GameObject:
   - component: {fileID: 1268380968}
   m_Layer: 9
   m_Name: Wall (2)
-  m_TagString: Untagged
+  m_TagString: Boundaries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23146,7 +23146,7 @@ GameObject:
   - component: {fileID: 1269472638}
   m_Layer: 9
   m_Name: Large_Rock (2)
-  m_TagString: Untagged
+  m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23705,7 +23705,7 @@ GameObject:
   - component: {fileID: 1295635810}
   m_Layer: 9
   m_Name: Large_Rock (3)
-  m_TagString: Untagged
+  m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27208,7 +27208,7 @@ GameObject:
   - component: {fileID: 1516713823}
   m_Layer: 9
   m_Name: Medium_Rock (4)
-  m_TagString: Untagged
+  m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29388,7 +29388,7 @@ GameObject:
   - component: {fileID: 1638285248}
   m_Layer: 9
   m_Name: Medium_Rock
-  m_TagString: Untagged
+  m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30179,7 +30179,7 @@ GameObject:
   - component: {fileID: 1693708264}
   m_Layer: 9
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Boundaries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31366,7 +31366,7 @@ GameObject:
   - component: {fileID: 1771525978}
   m_Layer: 9
   m_Name: Medium_Rock (5)
-  m_TagString: Untagged
+  m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31766,7 +31766,7 @@ GameObject:
   - component: {fileID: 1787520842}
   m_Layer: 9
   m_Name: Wall (8)
-  m_TagString: Untagged
+  m_TagString: Boundaries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32498,7 +32498,7 @@ GameObject:
   - component: {fileID: 1844026247}
   m_Layer: 9
   m_Name: Little_Rock
-  m_TagString: Untagged
+  m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32680,7 +32680,7 @@ GameObject:
   - component: {fileID: 1846487251}
   m_Layer: 9
   m_Name: Little_Rock (2)
-  m_TagString: Untagged
+  m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35866,7 +35866,7 @@ GameObject:
   - component: {fileID: 2048485948}
   m_Layer: 9
   m_Name: Wall (1)
-  m_TagString: Untagged
+  m_TagString: Boundaries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37405,7 +37405,7 @@ GameObject:
   - component: {fileID: 2130186125}
   m_Layer: 9
   m_Name: Large_Rock (1)
-  m_TagString: Untagged
+  m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
