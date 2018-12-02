@@ -43,6 +43,7 @@ public class TreasureChest : MonoBehaviour {
                     if (!dialog.active)
                         dialog.Activate("You got the " + treasureName + "! Press Shift key or B button to use.");
                     player.hasKey = false;
+                    FindObjectOfType<AudioManager>().Play("Chest");
                     Destroy(chest);
                 }
                 else

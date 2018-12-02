@@ -96,6 +96,8 @@ public class AudioManager : MonoBehaviour {
                 return true;
             case "Jump":
                 return true;
+            case "Woof":
+                return true;
             default:
                 return false;
         }
@@ -131,12 +133,28 @@ public class AudioManager : MonoBehaviour {
                     case 3:
                         return "Jump3";
                     default:
-                        Debug.LogWarning("Range Error in PickRandomSound(Attack)");
+                        Debug.LogWarning("Range Error in PickRandomSound(Jump)");
+                        break;
+                }
+                break;
+
+            case "Woof":
+                switch (UnityEngine.Random.Range(0, 3))
+                {
+                    case 0:
+                        return "WoofLow";
+                    case 1:
+                        return "WoofMid";
+                    case 2:
+                        return "WoofHigh";
+                    default:
+                        Debug.LogWarning("Range Error in PickRandomSound(Woof)");
                         break;
                 }
                 break;
 
             default:
+                Debug.LogWarning("Name Error in PickRandomSound(" + name + ")");
                 return null;
         }
         return null;

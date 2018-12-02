@@ -118,3 +118,33 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Chest
+    clip: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Cage
+    clip: {fileID: 8300000, guid: 605a33a81e93b3a4d858b9fb6c1ec006, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WoofLow
+    clip: {fileID: 8300000, guid: 385afefcfb27244468b121361764a7e5, type: 3}
+    volume: 0.4
+    pitch: 0.9
+    loop: 0
+    source: {fileID: 0}
+  - name: WoofMid
+    clip: {fileID: 8300000, guid: 385afefcfb27244468b121361764a7e5, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WoofHigh
+    clip: {fileID: 8300000, guid: 385afefcfb27244468b121361764a7e5, type: 3}
+    volume: 0.3
+    pitch: 1.1
+    loop: 0
+    source: {fileID: 0}

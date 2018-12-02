@@ -6,7 +6,7 @@ public class StayState : IState<Dog> {
 
     public void OnEnter(Dog owner)
     {
-
+        GameObject.FindObjectOfType<AudioManager>().Play("Woof");
     }
 
     // Update is called once per frame

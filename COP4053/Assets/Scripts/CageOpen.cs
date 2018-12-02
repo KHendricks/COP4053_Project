@@ -36,6 +36,7 @@ public class CageOpen : MonoBehaviour {
                 dog.followPlayer = true;
                 player.dogs.Add(dog);
                 context.Deactivate();
+                FindObjectOfType<AudioManager>().Play("Cage");
 
                 PlayerPrefs.SetInt("PlayerHealth", 3);
                 if(giveKey)
