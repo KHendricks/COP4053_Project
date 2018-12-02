@@ -1172,6 +1172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d69acd24c3a4e0b95fae4e0176a0ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   playerHealth: {fileID: 0}
   playerScore: {fileID: 0}
   playerAmmo: {fileID: 114499230973410710}
@@ -1231,8 +1232,12 @@ MonoBehaviour:
   animator: {fileID: 0}
   knife: {fileID: 0}
   showKnife: 0
-  dog: {fileID: 0}
+  dogs: []
   hasKey: 0
+  commandAll: 0
+  dogsFollow: 0
+  jump: 0
+  lastSpawnPoint: {fileID: 0}
   playerSpriteRenderer: {fileID: 212241419422177382}
 --- !u!114 &114318859207623556
 MonoBehaviour:

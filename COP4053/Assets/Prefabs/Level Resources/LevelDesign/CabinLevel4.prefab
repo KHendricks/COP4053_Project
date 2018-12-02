@@ -2610,6 +2610,10 @@ MonoBehaviour:
   currentDirection: {x: 0, y: 0}
   isStationary: 0
   speed: 2.5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpHeight: 4
   animator: {fileID: 0}
   rescued: 0
   followPlayer: 0
@@ -2617,6 +2621,7 @@ MonoBehaviour:
   distanceFromPlayer: 0.7
   context: {fileID: 0}
   closeEnough: 0
+  maxHeightDiff: 0
 --- !u!114 &114085613272571310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2646,6 +2651,7 @@ MonoBehaviour:
   dog: {fileID: 0}
   context: {fileID: 0}
   dialog: {fileID: 0}
+  giveKey: 0
 --- !u!114 &114133496369180596
 MonoBehaviour:
   m_ObjectHideFlags: 1

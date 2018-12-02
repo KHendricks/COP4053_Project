@@ -220,3 +220,4 @@ MonoBehaviour:
   dog: {fileID: 0}
   context: {fileID: 0}
   dialog: {fileID: 0}
+  giveKey: 0
