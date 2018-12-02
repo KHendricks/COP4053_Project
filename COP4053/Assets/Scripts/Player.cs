@@ -96,6 +96,7 @@ public class Player : Movement {
         {
             Destroy(other.gameObject);
             PlayerPrefs.SetInt("PlayerHealth", PlayerPrefs.GetInt("PlayerHealth") - 1);
+            FindObjectOfType<AudioManager>().Play("PlayerHurt");
             if (flashTimer)
             {
                 flashTimer = false;

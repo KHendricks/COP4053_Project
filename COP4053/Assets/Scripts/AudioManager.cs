@@ -98,6 +98,8 @@ public class AudioManager : MonoBehaviour {
                 return true;
             case "Woof":
                 return true;
+            case "Dash":
+                return true;
             default:
                 return false;
         }
@@ -116,7 +118,7 @@ public class AudioManager : MonoBehaviour {
                     case 1:
                         return "Attack1";
                     default:
-                        Debug.LogWarning("Range Error in PickRandomSound(Attack)");
+                        Debug.LogWarning("Range Error in PickRandomSound(" + name + ")");
                         break;
                 }
                 break;
@@ -133,7 +135,7 @@ public class AudioManager : MonoBehaviour {
                     case 3:
                         return "Jump3";
                     default:
-                        Debug.LogWarning("Range Error in PickRandomSound(Jump)");
+                        Debug.LogWarning("Range Error in PickRandomSound(" + name + ")");
                         break;
                 }
                 break;
@@ -148,7 +150,20 @@ public class AudioManager : MonoBehaviour {
                     case 2:
                         return "WoofHigh";
                     default:
-                        Debug.LogWarning("Range Error in PickRandomSound(Woof)");
+                        Debug.LogWarning("Range Error in PickRandomSound(" + name + ")");
+                        break;
+                }
+                break;
+
+            case "Dash":
+                switch (UnityEngine.Random.Range(0, 2))
+                {
+                    case 0:
+                        return "Dash0";
+                    case 1:
+                        return "Dash1";
+                    default:
+                        Debug.LogWarning("Range Error in PickRandomSound(" + name + ")");
                         break;
                 }
                 break;
