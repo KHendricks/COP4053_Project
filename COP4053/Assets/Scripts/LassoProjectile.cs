@@ -14,15 +14,13 @@ public class LassoProjectile : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Destroy(gameObject);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Lasso" && other.gameObject.tag != "Player")
+        if (other.gameObject.tag == "Rocks" ||
+            other.gameObject.tag == "Boundaries")
+     
         {
+            Debug.Log(other.gameObject.name);
             Destroy(gameObject);
         }
     }

@@ -8,6 +8,7 @@ public class Boss : MonoBehaviour
     public int health;
     public BossArea bossArea;
     public GameObject player;
+    public GameObject bossContainer;
 
     // Attackable weapons from boss
     public GameObject bossRock;
@@ -186,6 +187,7 @@ public class Boss : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            Destroy(bossContainer);
         }
     }
 
