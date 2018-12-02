@@ -9,7 +9,7 @@ public class Lasso : MonoBehaviour {
     public GameObject lassoPrefab, player;
     public float rockSpeed = 3f;
 
-    private bool enableFire, mutex;
+    private bool enableFire, mutex, beingPulledByLasso;
     private Vector3 dir;
     private bool oneProjectile;
 
@@ -17,6 +17,7 @@ public class Lasso : MonoBehaviour {
     void Start()
     {
         enableFire = mutex = true;
+        beingPulledByLasso = false;
         player = GameObject.Find("PlayerContainer");
     }
 
@@ -89,7 +90,13 @@ public class Lasso : MonoBehaviour {
 
         try
         {
-            player.transform.position = Vector3.MoveTowards(player.transform.position, lassoProjectile.transform.position, 100f * Time.deltaTime);
+            Vector3 newPos = new Vector3(lassoProjectile.transform.position.x, player.transform.position.y, lassoProjectile.transform.position.z);
+
+            if (!beingPulledByLasso)
+            {
+                beingPulledByLasso = true;
+                StartCoroutine(MoveToPosition(player.transform, newPos, .5f));
+            }
             Destroy(lassoProjectile);
         }
         catch (System.Exception e)
@@ -99,5 +106,19 @@ public class Lasso : MonoBehaviour {
         }
 
         oneProjectile = true;
+    }
+
+    public IEnumerator MoveToPosition(Transform transform, Vector3 position, float timeToMove)
+    {
+        var currentPos = transform.position;
+        var t = 0f;
+        while (t < 1)
+        {
+            t += Time.deltaTime / timeToMove;
+            transform.position = Vector3.Lerp(currentPos, position, t);
+            yield return null;
+        }
+
+        beingPulledByLasso = false;
     }
 }
