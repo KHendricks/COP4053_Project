@@ -13,7 +13,7 @@ public class FollowState : IState<Dog> {
 	// Update is called once per frame
 	public void Update (Dog owner) 
     {
-        if(!owner.followPlayer)
+        if (!owner.followPlayer)
         {
             owner.stateManager.Switch("stay");
         }

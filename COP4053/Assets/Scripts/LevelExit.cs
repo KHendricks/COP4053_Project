@@ -60,12 +60,27 @@ public class LevelExit : MonoBehaviour {
 
         if (dogExit && playerExit && followCount == dogCount)
         {
-            player.transform.position = spawnPoint.transform.position;
-            foreach (Dog dog in player.dogs)
+            switch(level)
             {
-                dog.transform.position = spawnPoint.transform.position;
+                case 1:
+                    LoadLevelTwo();
+                    break;
+                case 2:
+                    LoadLevelThree();
+                    break;
+                case 3:
+                    LoadLevelFour();
+                    break;
+                default:
+                    Debug.Log("Please specify level number.");
+                    break;
             }
-            player.lastSpawnPoint = spawnPoint;
+            //player.transform.position = spawnPoint.transform.position;
+            //foreach (Dog dog in player.dogs)
+            //{
+            //    dog.transform.position = spawnPoint.transform.position;
+            //}
+            //player.lastSpawnPoint = spawnPoint;
         }
 
         //if (dogExit && playerExit && DoesPlayerHaveSlingshot == 1)
@@ -77,5 +92,29 @@ public class LevelExit : MonoBehaviour {
         //    if (player != null)
         //        player.lastSpawnPoint = spawnPoint;
         //}
+    }
+
+    void LoadLevelTwo()
+    {
+        SceneManager.LoadScene("Canyon_level2");
+
+        // Was muted in PlayerStats.cs Death()
+        FindObjectOfType<AudioManager>().Unmute("Footsteps");
+    }
+
+    void LoadLevelThree()
+    {
+        SceneManager.LoadScene("Switchbacks_level3");
+
+        // Was muted in PlayerStats.cs Death()
+        FindObjectOfType<AudioManager>().Unmute("Footsteps");
+    }
+
+    void LoadLevelFour()
+    {
+        SceneManager.LoadScene("Cabin_level4");
+
+        // Was muted in PlayerStats.cs Death()
+        FindObjectOfType<AudioManager>().Unmute("Footsteps");
     }
 }

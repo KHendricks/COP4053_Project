@@ -33,6 +33,14 @@ public class PlayerInventory : MonoBehaviour
 
             PlayerPrefs.SetInt("InventorySlotSelected", 0);
         }
+        else if(SceneManager.GetActiveScene().name == "Canyon_level2")
+        {
+            PlayerPrefs.SetInt("Lasso", 0);
+            PlayerPrefs.SetInt("Knife", 0);
+            PlayerPrefs.SetInt("Slingshot", 1);
+
+            PlayerPrefs.SetInt("InventorySlotSelected", 0);
+        }
 
         // Defaults the display of the weapons to false
         slingshotDisplayed = knifeDisplayed = lassoDisplayed = false;

@@ -17,12 +17,10 @@ public class CommandCenter : MonoBehaviour {
         if(other.gameObject.tag == "Dog")
         {
             var dog = other.gameObject.GetComponent<Dog>();
-            Debug.Log(other.gameObject + " is in the command center");
 
                 if (dog != null && dog.rescued)
                 {
                     dog.closeEnough = true;
-                    Debug.Log("closeEnough = " + dog.closeEnough);
                     if (dog.followPlayer)
                         context.Activate("stay", InputAction.FollowToggle);
                     else

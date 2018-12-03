@@ -44,7 +44,6 @@ public class ContextMessage : MonoBehaviour
         incoming = true;
         if (shown)
         {
-            Debug.Log("a context is already shown for" + message);
             Deactivate();
         }
         shown = true;

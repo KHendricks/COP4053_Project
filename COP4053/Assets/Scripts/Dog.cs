@@ -20,16 +20,16 @@ public class Dog : Movement
 	// Use this for initialization
 	void Start () 
     {
-        closeEnough = false;
-        followPlayer = false;
-        rescued = false;
         animator = GetComponentInChildren<Animator>();
         stateManager = new StateManager<Dog>();
         stateManager.Add("caged", new CagedState());
         stateManager.Add("rescued", new FollowState());
         stateManager.Add("stay", new StayState());
         stateManager.Add("follow", new FollowState());
-        stateManager.Switch("caged");
+        if(rescued)
+            stateManager.Switch("follow");
+        else
+            stateManager.Switch("caged");
     }
 
     //private void OnTriggerStay(Collider other)

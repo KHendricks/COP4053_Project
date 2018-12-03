@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Player : Movement {
@@ -18,6 +19,7 @@ public class Player : Movement {
     public bool dogsFollow;
     public bool jump;
     public GameObject lastSpawnPoint;
+    public int currLevel;
 
     private bool flashTimer;
     public SpriteRenderer playerSpriteRenderer;
@@ -26,7 +28,6 @@ public class Player : Movement {
 	void Start () {
         if(lastSpawnPoint != null)
             lastSpawnPoint.transform.position = transform.position;
-        dogs = new List<Dog>();
         flashTimer = true;
         showKnife = false;
         hasKey = false;
