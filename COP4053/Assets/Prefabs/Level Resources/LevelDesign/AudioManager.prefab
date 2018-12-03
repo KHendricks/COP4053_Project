@@ -73,7 +73,7 @@ MonoBehaviour:
   - name: Attack0
     clip: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
     volume: 0.25
-    pitch: 1
+    pitch: 0.9
     loop: 0
     source: {fileID: 0}
   - name: Attack1
@@ -146,5 +146,17 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 385afefcfb27244468b121361764a7e5, type: 3}
     volume: 0.3
     pitch: 1.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Dash0
+    clip: {fileID: 8300000, guid: db973c0354146dd4596a7ea67aa6b7ec, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Dash1
+    clip: {fileID: 8300000, guid: 932d93c5398cfbb49925f5d213208a27, type: 3}
+    volume: 0.3
+    pitch: 1
     loop: 0
     source: {fileID: 0}

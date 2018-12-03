@@ -87,6 +87,7 @@ public class Boss : MonoBehaviour
         // Spawns the rock from the boss
         GameObject rockProjectile = Instantiate(bossRock, startingRockPos, Quaternion.identity);
         Vector3 playerPosWhenShot = player.transform.position;
+        FindObjectOfType<AudioManager>().Play("Attack");
 
         // Constantly shoot objects towards player
         Vector3 pathVector = Vector3.Normalize(player.transform.position - startingRockPos);
@@ -108,6 +109,7 @@ public class Boss : MonoBehaviour
             Vector3 startingRockPos = new Vector3(gameObject.transform.position.x, 1.5f, gameObject.transform.position.z);
             GameObject rockProjectile = Instantiate(bossRock, startingRockPos, Quaternion.identity);
             Vector3 playerPosWhenShot = player.transform.position;
+            FindObjectOfType<AudioManager>().Play("Attack");
 
             // Constantly shoot objects towards player
             Vector3 tempPlayPos = new Vector3(player.transform.position.x + (xOffset * i), player.transform.position.y, player.transform.position.z + (xOffset * i));
@@ -133,6 +135,7 @@ public class Boss : MonoBehaviour
         // Spawns the rock from the boss
         GameObject rockProjectile = Instantiate(bossRock, startingRockPos, Quaternion.identity);
         Vector3 playerPosWhenShot = player.transform.position;
+        FindObjectOfType<AudioManager>().Play("Attack");
 
         // Constantly shoot objects towards player
         Vector3 pathVector = Vector3.Normalize(player.transform.position - startingRockPos);
@@ -227,6 +230,7 @@ public class Boss : MonoBehaviour
         if (chanceToCharge == 0)
         {
             charging = true;
+            FindObjectOfType<AudioManager>().Play("Dash");
         }
         else
         {
