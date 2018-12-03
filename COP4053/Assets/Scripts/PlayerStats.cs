@@ -82,6 +82,8 @@ public class PlayerStats : MonoBehaviour
     void Death()
     {
         player.transform.position = player.lastSpawnPoint.transform.position;
+        PlayerPrefs.SetInt("PlayerHealth", startingHealth);
+
         // Footsteps audio play on death and Stop() doesn't stop it
         // Unmuted in MainMenu.cs LoadLevelOne() 
         //FindObjectOfType<AudioManager>().Mute("Footsteps");
