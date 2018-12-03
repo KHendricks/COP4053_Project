@@ -14133,26 +14133,6 @@ Prefab:
       propertyPath: dialog
       value: 
       objectReference: {fileID: 652280086}
-    - target: {fileID: 114045687138045276, guid: 71dde876d40d14d74b82ce0f993d4c8a,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1416046952}
-    - target: {fileID: 114045687138045276, guid: 71dde876d40d14d74b82ce0f993d4c8a,
-        type: 2}
-      propertyPath: playerSpriteRenderer
-      value: 
-      objectReference: {fileID: 402260971}
-    - target: {fileID: 114906002528331106, guid: 71dde876d40d14d74b82ce0f993d4c8a,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1416046952}
-    - target: {fileID: 114906002528331106, guid: 71dde876d40d14d74b82ce0f993d4c8a,
-        type: 2}
-      propertyPath: playerSpriteRenderer
-      value: 
-      objectReference: {fileID: 402260971}
     - target: {fileID: 114161296519036976, guid: 71dde876d40d14d74b82ce0f993d4c8a,
         type: 2}
       propertyPath: player
@@ -14163,16 +14143,36 @@ Prefab:
       propertyPath: playerSpriteRenderer
       value: 
       objectReference: {fileID: 402260971}
-    - target: {fileID: 114712672504281980, guid: 71dde876d40d14d74b82ce0f993d4c8a,
+    - target: {fileID: 114021462112938148, guid: 71dde876d40d14d74b82ce0f993d4c8a,
         type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 1416046952}
-    - target: {fileID: 114712672504281980, guid: 71dde876d40d14d74b82ce0f993d4c8a,
+    - target: {fileID: 114021462112938148, guid: 71dde876d40d14d74b82ce0f993d4c8a,
         type: 2}
-      propertyPath: playerSpriteRenderer
+      propertyPath: context
       value: 
-      objectReference: {fileID: 402260971}
+      objectReference: {fileID: 339927484}
+    - target: {fileID: 114957335607618104, guid: 71dde876d40d14d74b82ce0f993d4c8a,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1416046952}
+    - target: {fileID: 114957335607618104, guid: 71dde876d40d14d74b82ce0f993d4c8a,
+        type: 2}
+      propertyPath: context
+      value: 
+      objectReference: {fileID: 339927484}
+    - target: {fileID: 114686373599814050, guid: 71dde876d40d14d74b82ce0f993d4c8a,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1416046952}
+    - target: {fileID: 114686373599814050, guid: 71dde876d40d14d74b82ce0f993d4c8a,
+        type: 2}
+      propertyPath: context
+      value: 
+      objectReference: {fileID: 339927484}
     - target: {fileID: 114357201298108856, guid: 71dde876d40d14d74b82ce0f993d4c8a,
         type: 2}
       propertyPath: player
@@ -14222,36 +14222,36 @@ Prefab:
       propertyPath: m_Name
       value: Level3
       objectReference: {fileID: 0}
-    - target: {fileID: 114686373599814050, guid: 71dde876d40d14d74b82ce0f993d4c8a,
+    - target: {fileID: 114045687138045276, guid: 71dde876d40d14d74b82ce0f993d4c8a,
         type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 1416046952}
-    - target: {fileID: 114686373599814050, guid: 71dde876d40d14d74b82ce0f993d4c8a,
+    - target: {fileID: 114045687138045276, guid: 71dde876d40d14d74b82ce0f993d4c8a,
         type: 2}
-      propertyPath: context
+      propertyPath: playerSpriteRenderer
       value: 
-      objectReference: {fileID: 339927484}
-    - target: {fileID: 114957335607618104, guid: 71dde876d40d14d74b82ce0f993d4c8a,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1416046952}
-    - target: {fileID: 114957335607618104, guid: 71dde876d40d14d74b82ce0f993d4c8a,
-        type: 2}
-      propertyPath: context
-      value: 
-      objectReference: {fileID: 339927484}
-    - target: {fileID: 114021462112938148, guid: 71dde876d40d14d74b82ce0f993d4c8a,
+      objectReference: {fileID: 402260971}
+    - target: {fileID: 114906002528331106, guid: 71dde876d40d14d74b82ce0f993d4c8a,
         type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 1416046952}
-    - target: {fileID: 114021462112938148, guid: 71dde876d40d14d74b82ce0f993d4c8a,
+    - target: {fileID: 114906002528331106, guid: 71dde876d40d14d74b82ce0f993d4c8a,
         type: 2}
-      propertyPath: context
+      propertyPath: playerSpriteRenderer
       value: 
-      objectReference: {fileID: 339927484}
+      objectReference: {fileID: 402260971}
+    - target: {fileID: 114712672504281980, guid: 71dde876d40d14d74b82ce0f993d4c8a,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1416046952}
+    - target: {fileID: 114712672504281980, guid: 71dde876d40d14d74b82ce0f993d4c8a,
+        type: 2}
+      propertyPath: playerSpriteRenderer
+      value: 
+      objectReference: {fileID: 402260971}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71dde876d40d14d74b82ce0f993d4c8a, type: 2}
   m_IsPrefabAsset: 0

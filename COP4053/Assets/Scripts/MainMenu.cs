@@ -78,6 +78,7 @@ public class MainMenu : MonoBehaviour
 
         // Was muted in PlayerStats.cs Death()
         FindObjectOfType<AudioManager>().Unmute("Footsteps");
+
     }
 
     void LoadLevelTwo()

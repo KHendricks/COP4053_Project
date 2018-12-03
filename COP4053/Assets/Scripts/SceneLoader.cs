@@ -35,6 +35,8 @@ public class SceneLoader : MonoBehaviour
     public void Reload()
     {
         SceneManager.LoadScene(currLevel);
+        FindObjectOfType<AudioManager>().Stop("Lose");
+        FindObjectOfType<AudioManager>().Unmute("Footsteps");
     }
 
 }

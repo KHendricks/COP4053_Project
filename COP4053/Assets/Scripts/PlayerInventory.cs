@@ -41,6 +41,14 @@ public class PlayerInventory : MonoBehaviour
 
             PlayerPrefs.SetInt("InventorySlotSelected", 0);
         }
+        else if (SceneManager.GetActiveScene().name == "Switchbacks_level3")
+        {
+            PlayerPrefs.SetInt("Lasso", 0);
+            PlayerPrefs.SetInt("Knife", 1);
+            PlayerPrefs.SetInt("Slingshot", 1);
+
+            PlayerPrefs.SetInt("InventorySlotSelected", 0);
+        }
 
         // Defaults the display of the weapons to false
         slingshotDisplayed = knifeDisplayed = lassoDisplayed = false;
@@ -132,7 +140,7 @@ public class PlayerInventory : MonoBehaviour
                 {
                     knifeDisplayed = true;
                     knife = Instantiate(knifePrefab, player.transform.position, Quaternion.identity);
-                    context.Activate("attack", InputAction.Attack);
+                    //context.Activate("attack", InputAction.Attack);
                 }
 
                 // Keep the slingshot attached to the player

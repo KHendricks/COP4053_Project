@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: d25c705d0c29f404387553e17e03a5dd
+  - enabled: 1
+    path: Assets/Scenes/Canyon_level2.unity
+    guid: dbfdaa32f8eb24e73afc5615f6c25edb
+  - enabled: 1
+    path: Assets/Scenes/Switchbacks_level3.unity
+    guid: f003dedf355e941588036464f93f8af2
   m_configObjects: {}
