@@ -28,6 +28,10 @@ public class PlayerStats : MonoBehaviour
             // Slingshot ammo
             PlayerPrefs.SetInt("SlingshotAmmo", 30);
         }
+        if(SceneManager.GetActiveScene().name == "Cabin_level4")
+        {
+            PlayerPrefs.SetInt("SlingshotAmmo", 30);
+        }
 
         // Update the UI
         //playerHealth.text = PlayerPrefs.GetInt("PlayerHealth").ToString();

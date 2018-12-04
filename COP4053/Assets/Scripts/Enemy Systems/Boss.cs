@@ -7,7 +7,7 @@ public class Boss : MonoBehaviour
 
     public int health;
     public BossArea bossArea;
-    public GameObject player;
+    public Player player;
     public GameObject bossContainer;
 
     // Attackable weapons from boss
@@ -15,7 +15,7 @@ public class Boss : MonoBehaviour
 
     private bool FlashTimer, ableToAttack;
     private Material bossMaterial;
-    private float attackDelay = 3f;
+    private float attackDelay = 3.5f;
     private bool rockTimer, oneRockTimer, charging, determineCharge, chargeTimer;
 
 	// Use this for initialization
@@ -189,6 +189,7 @@ public class Boss : MonoBehaviour
     {
         if (health <= 0)
         {
+            player.defeatedBoss = true;
             Destroy(gameObject);
             Destroy(bossContainer);
         }

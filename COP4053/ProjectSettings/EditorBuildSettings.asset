@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalCutscene.unity
     guid: 23f588341016d42589a173023cd4dd4b
+  - enabled: 1
+    path: Assets/Scenes/Cabin_level4.unity
+    guid: dee4f61884b35404d8b4f6442a692313
   m_configObjects: {}

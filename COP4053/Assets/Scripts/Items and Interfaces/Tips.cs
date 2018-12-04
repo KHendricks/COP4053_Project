@@ -17,6 +17,7 @@ public class Tips : MonoBehaviour
         tipList.Add("Travelers shall not travel along this route without a weapon and a companion.");
         tipList.Add("Henchmen on this route are very aggressive! Unarmed companions should wait somewhere safe until the danger is cleared.");
         tipList.Add("Travelers beware! This route becomes more treacherous as it nears the villain's lair.");
+        tipList.Add("Welcome to Big Boss Cabin");
 
     }
 	

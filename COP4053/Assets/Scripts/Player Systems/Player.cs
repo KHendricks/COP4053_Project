@@ -19,7 +19,8 @@ public class Player : Movement {
     public bool dogsFollow;
     public bool jump;
     public GameObject lastSpawnPoint;
-    public int currLevel;
+    public bool freeze;
+    public bool defeatedBoss;
 
     private bool flashTimer;
     public SpriteRenderer playerSpriteRenderer;
@@ -51,33 +52,36 @@ public class Player : Movement {
 
     public void Movement()
     {
-        float horizontalAxis = Input.GetAxis("Horizontal");
-        float verticalAxis = Input.GetAxis("Vertical");
+        if(!freeze)
+        {
+            float horizontalAxis = Input.GetAxis("Horizontal");
+            float verticalAxis = Input.GetAxis("Vertical");
 
-        var camera = Camera.main;
+            var camera = Camera.main;
 
-        // Camera's forward and right vectors
-        var forward = camera.transform.forward;
-        var right = camera.transform.right;
+            // Camera's forward and right vectors
+            var forward = camera.transform.forward;
+            var right = camera.transform.right;
 
-        // Project forward and right vectors on horizontal plane (y = 0)
-        forward.y = 0f;
-        right.y = 0f;
-        forward.Normalize();
-        right.Normalize();
+            // Project forward and right vectors on horizontal plane (y = 0)
+            forward.y = 0f;
+            right.y = 0f;
+            forward.Normalize();
+            right.Normalize();
 
-        // Direction we want to move
-        var dir = forward * verticalAxis + right * horizontalAxis;
-        transform.Translate(dir * speed * Time.deltaTime);
+            // Direction we want to move
+            var dir = forward * verticalAxis + right * horizontalAxis;
+            transform.Translate(dir * speed * Time.deltaTime);
 
-        PlayerPrefs.SetFloat("PlayerDirectionX", dir.x);
-        PlayerPrefs.SetFloat("PlayerDirectionY", dir.y);
-        PlayerPrefs.SetFloat("PlayerDirectionZ", dir.z);
+            PlayerPrefs.SetFloat("PlayerDirectionX", dir.x);
+            PlayerPrefs.SetFloat("PlayerDirectionY", dir.y);
+            PlayerPrefs.SetFloat("PlayerDirectionZ", dir.z);
 
-        SetFacing(dir);
+            SetFacing(dir);
 
-        animator.SetFloat("FaceZ", currentDirection.y);
-        animator.SetFloat("FaceX", currentDirection.x);
+            animator.SetFloat("FaceZ", currentDirection.y);
+            animator.SetFloat("FaceX", currentDirection.x);
+        }
     }
 
     public bool IsGrounded()

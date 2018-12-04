@@ -7,7 +7,6 @@ public class LevelExit : MonoBehaviour {
 
     bool playerExit, dogExit;
     public GameObject spawnPoint;
-    private GameObject playerObject, dogObject;
     Player player;
     public int level;
     public int dogCount;
@@ -42,6 +41,10 @@ public class LevelExit : MonoBehaviour {
                         if (DoesPlayerHaveKnife == 1)
                             playerExit = true;
                         break;
+                    case 4:
+                        if (player.defeatedBoss)
+                            playerExit = true;
+                        break;
                     default:
                         playerExit = true;
                         break;
@@ -62,6 +65,11 @@ public class LevelExit : MonoBehaviour {
             if (playerExit && player.dogs.Count == dogCount)
                 LoadLevelFour();
         }
+        else if(level == 4)
+        {
+            if (playerExit && player.dogs.Count == dogCount)
+                GameOver();
+        }
         else if (dogExit && playerExit && followCount == dogCount)
         {
             switch(level)
@@ -76,23 +84,7 @@ public class LevelExit : MonoBehaviour {
                     Debug.Log("Please specify level 1 or 2.");
                     break;
             }
-            //player.transform.position = spawnPoint.transform.position;
-            //foreach (Dog dog in player.dogs)
-            //{
-            //    dog.transform.position = spawnPoint.transform.position;
-            //}
-            //player.lastSpawnPoint = spawnPoint;
         }
-
-        //if (dogExit && playerExit && DoesPlayerHaveSlingshot == 1)
-        //{
-        //    playerObject.transform.position = spawnPoint.transform.position;
-        //    dogObject.transform.position = spawnPoint.transform.position;
-
-        //    player = playerObject.GetComponent<Player>();
-        //    if (player != null)
-        //        player.lastSpawnPoint = spawnPoint;
-        //}
     }
 
     void LoadLevelTwo()
@@ -117,5 +109,11 @@ public class LevelExit : MonoBehaviour {
 
         // Was muted in PlayerStats.cs Death()
         FindObjectOfType<AudioManager>().Unmute("Footsteps");
+    }
+
+    void GameOver()
+    {
+        SceneManager.LoadScene("FinalCutscene");
+        FindObjectOfType<AudioManager>().Mute("Footsteps");
     }
 }
