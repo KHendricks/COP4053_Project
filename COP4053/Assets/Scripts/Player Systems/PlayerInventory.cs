@@ -268,7 +268,7 @@ public class PlayerInventory : MonoBehaviour
 
             if (selectorIndex <= -1)
             {
-                selectorIndex = 2;
+                selectorIndex = 1;
 
                 if (inventorySlots[selectorIndex].activeSelf)
                 {
@@ -301,7 +301,7 @@ public class PlayerInventory : MonoBehaviour
 
             // This if statement stops the selector from going to positions without 
             // an active weapon
-            if (selectorIndex >= 3)
+            if (selectorIndex >= 2)
             {
                 selectorIndex = 0;
 
