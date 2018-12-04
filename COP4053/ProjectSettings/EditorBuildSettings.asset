@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Switchbacks_level3.unity
     guid: f003dedf355e941588036464f93f8af2
+  - enabled: 1
+    path: Assets/Scenes/FinalCutscene.unity
+    guid: 23f588341016d42589a173023cd4dd4b
   m_configObjects: {}
