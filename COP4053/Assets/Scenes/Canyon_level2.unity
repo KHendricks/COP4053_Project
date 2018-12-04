@@ -7650,6 +7650,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1363119824089484, guid: b62cb961625c948e8a20ca06f4aeb495, type: 2}
+      propertyPath: m_Name
+      value: Laslo (dog)
+      objectReference: {fileID: 0}
     - target: {fileID: 114825843330084556, guid: b62cb961625c948e8a20ca06f4aeb495,
         type: 2}
       propertyPath: player
@@ -7660,10 +7664,6 @@ Prefab:
       propertyPath: context
       value: 
       objectReference: {fileID: 916279577}
-    - target: {fileID: 1363119824089484, guid: b62cb961625c948e8a20ca06f4aeb495, type: 2}
-      propertyPath: m_Name
-      value: Laslo (dog)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b62cb961625c948e8a20ca06f4aeb495, type: 2}
   m_IsPrefabAsset: 0
@@ -18741,6 +18741,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1270225485813958, guid: 2a86b1ee083dc41c7b47b18351ae9334, type: 2}
+      propertyPath: m_Name
+      value: Ernie (dog)
+      objectReference: {fileID: 0}
     - target: {fileID: 114433864385552582, guid: 2a86b1ee083dc41c7b47b18351ae9334,
         type: 2}
       propertyPath: player
@@ -18751,10 +18755,6 @@ Prefab:
       propertyPath: context
       value: 
       objectReference: {fileID: 916279577}
-    - target: {fileID: 1270225485813958, guid: 2a86b1ee083dc41c7b47b18351ae9334, type: 2}
-      propertyPath: m_Name
-      value: Ernie (dog)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a86b1ee083dc41c7b47b18351ae9334, type: 2}
   m_IsPrefabAsset: 0
@@ -20277,38 +20277,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 4502959433694538, guid: 4a931f1dba73c4fc6837559ae4081aac, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.0525329
-      objectReference: {fileID: 0}
-    - target: {fileID: 4502959433694538, guid: 4a931f1dba73c4fc6837559ae4081aac, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.2673676
-      objectReference: {fileID: 0}
-    - target: {fileID: 4502959433694538, guid: 4a931f1dba73c4fc6837559ae4081aac, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.464998
-      objectReference: {fileID: 0}
-    - target: {fileID: 114536657723368306, guid: 4a931f1dba73c4fc6837559ae4081aac,
-        type: 2}
-      propertyPath: followPlayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114536657723368306, guid: 4a931f1dba73c4fc6837559ae4081aac,
-        type: 2}
-      propertyPath: rescued
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114536657723368306, guid: 4a931f1dba73c4fc6837559ae4081aac,
-        type: 2}
-      propertyPath: context
-      value: 
-      objectReference: {fileID: 916279577}
     - target: {fileID: 114536657723368306, guid: 4a931f1dba73c4fc6837559ae4081aac,
         type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 961177134}
+    - target: {fileID: 114536657723368306, guid: 4a931f1dba73c4fc6837559ae4081aac,
+        type: 2}
+      propertyPath: context
+      value: 
+      objectReference: {fileID: 916279577}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a931f1dba73c4fc6837559ae4081aac, type: 2}
   m_IsPrefabAsset: 0

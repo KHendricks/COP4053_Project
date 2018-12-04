@@ -25173,7 +25173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDirection: {x: 0, y: 0}
   isStationary: 0
-  speed: 2.5
+  speed: 7
   groundLayer:
     serializedVersion: 2
     m_Bits: 513
@@ -40188,7 +40188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDirection: {x: 0, y: 0}
   isStationary: 0
-  speed: 2.5
+  speed: 7
   groundLayer:
     serializedVersion: 2
     m_Bits: 513
@@ -44037,7 +44037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDirection: {x: 0, y: 0}
   isStationary: 0
-  speed: 2.5
+  speed: 7
   groundLayer:
     serializedVersion: 2
     m_Bits: 513

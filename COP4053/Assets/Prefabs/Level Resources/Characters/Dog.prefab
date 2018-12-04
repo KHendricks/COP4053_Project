@@ -39,9 +39,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1456880644709246}
-  m_LocalRotation: {x: 0.14701578, y: -0.69165486, z: 0.14701577, w: 0.69165486}
-  m_LocalPosition: {x: -8.014, y: 3.1577835, z: -3.210939}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.06477369, y: -0.00000005960463, z: 0.000000029802315, w: -0.99789995}
+  m_LocalPosition: {x: -1.13, y: -4.35, z: 19.91}
+  m_LocalScale: {x: 1.0525329, y: 1.2673676, z: 1.464998}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -105,14 +105,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDirection: {x: 0, y: 0}
   isStationary: 0
-  speed: 8
+  speed: 7
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
   jumpHeight: 4
   animator: {fileID: 0}
-  rescued: 0
-  followPlayer: 0
+  rescued: 1
+  followPlayer: 1
   player: {fileID: 0}
   distanceFromPlayer: 1.2
   context: {fileID: 0}
