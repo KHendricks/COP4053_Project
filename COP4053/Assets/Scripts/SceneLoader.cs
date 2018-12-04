@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    float timer = 16f;
 
     // Make this static and just the name of the scene
     public static string currLevel;
@@ -24,13 +25,16 @@ public class SceneLoader : MonoBehaviour
         {
             currLevel = name;
         }
-
+        if(name == "FinalCutscene")
+        {
+            FindObjectOfType<AudioManager>().Play("Theme");
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+                SceneManager.LoadScene("WinScreen");
+        }
+            
     }
 
-    public void LoadLevel(int level)
-    {
-
-    }
 
     public void Reload()
     {

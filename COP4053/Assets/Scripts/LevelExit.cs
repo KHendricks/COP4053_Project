@@ -57,8 +57,12 @@ public class LevelExit : MonoBehaviour {
             dogExit = true;
         }
 
-
-        if (dogExit && playerExit && followCount == dogCount)
+        if(level == 3)
+        {
+            if (playerExit && player.dogs.Count == dogCount)
+                LoadLevelFour();
+        }
+        else if (dogExit && playerExit && followCount == dogCount)
         {
             switch(level)
             {
@@ -68,11 +72,8 @@ public class LevelExit : MonoBehaviour {
                 case 2:
                     LoadLevelThree();
                     break;
-                case 3:
-                    LoadLevelFour();
-                    break;
                 default:
-                    Debug.Log("Please specify level number.");
+                    Debug.Log("Please specify level 1 or 2.");
                     break;
             }
             //player.transform.position = spawnPoint.transform.position;
