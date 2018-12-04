@@ -322,7 +322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9416fa43e654a32a341e764c9417de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderingArea: {fileID: 1552457754515380}
+  wanderingArea1: {fileID: 0}
+  wanderingArea2: {fileID: 0}
   enemy: {fileID: 0}
 --- !u!114 &114133948489298344
 MonoBehaviour:
@@ -373,7 +374,8 @@ MonoBehaviour:
   isAttacking: 0
   playerSpriteRenderer: {fileID: 0}
   wanderEnabled: 1
-  waypoint: {fileID: 1062785962977644}
+  waypoint1: {fileID: 0}
+  waypoint2: {fileID: 0}
 --- !u!114 &114520254524221266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -410,7 +412,8 @@ MonoBehaviour:
   isAttacking: 0
   playerSpriteRenderer: {fileID: 0}
   wanderEnabled: 0
-  waypoint: {fileID: 1062785962977644}
+  waypoint1: {fileID: 0}
+  waypoint2: {fileID: 0}
 --- !u!119 &119546720865124960
 Projector:
   m_ObjectHideFlags: 1

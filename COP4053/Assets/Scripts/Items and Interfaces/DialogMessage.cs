@@ -10,6 +10,7 @@ public class DialogMessage : MonoBehaviour {
     public GameObject c;
     public GameObject back;
     public bool active;
+    public float timeActive;
 
     GameObject dismiss;
 
@@ -19,6 +20,8 @@ public class DialogMessage : MonoBehaviour {
         c.SetActive(false);
         back.SetActive(false);
         active = false;
+        if (timeActive < 1)
+            timeActive = 5;
     }
 
     void Update()
@@ -36,7 +39,6 @@ public class DialogMessage : MonoBehaviour {
         Debug.Log("Trying to activate " + message + " dialog");
         this.message.text = message;
         StartCoroutine(MessageTimer());
-
     }
 
     public void Deactivate()
@@ -50,7 +52,7 @@ public class DialogMessage : MonoBehaviour {
 
     IEnumerator MessageTimer()
     {
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(timeActive);
         Deactivate();
     }
 

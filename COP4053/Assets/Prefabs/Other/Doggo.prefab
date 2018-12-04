@@ -106,10 +106,18 @@ MonoBehaviour:
   currentDirection: {x: 0, y: 0}
   isStationary: 0
   speed: 3
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpHeight: 4
   animator: {fileID: 0}
   rescued: 0
+  followPlayer: 0
   player: {fileID: 0}
   distanceFromPlayer: 0.7
+  context: {fileID: 0}
+  closeEnough: 0
+  maxHeightDiff: 0
 --- !u!114 &114840669952622176
 MonoBehaviour:
   m_ObjectHideFlags: 1
