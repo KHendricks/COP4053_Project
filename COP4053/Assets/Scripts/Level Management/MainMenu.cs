@@ -61,7 +61,7 @@ public class MainMenu : MonoBehaviour
 
         // Was muted in PlayerStats.cs Death()
         FindObjectOfType<AudioManager>().Unmute("Footsteps");
-
+        FindObjectOfType<AudioManager>().Stop("Theme");
     }
 
     void LoadLevelTwo()
@@ -70,6 +70,7 @@ public class MainMenu : MonoBehaviour
 
         // Was muted in PlayerStats.cs Death()
         FindObjectOfType<AudioManager>().Unmute("Footsteps");
+        FindObjectOfType<AudioManager>().Stop("Theme");
     }
 
     void LoadLevelThree()
@@ -78,6 +79,7 @@ public class MainMenu : MonoBehaviour
 
         // Was muted in PlayerStats.cs Death()
         FindObjectOfType<AudioManager>().Unmute("Footsteps");
+        FindObjectOfType<AudioManager>().Stop("Theme");
     }
 
     void LoadLevelFour()
@@ -86,6 +88,7 @@ public class MainMenu : MonoBehaviour
 
         // Was muted in PlayerStats.cs Death()
         FindObjectOfType<AudioManager>().Unmute("Footsteps");
+        FindObjectOfType<AudioManager>().Stop("Theme");
     }
 
     public void GameOver()
