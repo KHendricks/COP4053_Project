@@ -29,24 +29,7 @@ public class MainMenu : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.JoystickButton0) && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("LoseScreen"))
         {
-            switch (currLevel)
-            {
-                case 1:
-                    LoadLevelOne();
-                    break;
-                case 2:
-                    LoadLevelTwo();
-                    break;
-                case 3:
-                    LoadLevelThree();
-                    break;
-                case 4:
-                    LoadLevelFour();
-                    break;
-                default:
-                    Debug.Log("Please specify level number.");
-                    break;
-            }
+            FindObjectOfType<SceneLoader>().Reload();
         }
     }
 

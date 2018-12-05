@@ -14,7 +14,6 @@ public class SceneLoader : MonoBehaviour
     void Start()
     {
         //Get name of scene and set currLevel
-        FindObjectOfType<AudioManager>().Play("Theme");
     }
 
     // Update is called once per frame
@@ -31,7 +30,6 @@ public class SceneLoader : MonoBehaviour
             if (timer <= 0)
                 SceneManager.LoadScene("WinScreen");
         }
-            
     }
 
 
@@ -39,6 +37,7 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(currLevel);
         FindObjectOfType<AudioManager>().Stop("Lose");
+        FindObjectOfType<AudioManager>().Play("Theme");
         FindObjectOfType<AudioManager>().Unmute("Footsteps");
     }
 
