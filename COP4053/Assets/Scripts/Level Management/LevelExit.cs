@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelExit : MonoBehaviour {
 
@@ -11,6 +12,9 @@ public class LevelExit : MonoBehaviour {
     public int level;
     public int dogCount;
     int followCount;
+    private YieldInstruction fadeInstruction = new YieldInstruction();
+    public float fadeTime;
+    public Image image;
 
     private void Start()
     {
@@ -89,6 +93,7 @@ public class LevelExit : MonoBehaviour {
 
     void LoadLevelTwo()
     {
+        StartCoroutine(FadeIn());
         SceneManager.LoadScene("Canyon_level2");
 
         // Was muted in PlayerStats.cs Death()
@@ -97,6 +102,7 @@ public class LevelExit : MonoBehaviour {
 
     void LoadLevelThree()
     {
+        StartCoroutine(FadeIn());
         SceneManager.LoadScene("Switchbacks_level3");
 
         // Was muted in PlayerStats.cs Death()
@@ -105,6 +111,7 @@ public class LevelExit : MonoBehaviour {
 
     void LoadLevelFour()
     {
+        StartCoroutine(FadeIn());
         SceneManager.LoadScene("Cabin_level4");
 
         // Was muted in PlayerStats.cs Death()
@@ -113,7 +120,34 @@ public class LevelExit : MonoBehaviour {
 
     void GameOver()
     {
+        StartCoroutine(FadeIn());
         SceneManager.LoadScene("FinalCutscene");
         FindObjectOfType<AudioManager>().Mute("Footsteps");
+    }
+
+    IEnumerator FadeOut()
+    {
+        float elapsedTime = 0.0f;
+        Color c = image.color;
+        while (elapsedTime < fadeTime)
+        {
+            yield return fadeInstruction;
+            elapsedTime += Time.deltaTime;
+            c.a = 1.0f - Mathf.Clamp01(elapsedTime / fadeTime);
+            image.color = c;
+        }
+    }
+
+    IEnumerator FadeIn()
+    {
+        float elapsedTime = 0.0f;
+        Color c = image.color;
+        while (elapsedTime < fadeTime)
+        {
+            yield return fadeInstruction;
+            elapsedTime += Time.deltaTime;
+            c.a = Mathf.Clamp01(elapsedTime / fadeTime);
+            image.color = c;
+        }
     }
 }
