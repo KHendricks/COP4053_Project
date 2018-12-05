@@ -115,5 +115,6 @@ public class LevelExit : MonoBehaviour {
     {
         SceneManager.LoadScene("FinalCutscene");
         FindObjectOfType<AudioManager>().Mute("Footsteps");
+        FindObjectOfType<AudioManager>().Play("Theme");
     }
 }
