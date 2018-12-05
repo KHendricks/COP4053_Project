@@ -122,6 +122,7 @@ public class LevelExit : MonoBehaviour {
     {
         StartCoroutine(FadeIn());
         SceneManager.LoadScene("FinalCutscene");
+        FindObjectOfType<AudioManager>().Play("Theme");
         FindObjectOfType<AudioManager>().Mute("Footsteps");
     }
 
