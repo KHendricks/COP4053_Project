@@ -78,6 +78,37 @@ public class PlayerInventory : MonoBehaviour
         // item selected
         // TODO: This is a WIP
         DisplayCurrent();
+
+        // Debug buttons
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            ReloadScene();
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            GiveHealth();
+        }
+
+        if (Input.GetKey(KeyCode.Return) && Input.GetKey(KeyCode.Alpha1))
+        {
+            LoadLevelOne();
+        }
+
+        if (Input.GetKey(KeyCode.Return) && Input.GetKey(KeyCode.Alpha2))
+        {
+            LoadLevelTwo();
+        }
+
+        if (Input.GetKey(KeyCode.Return) && Input.GetKey(KeyCode.Alpha3))
+        {
+            LoadLevelThree();
+        }
+
+        if (Input.GetKey(KeyCode.Return) && Input.GetKey(KeyCode.Alpha4))
+        {
+            LoadLevelFour();
+        }
     }
 
     void DisplayCurrent()
@@ -330,5 +361,33 @@ public class PlayerInventory : MonoBehaviour
         PlayerPrefs.SetInt("Lasso", 1);
     }
 
+    void GiveHealth()
+    {
+        PlayerPrefs.SetInt("PlayerHealth", 3);
+    }
 
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    void LoadLevelOne()
+    {
+        SceneManager.LoadScene("Desert_level1");
+    }
+
+    void LoadLevelTwo()
+    {
+        SceneManager.LoadScene("Canyon_level2");
+    }
+
+    void LoadLevelThree()
+    {
+        SceneManager.LoadScene("Switchbacks_level3");
+    }
+
+    void LoadLevelFour()
+    {
+        SceneManager.LoadScene("Cabin_level4");
+    }
 }
