@@ -24,7 +24,7 @@ public class SceneLoader : MonoBehaviour
         {
             currLevel = sceneName;
         }
-        if(name == "FinalCutscene")
+        if(sceneName == "FinalCutscene")
         {
             timer -= Time.deltaTime;
             if (timer <= 0)
