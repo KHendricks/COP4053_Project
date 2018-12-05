@@ -27,7 +27,7 @@ public static class InputManager {
                     isGamepad = false;
                     return true;
                 }
-                if (Input.GetKeyDown(KeyCode.JoystickButton2)) 
+                if (Input.GetKeyDown(KeyCode.JoystickButton2) || Input.GetKeyDown(KeyCode.JoystickButton18)) 
                 {
                     isGamepad = true;
                     return true;
@@ -40,7 +40,7 @@ public static class InputManager {
                     isGamepad = false;
                     return true;
                 }
-                if (Input.GetKeyDown(KeyCode.JoystickButton1))
+                if (Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.JoystickButton17))
                 {
                     isGamepad = true;
                     return true;
@@ -53,7 +53,7 @@ public static class InputManager {
                     isGamepad = false;
                     return true;
                 }
-                if (Input.GetKeyDown(KeyCode.JoystickButton0))
+                if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.JoystickButton16))
                 {
                     isGamepad = true;
                     return true;
@@ -66,7 +66,7 @@ public static class InputManager {
                     isGamepad = false;
                     return true;
                 }
-                if (Input.GetKeyDown(KeyCode.JoystickButton3))
+                if (Input.GetKeyDown(KeyCode.JoystickButton3) || Input.GetKeyDown(KeyCode.JoystickButton19))
                 {
                     isGamepad = true;
                     return true;
@@ -79,7 +79,7 @@ public static class InputManager {
                     isGamepad = false;
                     return true;
                 }
-                if (Input.GetKeyDown(KeyCode.JoystickButton6))
+                if (Input.GetKeyDown(KeyCode.JoystickButton6) || Input.GetKeyDown(KeyCode.JoystickButton10))
                 {
                     isGamepad = true;
                     return true;
@@ -100,7 +100,7 @@ public static class InputManager {
                 {
                     return true;
                 }
-                if (Input.GetKeyUp(KeyCode.JoystickButton2))
+                if (Input.GetKeyUp(KeyCode.JoystickButton2) || Input.GetKeyDown(KeyCode.JoystickButton18))
                 {
                     return true;
                 }
@@ -111,7 +111,7 @@ public static class InputManager {
                 {
                     return true;
                 }
-                if (Input.GetKeyUp(KeyCode.JoystickButton1))
+                if (Input.GetKeyUp(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.JoystickButton17))
                 {
                     return true;
                 }
@@ -122,7 +122,7 @@ public static class InputManager {
                 {
                     return true;
                 }
-                if (Input.GetKeyUp(KeyCode.JoystickButton0))
+                if (Input.GetKeyUp(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.JoystickButton16))
                 {
                     return true;
                 }
@@ -133,7 +133,7 @@ public static class InputManager {
                 {
                     return true;
                 }
-                if (Input.GetKeyUp(KeyCode.JoystickButton3))
+                if (Input.GetKeyUp(KeyCode.JoystickButton3) || Input.GetKeyDown(KeyCode.JoystickButton19))
                 {
                     return true;
                 }
@@ -144,7 +144,7 @@ public static class InputManager {
                 {
                     return true;
                 }
-                if (Input.GetKeyUp(KeyCode.JoystickButton6))
+                if (Input.GetKeyUp(KeyCode.JoystickButton6) || Input.GetKeyDown(KeyCode.JoystickButton10))
                 {
                     return true;
                 }

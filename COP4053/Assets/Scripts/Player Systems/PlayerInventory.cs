@@ -278,7 +278,7 @@ public class PlayerInventory : MonoBehaviour
     {
         // Cycle selector to the left
         // JoystickButton4 is the left bumper on an Xbox one controller
-        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.JoystickButton4))
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.JoystickButton13))
         {
             int prevIndex = PlayerPrefs.GetInt("InventorySlotSelected");
             int selectorIndex = (PlayerPrefs.GetInt("InventorySlotSelected") - 1);
@@ -314,7 +314,7 @@ public class PlayerInventory : MonoBehaviour
 
         // Cycle selector to the right
         // JoystickButton5 is the right bumper on an Xbox one controller
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton5))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton5) || Input.GetKeyDown(KeyCode.JoystickButton14))
         {
             int prevIndex = PlayerPrefs.GetInt("InventorySlotSelected");
             int selectorIndex = (PlayerPrefs.GetInt("InventorySlotSelected") + 1);
