@@ -20,10 +20,10 @@ public class SceneLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var name = SceneManager.GetActiveScene().name;
-        if (name != "WinScreen" && name != "LoseScreen" && name != "MainMenu")
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName != "WinScreen" && sceneName != "LoseScreen" && sceneName != "MainMenu")
         {
-            currLevel = name;
+            currLevel = sceneName;
         }
         if(name == "FinalCutscene")
         {

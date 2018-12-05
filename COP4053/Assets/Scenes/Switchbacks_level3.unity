@@ -14972,7 +14972,12 @@ Prefab:
     - target: {fileID: 114825843330084556, guid: b62cb961625c948e8a20ca06f4aeb495,
         type: 2}
       propertyPath: speed
-      value: 2.4
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114825843330084556, guid: b62cb961625c948e8a20ca06f4aeb495,
+        type: 2}
+      propertyPath: distanceFromPlayer
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b62cb961625c948e8a20ca06f4aeb495, type: 2}
@@ -25655,7 +25660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDirection: {x: 0, y: 0}
   isStationary: 0
-  speed: 2.4
+  speed: 2.5
   groundLayer:
     serializedVersion: 2
     m_Bits: 513
@@ -25664,7 +25669,7 @@ MonoBehaviour:
   rescued: 0
   followPlayer: 0
   player: {fileID: 2143242639}
-  distanceFromPlayer: 0.7
+  distanceFromPlayer: 1.2
   context: {fileID: 1556378224}
   closeEnough: 0
   maxHeightDiff: 0
@@ -40977,16 +40982,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDirection: {x: 0, y: 0}
   isStationary: 0
-  speed: 2.4
+  speed: 2.5
   groundLayer:
     serializedVersion: 2
     m_Bits: 513
-  jumpHeight: 4
+  jumpHeight: 2.2
   animator: {fileID: 0}
   rescued: 0
   followPlayer: 0
   player: {fileID: 2143242639}
-  distanceFromPlayer: 0.7
+  distanceFromPlayer: 1.2
   context: {fileID: 1556378224}
   closeEnough: 0
   maxHeightDiff: 0
@@ -42759,7 +42764,7 @@ Prefab:
     - target: {fileID: 114536657723368306, guid: 4a931f1dba73c4fc6837559ae4081aac,
         type: 2}
       propertyPath: speed
-      value: 2.4
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 114536657723368306, guid: 4a931f1dba73c4fc6837559ae4081aac,
         type: 2}
@@ -44456,12 +44461,17 @@ Prefab:
     - target: {fileID: 114433864385552582, guid: 2a86b1ee083dc41c7b47b18351ae9334,
         type: 2}
       propertyPath: speed
-      value: 2.4
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 114433864385552582, guid: 2a86b1ee083dc41c7b47b18351ae9334,
         type: 2}
       propertyPath: followPlayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114433864385552582, guid: 2a86b1ee083dc41c7b47b18351ae9334,
+        type: 2}
+      propertyPath: distanceFromPlayer
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a86b1ee083dc41c7b47b18351ae9334, type: 2}
@@ -44975,7 +44985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDirection: {x: 0, y: 0}
   isStationary: 0
-  speed: 2.4
+  speed: 2.5
   groundLayer:
     serializedVersion: 2
     m_Bits: 513
@@ -44984,7 +44994,7 @@ MonoBehaviour:
   rescued: 0
   followPlayer: 0
   player: {fileID: 2143242639}
-  distanceFromPlayer: 0.7
+  distanceFromPlayer: 1.2
   context: {fileID: 1556378224}
   closeEnough: 0
   maxHeightDiff: 0

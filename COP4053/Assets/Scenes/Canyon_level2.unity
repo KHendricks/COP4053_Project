@@ -5791,8 +5791,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.29599047, y: 0.43005192, z: 0.025956681}
-  m_Center: {x: -0.054878153, y: 0.11812495, z: 0.0016520704}
+  m_Size: {x: 0.5882716, y: 0.60680705, z: 0.025956681}
+  m_Center: {x: -0.1313545, y: 0.14496338, z: 0.0016520699}
 --- !u!1 &469214710
 GameObject:
   m_ObjectHideFlags: 0
@@ -10530,6 +10530,7 @@ MonoBehaviour:
   jump: 0
   lastSpawnPoint: {fileID: 0}
   freeze: 0
+  defeatedBoss: 0
   playerSpriteRenderer: {fileID: 1013318959}
 --- !u!114 &961177135
 MonoBehaviour:
@@ -16409,8 +16410,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.29599047, y: 0.43005192, z: 0.025956681}
-  m_Center: {x: -0.054878153, y: 0.11812495, z: 0.0016520704}
+  m_Size: {x: 0.5481541, y: 0.5105135, z: 0.025956681}
+  m_Center: {x: -0.12419905, y: 0.1067255, z: 0.0016520707}
 --- !u!1 &1702406333
 GameObject:
   m_ObjectHideFlags: 0

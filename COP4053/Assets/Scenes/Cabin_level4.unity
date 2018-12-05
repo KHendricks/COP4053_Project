@@ -1300,8 +1300,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.7132235, y: 3.6973681, z: 7.1973248}
-  m_Center: {x: -1.1543595, y: 7.51949, z: 1.0551227}
+  m_Size: {x: 4.064155, y: 4.0965996, z: 7.1973248}
+  m_Center: {x: -0.97889316, y: 7.7191086, z: 1.0551227}
 --- !u!1 &470816702
 GameObject:
   m_ObjectHideFlags: 0
@@ -4131,7 +4131,7 @@ Prefab:
     - target: {fileID: 114861264759898364, guid: ba4e51fa68c5540209068872ce1a0d32,
         type: 2}
       propertyPath: health
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114075979528903422, guid: ba4e51fa68c5540209068872ce1a0d32,
         type: 2}
@@ -4218,6 +4218,46 @@ Prefab:
     - target: {fileID: 4135127761300396, guid: ba4e51fa68c5540209068872ce1a0d32, type: 2}
       propertyPath: m_LocalScale.z
       value: 82.88126
+      objectReference: {fileID: 0}
+    - target: {fileID: 65602817802682166, guid: ba4e51fa68c5540209068872ce1a0d32,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 1.5922008
+      objectReference: {fileID: 0}
+    - target: {fileID: 65602817802682166, guid: ba4e51fa68c5540209068872ce1a0d32,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 7.913656
+      objectReference: {fileID: 0}
+    - target: {fileID: 65602817802682166, guid: ba4e51fa68c5540209068872ce1a0d32,
+        type: 2}
+      propertyPath: m_Center.z
+      value: 4.1085763
+      objectReference: {fileID: 0}
+    - target: {fileID: 65602817802682166, guid: ba4e51fa68c5540209068872ce1a0d32,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 3.4499784
+      objectReference: {fileID: 0}
+    - target: {fileID: 65995493260094886, guid: ba4e51fa68c5540209068872ce1a0d32,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 4.3555517
+      objectReference: {fileID: 0}
+    - target: {fileID: 65995493260094886, guid: ba4e51fa68c5540209068872ce1a0d32,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 1.0018035
+      objectReference: {fileID: 0}
+    - target: {fileID: 65995493260094886, guid: ba4e51fa68c5540209068872ce1a0d32,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 7.7191544
+      objectReference: {fileID: 0}
+    - target: {fileID: 65995493260094886, guid: ba4e51fa68c5540209068872ce1a0d32,
+        type: 2}
+      propertyPath: m_Center.z
+      value: -2.0426366
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64523163718758950, guid: ba4e51fa68c5540209068872ce1a0d32, type: 2}
