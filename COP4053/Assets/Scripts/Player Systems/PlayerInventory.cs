@@ -78,17 +78,6 @@ public class PlayerInventory : MonoBehaviour
         // item selected
         // TODO: This is a WIP
         DisplayCurrent();
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            GiveKnife();
-            GiveSlingshot();
-            GiveLasso();
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            PlayerPrefs.SetInt("PlayerHealth", 3);
-        }
     }
 
     void DisplayCurrent()
